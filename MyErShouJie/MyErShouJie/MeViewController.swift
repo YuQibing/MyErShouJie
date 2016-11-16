@@ -42,7 +42,7 @@ class MeViewController: UIViewController,UITableViewDelegate,UITableViewDataSour
         return 0
     }
     
-    private func tableVew(tableViwe:UITableView,heightForRowAtIndexPath indexPath:NSIndexPath)->CGFloat{
+    private func tableView(tableView:UITableView,heightForRowAtIndexPath indexPath:NSIndexPath)->CGFloat{
         if(indexPath.section == 0){
             return 80
         }else{

@@ -1,22 +1,22 @@
 //
-//  HomeViewController.swift
+//  Home.swift
 //  MyErShouJie
 //
-//  Created by bingbing on 16/11/7.
+//  Created by bingbing on 16/11/16.
 //  Copyright © 2016年 yuqibing. All rights reserved.
 //
 
 import UIKit
 
-class HomeViewController: UIViewController, UICollectionViewDelegate{
+class Home:UIViewController, UICollectionViewDelegate {
     let width = UIScreen.main .bounds.size.width
     var collection = UICollectionView()
     var dataArr = NSMutableArray()
     var screenObject = UIScreen.main.bounds
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.navigationItem.title = "首页"
-        func viewDidLoad() {
+
+    
+    
+        override func viewDidLoad() {
             super.viewDidLoad()
             let layout = UICollectionViewFlowLayout()
             
@@ -24,21 +24,21 @@ class HomeViewController: UIViewController, UICollectionViewDelegate{
             collection.register(Home_view.self, forCellWithReuseIdentifier:"cell")
             collection.delegate = self
             //collection.dataSource = self
-            
+        
             collection.backgroundColor = UIColor.white
             layout.itemSize = CGSize(width: (width-30)/2, height: 250)
             self.view.addSubview(collection)
-        }
-        
+    }
+    
         func numberOfSections(collection: UICollectionView) -> Int {
             return 1
         }
         
-        func collectionView(collectionView: UICollectionView, numberOfItemsInSection: Int) -> Int{
+        private func collectionView(collectionView: UICollectionView, numberOfItemsInSection: Int) -> Int{
             return dataArr.count
         }
         
-        func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: IndexPath) ->UICollectionViewCell{
+        private func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: IndexPath) ->UICollectionViewCell{
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier:"cell", for: indexPath as IndexPath) as! Home_view
             cell.layer.borderWidth = 0.3
             cell.layer.borderColor = UIColor.lightGray.cgColor
@@ -48,6 +48,12 @@ class HomeViewController: UIViewController, UICollectionViewDelegate{
         func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets{
             return UIEdgeInsetsMake(5, 10, 5, 10)
         }
+        
+        
+        
+        
+        
+        // Do any additional setup after loading the view.
     }
 
-}
+
