@@ -42,7 +42,7 @@ class MeViewController: UIViewController,UITableViewDelegate,UITableViewDataSour
         return 0
     }
     
-    private func tableView(tableView:UITableView,heightForRowAtIndexPath indexPath:NSIndexPath)->CGFloat{
+    private func tableView(tableView:UITableView, heightForRowAtIndexPath indexPath:NSIndexPath)->CGFloat{
         if(indexPath.section == 0){
             return 80
         }else{
@@ -50,15 +50,15 @@ class MeViewController: UIViewController,UITableViewDelegate,UITableViewDataSour
         }
     }
     
-    private func tableView(tableView: UITableView,heightForHeaderInSection section:Int)-> CGFloat{
+    private func tableView(tableView: UITableView, heightForHeaderInSection section:Int)-> CGFloat{
         return 10
     }
     
-    private func tableView(tableView: UITableView,heightForFooterInSection section:Int)-> CGFloat{
+    private func tableView(tableView: UITableView, heightForFooterInSection section:Int)-> CGFloat{
         return 1
     }
     //返回数据源
-    func tableView(_ tableView:UITableView,cellForRowAt indexPath:IndexPath)-> UITableViewCell{
+    func tableView(_ tableView:UITableView, cellForRowAt indexPath:IndexPath)-> UITableViewCell{
         let identifier = "identifier"
         var cell = tableView.dequeueReusableCell(withIdentifier: identifier)
         

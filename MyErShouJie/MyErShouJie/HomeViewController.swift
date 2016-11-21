@@ -7,47 +7,89 @@
 //
 
 import UIKit
+let homeIdentifier:String = "homecell"
+let scrollIdentifier:String = "scrollcell"
+let listIdentifier:String = "listcell"
+let defaultIdentifier:String = "defaultcell"
 
-class HomeViewController: UIViewController, UICollectionViewDelegate{
-    let width = UIScreen.main .bounds.size.width
-    var collection = UICollectionView()
-    var dataArr = NSMutableArray()
-    var screenObject = UIScreen.main.bounds
+
+class HomeViewController: RootViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "首页"
-        func viewDidLoad() {
-            super.viewDidLoad()
-            let layout = UICollectionViewFlowLayout()
-            
-            collection = UICollectionView(frame: CGRect(x: 0, y: 0, width: screenObject.width, height: screenObject.height), collectionViewLayout: layout)
-            collection.register(Home_view.self, forCellWithReuseIdentifier:"cell")
-            collection.delegate = self
-            //collection.dataSource = self
-            
-            collection.backgroundColor = UIColor.white
-            layout.itemSize = CGSize(width: (width-30)/2, height: 250)
-            self.view.addSubview(collection)
-        }
         
-        func numberOfSections(collection: UICollectionView) -> Int {
-            return 1
-        }
-        
-        func collectionView(collectionView: UICollectionView, numberOfItemsInSection: Int) -> Int{
-            return dataArr.count
-        }
-        
-        func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: IndexPath) ->UICollectionViewCell{
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier:"cell", for: indexPath as IndexPath) as! Home_view
-            cell.layer.borderWidth = 0.3
-            cell.layer.borderColor = UIColor.lightGray.cgColor
-            return cell
-        }
-        
-        func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets{
-            return UIEdgeInsetsMake(5, 10, 5, 10)
-        }
+        tableView?.register(HeadCell.self, forCellReuseIdentifier: homeIdentifier)
+        tableView?.register(ScrollCell.self, forCellReuseIdentifier: scrollIdentifier)
+        tableView?.register(ListCell.self, forCellReuseIdentifier: listIdentifier)
+        tableView?.register(DefaultCell.self, forCellReuseIdentifier: defaultIdentifier)
+
     }
 
 }
+
+extension HomeViewController {
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        
+        return 4
+        
+    }
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        if section < 3 {
+            return 1
+        }
+        
+        return 100
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        var cell:UITableViewCell?
+        switch indexPath.section {
+        case 0:
+            cell = tableView.dequeueReusableCell(withIdentifier: homeIdentifier, for: indexPath) as! HeadCell
+            break
+        case 1:
+            cell = tableView.dequeueReusableCell(withIdentifier: scrollIdentifier, for: indexPath) as! ScrollCell
+            break
+        case 2:
+            cell = tableView.dequeueReusableCell(withIdentifier: listIdentifier, for: indexPath)
+            break
+        default:
+            
+            let cell = tableView.dequeueReusableCell(withIdentifier: defaultIdentifier, for: indexPath) as! DefaultCell
+            
+            cell.indexPath = indexPath
+            
+            return cell
+        }
+        return cell!
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        print(indexPath.row)
+        
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        if indexPath.section == 0 && indexPath.row == 0 {
+            
+            return 200
+        }
+        else if indexPath.section == 1 && indexPath.row == 0 {
+            
+            return ScreenWidth/2
+        }
+        return 80
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 0.0
+    }
+    
+}
+

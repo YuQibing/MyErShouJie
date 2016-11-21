@@ -15,8 +15,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        self.window?.backgroundColor = UIColor.white
-        self.window?.rootViewController = TabBarViewController.TabbarViewController()
+        window = UIWindow(frame: UIScreen.main.bounds)
+        let mainVC = TabBarViewController()
+        window?.rootViewController = mainVC
+        window?.makeKeyAndVisible()
         
         return true
     }

@@ -10,6 +10,7 @@
 		31261AA7773B08128FF2F6350EEB4573 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
 		3BE67267EF4C802CDF9BB1A2FBBF76BD /* Pods-MyErShouJieTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D82CE9701CD425395891D445B2CEFEA /* Pods-MyErShouJieTests-dummy.m */; };
 		A6B740234B821FE6B0ADFD2BA69CFAF1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		AD9C6C641DE06E21009AB8EC /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD9C6C631DE06E21009AB8EC /* SnapKit.framework */; };
 		B10F6543E26E9E617CB94E6F23313F37 /* Pods-MyErShouJieUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C50D2D36B51F22120D35B71E3D730E49 /* Pods-MyErShouJieUITests-dummy.m */; };
 		BF6883811445C6ECFB19717A4BF9C310 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
 		F14E599C9B515E207FAEC088AA6356B8 /* Pods-MyErShouJie-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 65BF0D7DF2F0F275BF9B9784AAC068C8 /* Pods-MyErShouJie-dummy.m */; };
@@ -18,21 +19,22 @@
 /* Begin PBXFileReference section */
 		00050757A8769F6FE604CE935E3E5FB1 /* Pods-MyErShouJieUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MyErShouJieUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		0C1963BCECD80CC3ED5533BF5AAE638C /* Pods-MyErShouJie-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MyErShouJie-frameworks.sh"; sourceTree = "<group>"; };
-		0CE1B5C2C71F8AFEB8693ED56B72F589 /* libPods-MyErShouJieUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-MyErShouJieUITests.a"; path = "libPods-MyErShouJieUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0CE1B5C2C71F8AFEB8693ED56B72F589 /* libPods-MyErShouJieUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MyErShouJieUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		18BA2447229082E47ACAF69D85162E1E /* Pods-MyErShouJie-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MyErShouJie-acknowledgements.markdown"; sourceTree = "<group>"; };
 		1A864E6C49AC09DBD37EF36A46B3109E /* Pods-MyErShouJieUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MyErShouJieUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		28DA3F895A1F93B77F9C308FF20CB7D7 /* Pods-MyErShouJieTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MyErShouJieTests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		4DDAB0C4AFD96219BBF81444B98F8FF4 /* Pods-MyErShouJie-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MyErShouJie-acknowledgements.plist"; sourceTree = "<group>"; };
 		4E61026D5942796390C1CDF10F1BC923 /* Pods-MyErShouJie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MyErShouJie.release.xcconfig"; sourceTree = "<group>"; };
-		5A115C4A826F3221D52694A324C3F822 /* libPods-MyErShouJieTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-MyErShouJieTests.a"; path = "libPods-MyErShouJieTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A115C4A826F3221D52694A324C3F822 /* libPods-MyErShouJieTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MyErShouJieTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		63A2A485FF80AD4F65196F18B6AA1D0C /* Pods-MyErShouJie-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MyErShouJie-resources.sh"; sourceTree = "<group>"; };
 		65BF0D7DF2F0F275BF9B9784AAC068C8 /* Pods-MyErShouJie-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MyErShouJie-dummy.m"; sourceTree = "<group>"; };
 		6C1E373908D1A94666AD1B75645E8CC0 /* Pods-MyErShouJieUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MyErShouJieUITests-frameworks.sh"; sourceTree = "<group>"; };
 		7D82CE9701CD425395891D445B2CEFEA /* Pods-MyErShouJieTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MyErShouJieTests-dummy.m"; sourceTree = "<group>"; };
 		814608BD176B6AE2E24CD3BE88D14B26 /* Pods-MyErShouJieTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MyErShouJieTests-frameworks.sh"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		950F5B99CAA7172ED8F35CCE4E623C27 /* Pods-MyErShouJieUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MyErShouJieUITests.release.xcconfig"; sourceTree = "<group>"; };
 		9929AC456DB08C5EE25472610252DBB4 /* Pods-MyErShouJie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MyErShouJie.debug.xcconfig"; sourceTree = "<group>"; };
+		AD9C6C631DE06E21009AB8EC /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SnapKit.framework; sourceTree = "<group>"; };
 		BA7878FE2FD276390A709FC05F3724BB /* Pods-MyErShouJieTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MyErShouJieTests.release.xcconfig"; sourceTree = "<group>"; };
 		C50D2D36B51F22120D35B71E3D730E49 /* Pods-MyErShouJieUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MyErShouJieUITests-dummy.m"; sourceTree = "<group>"; };
 		CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
@@ -40,7 +42,7 @@
 		E449F53802E26E6A47B4B68173403FD6 /* Pods-MyErShouJieUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MyErShouJieUITests-acknowledgements.plist"; sourceTree = "<group>"; };
 		E85DFF27DA38C7247BC1E7C1A5B4D52D /* Pods-MyErShouJieUITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MyErShouJieUITests-resources.sh"; sourceTree = "<group>"; };
 		EA4DADB87083275D4547903A7444C43B /* Pods-MyErShouJieTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MyErShouJieTests-acknowledgements.plist"; sourceTree = "<group>"; };
-		FD45EF04ECBAC09E0D3CCC9438AD127F /* libPods-MyErShouJie.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-MyErShouJie.a"; path = "libPods-MyErShouJie.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD45EF04ECBAC09E0D3CCC9438AD127F /* libPods-MyErShouJie.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MyErShouJie.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD947B873D88EC0F633C64A022AAB075 /* Pods-MyErShouJieTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MyErShouJieTests-resources.sh"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -50,6 +52,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A6B740234B821FE6B0ADFD2BA69CFAF1 /* Foundation.framework in Frameworks */,
+				AD9C6C641DE06E21009AB8EC /* SnapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,6 +144,7 @@
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
 				8DA5A55461E48802BB385CC97E38ACEE /* Products */,
+				AD9C6C631DE06E21009AB8EC /* SnapKit.framework */,
 				044AB4A71A4BBAD36C71C9EBB390B18C /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
@@ -220,6 +224,9 @@
 		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					New,
+				);
 				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0700;
 			};
@@ -348,6 +355,10 @@
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_NO_COMMON_BLOCKS = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				MACH_O_TYPE = staticlib;
@@ -394,6 +405,10 @@
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_NO_COMMON_BLOCKS = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				MACH_O_TYPE = staticlib;
