@@ -88,27 +88,27 @@ class MeViewController: UIViewController,UITableViewDelegate,UITableViewDataSour
         
         switch indexPath.section {
         case 0:
-            let person = Person()
+            let person = MePersonDetails()
             person.hidesBottomBarWhenPushed = true
             self.navigationController?.pushViewController(person, animated: false)
         case 1:
             if(indexPath.row == 0){
-                let issue = Issue()
+                let issue = MeIssueDetails()
                 issue.hidesBottomBarWhenPushed = true  //隐藏tabbar
                 self.navigationController?.pushViewController(issue, animated: false)
             }
             if(indexPath.row == 1){
-                let sell = Sell()
+                let sell = MeSellDetails()
                 sell.hidesBottomBarWhenPushed = true
                 self.navigationController?.pushViewController(sell, animated: false)
             }
             if(indexPath.row == 2){
-                let buy = Buy()
+                let buy = MeBuyDetails()
                 buy.hidesBottomBarWhenPushed = true
                 self.navigationController?.pushViewController(buy, animated: false)
             }
         case 2:
-            let set = Set()
+            let set = MeSetDetails()
             set.hidesBottomBarWhenPushed = true
             self.navigationController?.pushViewController(set, animated: false)
         default:

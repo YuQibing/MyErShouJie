@@ -19,10 +19,10 @@ class HomeViewController: RootViewController {
         super.viewDidLoad()
         self.navigationItem.title = "首页"
         
-        tableView?.register(HeadCell.self, forCellReuseIdentifier: homeIdentifier)
-        tableView?.register(ScrollCell.self, forCellReuseIdentifier: scrollIdentifier)
-        tableView?.register(ListCell.self, forCellReuseIdentifier: listIdentifier)
-        tableView?.register(DefaultCell.self, forCellReuseIdentifier: defaultIdentifier)
+        tableView?.register(HomeHeadCell.self, forCellReuseIdentifier: homeIdentifier)
+        tableView?.register(HomeScrollCell.self, forCellReuseIdentifier: scrollIdentifier)
+        tableView?.register(HomeListCell.self, forCellReuseIdentifier: listIdentifier)
+        tableView?.register(HomeDefaultCell.self, forCellReuseIdentifier: defaultIdentifier)
 
     }
 
@@ -49,17 +49,17 @@ extension HomeViewController {
         var cell:UITableViewCell?
         switch indexPath.section {
         case 0:
-            cell = tableView.dequeueReusableCell(withIdentifier: homeIdentifier, for: indexPath) as! HeadCell
+            cell = tableView.dequeueReusableCell(withIdentifier: homeIdentifier, for: indexPath) as! HomeHeadCell
             break
         case 1:
-            cell = tableView.dequeueReusableCell(withIdentifier: scrollIdentifier, for: indexPath) as! ScrollCell
+            cell = tableView.dequeueReusableCell(withIdentifier: scrollIdentifier, for: indexPath) as! HomeScrollCell
             break
         case 2:
             cell = tableView.dequeueReusableCell(withIdentifier: listIdentifier, for: indexPath)
             break
         default:
             
-            let cell = tableView.dequeueReusableCell(withIdentifier: defaultIdentifier, for: indexPath) as! DefaultCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: defaultIdentifier, for: indexPath) as! HomeDefaultCell
             
             cell.indexPath = indexPath
             

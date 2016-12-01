@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2BF42F2AAA9563D7C64FFF44 /* libPods-MyErShouJieTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 467604BF395531271F0BEA7C /* libPods-MyErShouJieTests.a */; };
-		A80C448C39FA640081D8CA3E /* libPods-MyErShouJie.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BC9C7E6F285B731C41010AF /* libPods-MyErShouJie.a */; };
-		AD2800831DD2B54700483B8D /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2800821DD2B54700483B8D /* Person.swift */; };
-		AD2800861DD2BBF600483B8D /* Issue.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2800851DD2BBF600483B8D /* Issue.swift */; };
-		AD2800881DD2BC7000483B8D /* Sell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2800871DD2BC7000483B8D /* Sell.swift */; };
-		AD28008A1DD2BDAA00483B8D /* Buy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2800891DD2BDAA00483B8D /* Buy.swift */; };
-		AD28008C1DD2BE6000483B8D /* Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD28008B1DD2BE6000483B8D /* Set.swift */; };
+		AD0F749C1DEFE8700090D6B3 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD0F749B1DEFE8700090D6B3 /* SnapKit.framework */; };
+		AD0F74A01DEFED5D0090D6B3 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0F749F1DEFED5D0090D6B3 /* RootViewController.swift */; };
+		AD2800831DD2B54700483B8D /* MePersonDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2800821DD2B54700483B8D /* MePersonDetails.swift */; };
+		AD2800861DD2BBF600483B8D /* MeIssueDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2800851DD2BBF600483B8D /* MeIssueDetails.swift */; };
+		AD2800881DD2BC7000483B8D /* MeSellDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2800871DD2BC7000483B8D /* MeSellDetails.swift */; };
+		AD28008A1DD2BDAA00483B8D /* MeBuyDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2800891DD2BDAA00483B8D /* MeBuyDetails.swift */; };
+		AD28008C1DD2BE6000483B8D /* MeSetDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD28008B1DD2BE6000483B8D /* MeSetDetails.swift */; };
 		AD5B0B131DD0982B00E39670 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5B0B121DD0982B00E39670 /* AppDelegate.swift */; };
 		AD5B0B151DD0982B00E39670 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5B0B141DD0982B00E39670 /* ViewController.swift */; };
 		AD5B0B181DD0982B00E39670 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD5B0B161DD0982B00E39670 /* Main.storyboard */; };
@@ -26,23 +26,20 @@
 		AD5B0B471DD098F300E39670 /* IssueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5B0B461DD098F300E39670 /* IssueViewController.swift */; };
 		AD5B0B491DD0990400E39670 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5B0B481DD0990400E39670 /* SearchViewController.swift */; };
 		AD5B0B4B1DD0990E00E39670 /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5B0B4A1DD0990E00E39670 /* MeViewController.swift */; };
-		AD9C6C5F1DE06BED009AB8EC /* HeadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9C6C5E1DE06BED009AB8EC /* HeadCell.swift */; };
-		AD9C6C661DE06E39009AB8EC /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD9C6C651DE06E39009AB8EC /* SnapKit.framework */; };
-		AD9C6C671DE06E39009AB8EC /* SnapKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AD9C6C651DE06E39009AB8EC /* SnapKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		AD9C6C6A1DE07253009AB8EC /* ScrollCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9C6C691DE07253009AB8EC /* ScrollCell.swift */; };
-		AD9C6C6C1DE07264009AB8EC /* ListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9C6C6B1DE07264009AB8EC /* ListCell.swift */; };
-		AD9C6C6E1DE0728C009AB8EC /* DefaultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9C6C6D1DE0728C009AB8EC /* DefaultCell.swift */; };
-		AD9C6C741DE073C7009AB8EC /* CycleScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9C6C731DE073C7009AB8EC /* CycleScrollView.swift */; };
-		AD9C6C761DE07891009AB8EC /* CycleViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9C6C751DE07891009AB8EC /* CycleViewCell.swift */; };
+		AD9C6C5F1DE06BED009AB8EC /* HomeHeadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9C6C5E1DE06BED009AB8EC /* HomeHeadCell.swift */; };
+		AD9C6C6A1DE07253009AB8EC /* HomeScrollCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9C6C691DE07253009AB8EC /* HomeScrollCell.swift */; };
+		AD9C6C6C1DE07264009AB8EC /* HomeListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9C6C6B1DE07264009AB8EC /* HomeListCell.swift */; };
+		AD9C6C6E1DE0728C009AB8EC /* HomeDefaultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9C6C6D1DE0728C009AB8EC /* HomeDefaultCell.swift */; };
+		AD9C6C741DE073C7009AB8EC /* HomeCycleScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9C6C731DE073C7009AB8EC /* HomeCycleScrollView.swift */; };
+		AD9C6C761DE07891009AB8EC /* HomeCycleViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9C6C751DE07891009AB8EC /* HomeCycleViewCell.swift */; };
 		AD9C6C791DE088E0009AB8EC /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9C6C781DE088E0009AB8EC /* UIImage+Extension.swift */; };
-		AD9C6C8F1DE1AC6D009AB8EC /* HeadCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9C6C8E1DE1AC6D009AB8EC /* HeadCollectionView.swift */; };
-		AD9C6C911DE1AF4E009AB8EC /* HeadCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9C6C901DE1AF4E009AB8EC /* HeadCollectionViewCell.swift */; };
+		AD9C6C8F1DE1AC6D009AB8EC /* HomeHeadCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9C6C8E1DE1AC6D009AB8EC /* HomeHeadCollectionView.swift */; };
+		AD9C6C911DE1AF4E009AB8EC /* HomeHeadCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9C6C901DE1AF4E009AB8EC /* HomeHeadCollectionViewCell.swift */; };
 		AD9C6C931DE1DC80009AB8EC /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9C6C921DE1DC80009AB8EC /* UIImageView+Extension.swift */; };
 		AD9C6C951DE1E090009AB8EC /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9C6C941DE1E090009AB8EC /* UILabel+Extension.swift */; };
-		AD9C6C971DE1E3B3009AB8EC /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9C6C961DE1E3B3009AB8EC /* RootViewController.swift */; };
-		AD9C6C991DE2CBD5009AB8EC /* TextScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9C6C981DE2CBD5009AB8EC /* TextScrollView.swift */; };
-		AD9C6C9B1DE2D106009AB8EC /* TextScrollCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9C6C9A1DE2D106009AB8EC /* TextScrollCell.swift */; };
-		FDEB5BB8C432423928A9D667 /* libPods-MyErShouJieUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D18C739FBB085E5DB4DEFD58 /* libPods-MyErShouJieUITests.a */; };
+		AD9C6C991DE2CBD5009AB8EC /* HomeTextScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9C6C981DE2CBD5009AB8EC /* HomeTextScrollView.swift */; };
+		AD9C6C9B1DE2D106009AB8EC /* HomeTextScrollCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9C6C9A1DE2D106009AB8EC /* HomeTextScrollCell.swift */; };
+		CD76BC23472005021F9B8F1E /* Pods_MyErShouJie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9014CADF5676F4BAC045EBFA /* Pods_MyErShouJie.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,7 +66,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				AD9C6C671DE06E39009AB8EC /* SnapKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -77,17 +73,17 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		3BC9C7E6F285B731C41010AF /* libPods-MyErShouJie.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MyErShouJie.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		467604BF395531271F0BEA7C /* libPods-MyErShouJieTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MyErShouJieTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		4BC5850C5C533C684DF6D5E9 /* Pods-MyErShouJieTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyErShouJieTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyErShouJieTests/Pods-MyErShouJieTests.release.xcconfig"; sourceTree = "<group>"; };
 		5DEBD8417D0F983324339EB8 /* Pods-MyErShouJie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyErShouJie.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyErShouJie/Pods-MyErShouJie.release.xcconfig"; sourceTree = "<group>"; };
+		9014CADF5676F4BAC045EBFA /* Pods_MyErShouJie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyErShouJie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9665182C5DC775E086232937 /* Pods-MyErShouJie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyErShouJie.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyErShouJie/Pods-MyErShouJie.debug.xcconfig"; sourceTree = "<group>"; };
-		9D3532082D7F244791063CDD /* Pods-MyErShouJieUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyErShouJieUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyErShouJieUITests/Pods-MyErShouJieUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		AD2800821DD2B54700483B8D /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
-		AD2800851DD2BBF600483B8D /* Issue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Issue.swift; sourceTree = "<group>"; };
-		AD2800871DD2BC7000483B8D /* Sell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sell.swift; sourceTree = "<group>"; };
-		AD2800891DD2BDAA00483B8D /* Buy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Buy.swift; sourceTree = "<group>"; };
-		AD28008B1DD2BE6000483B8D /* Set.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Set.swift; sourceTree = "<group>"; };
+		AD0F749B1DEFE8700090D6B3 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = "../../Library/Developer/Xcode/DerivedData/MyErShouJie-dchfnaftqkodnvdaapuogdunivkn/Build/Products/Debug-iphonesimulator/SnapKit/SnapKit.framework"; sourceTree = "<group>"; };
+		AD0F749F1DEFED5D0090D6B3 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		AD2800821DD2B54700483B8D /* MePersonDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MePersonDetails.swift; sourceTree = "<group>"; };
+		AD2800851DD2BBF600483B8D /* MeIssueDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeIssueDetails.swift; sourceTree = "<group>"; };
+		AD2800871DD2BC7000483B8D /* MeSellDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeSellDetails.swift; sourceTree = "<group>"; };
+		AD2800891DD2BDAA00483B8D /* MeBuyDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeBuyDetails.swift; sourceTree = "<group>"; };
+		AD28008B1DD2BE6000483B8D /* MeSetDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeSetDetails.swift; sourceTree = "<group>"; };
 		AD5B0B0F1DD0982B00E39670 /* MyErShouJie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyErShouJie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD5B0B121DD0982B00E39670 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AD5B0B141DD0982B00E39670 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -106,24 +102,20 @@
 		AD5B0B461DD098F300E39670 /* IssueViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IssueViewController.swift; sourceTree = "<group>"; };
 		AD5B0B481DD0990400E39670 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		AD5B0B4A1DD0990E00E39670 /* MeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
-		AD9C6C5E1DE06BED009AB8EC /* HeadCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeadCell.swift; sourceTree = "<group>"; };
-		AD9C6C651DE06E39009AB8EC /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Pods/SnapKit.framework; sourceTree = "<group>"; };
-		AD9C6C691DE07253009AB8EC /* ScrollCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollCell.swift; sourceTree = "<group>"; };
-		AD9C6C6B1DE07264009AB8EC /* ListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListCell.swift; sourceTree = "<group>"; };
-		AD9C6C6D1DE0728C009AB8EC /* DefaultCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultCell.swift; sourceTree = "<group>"; };
-		AD9C6C731DE073C7009AB8EC /* CycleScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CycleScrollView.swift; sourceTree = "<group>"; };
-		AD9C6C751DE07891009AB8EC /* CycleViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CycleViewCell.swift; sourceTree = "<group>"; };
+		AD9C6C5E1DE06BED009AB8EC /* HomeHeadCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeHeadCell.swift; sourceTree = "<group>"; };
+		AD9C6C691DE07253009AB8EC /* HomeScrollCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeScrollCell.swift; sourceTree = "<group>"; };
+		AD9C6C6B1DE07264009AB8EC /* HomeListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeListCell.swift; sourceTree = "<group>"; };
+		AD9C6C6D1DE0728C009AB8EC /* HomeDefaultCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeDefaultCell.swift; sourceTree = "<group>"; };
+		AD9C6C731DE073C7009AB8EC /* HomeCycleScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCycleScrollView.swift; sourceTree = "<group>"; };
+		AD9C6C751DE07891009AB8EC /* HomeCycleViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCycleViewCell.swift; sourceTree = "<group>"; };
 		AD9C6C781DE088E0009AB8EC /* UIImage+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
-		AD9C6C8E1DE1AC6D009AB8EC /* HeadCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeadCollectionView.swift; sourceTree = "<group>"; };
-		AD9C6C901DE1AF4E009AB8EC /* HeadCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeadCollectionViewCell.swift; sourceTree = "<group>"; };
+		AD9C6C8E1DE1AC6D009AB8EC /* HomeHeadCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeHeadCollectionView.swift; sourceTree = "<group>"; };
+		AD9C6C901DE1AF4E009AB8EC /* HomeHeadCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeHeadCollectionViewCell.swift; sourceTree = "<group>"; };
 		AD9C6C921DE1DC80009AB8EC /* UIImageView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		AD9C6C941DE1E090009AB8EC /* UILabel+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
-		AD9C6C961DE1E3B3009AB8EC /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RootViewController.swift; path = ../RootViewController.swift; sourceTree = "<group>"; };
-		AD9C6C981DE2CBD5009AB8EC /* TextScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextScrollView.swift; sourceTree = "<group>"; };
-		AD9C6C9A1DE2D106009AB8EC /* TextScrollCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextScrollCell.swift; sourceTree = "<group>"; };
-		BB85D319ECFCE6D4B1E4FCD4 /* Pods-MyErShouJieTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyErShouJieTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyErShouJieTests/Pods-MyErShouJieTests.debug.xcconfig"; sourceTree = "<group>"; };
+		AD9C6C981DE2CBD5009AB8EC /* HomeTextScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTextScrollView.swift; sourceTree = "<group>"; };
+		AD9C6C9A1DE2D106009AB8EC /* HomeTextScrollCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTextScrollCell.swift; sourceTree = "<group>"; };
 		D18C739FBB085E5DB4DEFD58 /* libPods-MyErShouJieUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MyErShouJieUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D98D2A569E5E19D43E347F8E /* Pods-MyErShouJieUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyErShouJieUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyErShouJieUITests/Pods-MyErShouJieUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,8 +123,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A80C448C39FA640081D8CA3E /* libPods-MyErShouJie.a in Frameworks */,
-				AD9C6C661DE06E39009AB8EC /* SnapKit.framework in Frameworks */,
+				AD0F749C1DEFE8700090D6B3 /* SnapKit.framework in Frameworks */,
+				CD76BC23472005021F9B8F1E /* Pods_MyErShouJie.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,7 +132,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2BF42F2AAA9563D7C64FFF44 /* libPods-MyErShouJieTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,7 +139,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FDEB5BB8C432423928A9D667 /* libPods-MyErShouJieUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,10 +150,6 @@
 			children = (
 				9665182C5DC775E086232937 /* Pods-MyErShouJie.debug.xcconfig */,
 				5DEBD8417D0F983324339EB8 /* Pods-MyErShouJie.release.xcconfig */,
-				BB85D319ECFCE6D4B1E4FCD4 /* Pods-MyErShouJieTests.debug.xcconfig */,
-				4BC5850C5C533C684DF6D5E9 /* Pods-MyErShouJieTests.release.xcconfig */,
-				9D3532082D7F244791063CDD /* Pods-MyErShouJieUITests.debug.xcconfig */,
-				D98D2A569E5E19D43E347F8E /* Pods-MyErShouJieUITests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -171,21 +157,39 @@
 		0778994A08FEBB20C07AE5D4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				3BC9C7E6F285B731C41010AF /* libPods-MyErShouJie.a */,
+				AD0F749B1DEFE8700090D6B3 /* SnapKit.framework */,
 				467604BF395531271F0BEA7C /* libPods-MyErShouJieTests.a */,
 				D18C739FBB085E5DB4DEFD58 /* libPods-MyErShouJieUITests.a */,
+				9014CADF5676F4BAC045EBFA /* Pods_MyErShouJie.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AD0F749D1DEFECB20090D6B3 /* Issue */ = {
+			isa = PBXGroup;
+			children = (
+				AD5B0B461DD098F300E39670 /* IssueViewController.swift */,
+			);
+			name = Issue;
+			sourceTree = "<group>";
+		};
+		AD0F749E1DEFECBA0090D6B3 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				AD5B0B481DD0990400E39670 /* SearchViewController.swift */,
+			);
+			name = Search;
 			sourceTree = "<group>";
 		};
 		AD2800841DD2BBC600483B8D /* Me */ = {
 			isa = PBXGroup;
 			children = (
-				AD2800821DD2B54700483B8D /* Person.swift */,
-				AD2800851DD2BBF600483B8D /* Issue.swift */,
-				AD2800871DD2BC7000483B8D /* Sell.swift */,
-				AD2800891DD2BDAA00483B8D /* Buy.swift */,
-				AD28008B1DD2BE6000483B8D /* Set.swift */,
+				AD5B0B4A1DD0990E00E39670 /* MeViewController.swift */,
+				AD2800821DD2B54700483B8D /* MePersonDetails.swift */,
+				AD2800851DD2BBF600483B8D /* MeIssueDetails.swift */,
+				AD2800871DD2BC7000483B8D /* MeSellDetails.swift */,
+				AD2800891DD2BDAA00483B8D /* MeBuyDetails.swift */,
+				AD28008B1DD2BE6000483B8D /* MeSetDetails.swift */,
 			);
 			name = Me;
 			sourceTree = "<group>";
@@ -194,8 +198,16 @@
 			isa = PBXGroup;
 			children = (
 				AD5B0B441DD098E200E39670 /* HomeViewController.swift */,
-				AD9C6C5D1DE06BB3009AB8EC /* TableViewCells */,
-				AD9C6C6F1DE07295009AB8EC /* Views */,
+				AD9C6C5E1DE06BED009AB8EC /* HomeHeadCell.swift */,
+				AD9C6C691DE07253009AB8EC /* HomeScrollCell.swift */,
+				AD9C6C6B1DE07264009AB8EC /* HomeListCell.swift */,
+				AD9C6C6D1DE0728C009AB8EC /* HomeDefaultCell.swift */,
+				AD9C6C731DE073C7009AB8EC /* HomeCycleScrollView.swift */,
+				AD9C6C751DE07891009AB8EC /* HomeCycleViewCell.swift */,
+				AD9C6C8E1DE1AC6D009AB8EC /* HomeHeadCollectionView.swift */,
+				AD9C6C901DE1AF4E009AB8EC /* HomeHeadCollectionViewCell.swift */,
+				AD9C6C981DE2CBD5009AB8EC /* HomeTextScrollView.swift */,
+				AD9C6C9A1DE2D106009AB8EC /* HomeTextScrollCell.swift */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -203,7 +215,6 @@
 		AD5B0B061DD0982B00E39670 = {
 			isa = PBXGroup;
 			children = (
-				AD9C6C651DE06E39009AB8EC /* SnapKit.framework */,
 				AD5B0B111DD0982B00E39670 /* MyErShouJie */,
 				AD5B0B261DD0982B00E39670 /* MyErShouJieTests */,
 				AD5B0B311DD0982B00E39670 /* MyErShouJieUITests */,
@@ -227,10 +238,10 @@
 			isa = PBXGroup;
 			children = (
 				AD5B0B121DD0982B00E39670 /* AppDelegate.swift */,
-				AD9C6C961DE1E3B3009AB8EC /* RootViewController.swift */,
+				AD0F749F1DEFED5D0090D6B3 /* RootViewController.swift */,
 				AD5B0B411DD098A800E39670 /* TabBarViewController.swift */,
 				AD9C6C771DE088B4009AB8EC /* Common */,
-				AD5B0B431DD098C700E39670 /* VC */,
+				AD5B0B431DD098C700E39670 /* ViewController */,
 				AD5B0B141DD0982B00E39670 /* ViewController.swift */,
 				AD5B0B161DD0982B00E39670 /* Main.storyboard */,
 				AD5B0B191DD0982B00E39670 /* Assets.xcassets */,
@@ -258,64 +269,15 @@
 			path = MyErShouJieUITests;
 			sourceTree = "<group>";
 		};
-		AD5B0B431DD098C700E39670 /* VC */ = {
+		AD5B0B431DD098C700E39670 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
 				AD42BF7F1DD9B332008C1874 /* Home */,
+				AD0F749D1DEFECB20090D6B3 /* Issue */,
+				AD0F749E1DEFECBA0090D6B3 /* Search */,
 				AD2800841DD2BBC600483B8D /* Me */,
-				AD5B0B461DD098F300E39670 /* IssueViewController.swift */,
-				AD5B0B481DD0990400E39670 /* SearchViewController.swift */,
-				AD5B0B4A1DD0990E00E39670 /* MeViewController.swift */,
 			);
-			name = VC;
-			sourceTree = "<group>";
-		};
-		AD9C6C5D1DE06BB3009AB8EC /* TableViewCells */ = {
-			isa = PBXGroup;
-			children = (
-				AD9C6C5E1DE06BED009AB8EC /* HeadCell.swift */,
-				AD9C6C691DE07253009AB8EC /* ScrollCell.swift */,
-				AD9C6C6B1DE07264009AB8EC /* ListCell.swift */,
-				AD9C6C6D1DE0728C009AB8EC /* DefaultCell.swift */,
-			);
-			name = TableViewCells;
-			sourceTree = "<group>";
-		};
-		AD9C6C6F1DE07295009AB8EC /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				AD9C6C701DE07383009AB8EC /* First */,
-				AD9C6C711DE07391009AB8EC /* Second */,
-				AD9C6C721DE0739A009AB8EC /* Third */,
-			);
-			name = Views;
-			sourceTree = "<group>";
-		};
-		AD9C6C701DE07383009AB8EC /* First */ = {
-			isa = PBXGroup;
-			children = (
-				AD9C6C731DE073C7009AB8EC /* CycleScrollView.swift */,
-				AD9C6C751DE07891009AB8EC /* CycleViewCell.swift */,
-			);
-			name = First;
-			sourceTree = "<group>";
-		};
-		AD9C6C711DE07391009AB8EC /* Second */ = {
-			isa = PBXGroup;
-			children = (
-				AD9C6C8E1DE1AC6D009AB8EC /* HeadCollectionView.swift */,
-				AD9C6C901DE1AF4E009AB8EC /* HeadCollectionViewCell.swift */,
-			);
-			name = Second;
-			sourceTree = "<group>";
-		};
-		AD9C6C721DE0739A009AB8EC /* Third */ = {
-			isa = PBXGroup;
-			children = (
-				AD9C6C981DE2CBD5009AB8EC /* TextScrollView.swift */,
-				AD9C6C9A1DE2D106009AB8EC /* TextScrollCell.swift */,
-			);
-			name = Third;
+			name = ViewController;
 			sourceTree = "<group>";
 		};
 		AD9C6C771DE088B4009AB8EC /* Common */ = {
@@ -356,12 +318,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AD5B0B3A1DD0982B00E39670 /* Build configuration list for PBXNativeTarget "MyErShouJieTests" */;
 			buildPhases = (
-				A4682F25EE07E93DDEABF702 /* [CP] Check Pods Manifest.lock */,
 				AD5B0B1F1DD0982B00E39670 /* Sources */,
 				AD5B0B201DD0982B00E39670 /* Frameworks */,
 				AD5B0B211DD0982B00E39670 /* Resources */,
-				B924A75ABE49D9791DACAE06 /* [CP] Embed Pods Frameworks */,
-				DEAD6274BE45839CDEADE5D9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -377,12 +336,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AD5B0B3D1DD0982B00E39670 /* Build configuration list for PBXNativeTarget "MyErShouJieUITests" */;
 			buildPhases = (
-				DC699B757D85426614EEC195 /* [CP] Check Pods Manifest.lock */,
 				AD5B0B2A1DD0982B00E39670 /* Sources */,
 				AD5B0B2B1DD0982B00E39670 /* Frameworks */,
 				AD5B0B2C1DD0982B00E39670 /* Resources */,
-				D6EF347ABB5976534A0CAD28 /* [CP] Embed Pods Frameworks */,
-				299B15212D8E9B00EF23ACDF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -406,6 +362,7 @@
 				TargetAttributes = {
 					AD5B0B0E1DD0982B00E39670 = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 52R94S6J8U;
 						ProvisioningStyle = Automatic;
 					};
 					AD5B0B221DD0982B00E39670 = {
@@ -513,96 +470,6 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		299B15212D8E9B00EF23ACDF /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MyErShouJieUITests/Pods-MyErShouJieUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A4682F25EE07E93DDEABF702 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		B924A75ABE49D9791DACAE06 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MyErShouJieTests/Pods-MyErShouJieTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D6EF347ABB5976534A0CAD28 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MyErShouJieUITests/Pods-MyErShouJieUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		DC699B757D85426614EEC195 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		DEAD6274BE45839CDEADE5D9 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MyErShouJieTests/Pods-MyErShouJieTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -611,31 +478,31 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD5B0B491DD0990400E39670 /* SearchViewController.swift in Sources */,
-				AD9C6C6E1DE0728C009AB8EC /* DefaultCell.swift in Sources */,
+				AD9C6C6E1DE0728C009AB8EC /* HomeDefaultCell.swift in Sources */,
 				AD5B0B4B1DD0990E00E39670 /* MeViewController.swift in Sources */,
 				AD9C6C951DE1E090009AB8EC /* UILabel+Extension.swift in Sources */,
-				AD9C6C911DE1AF4E009AB8EC /* HeadCollectionViewCell.swift in Sources */,
+				AD0F74A01DEFED5D0090D6B3 /* RootViewController.swift in Sources */,
+				AD9C6C911DE1AF4E009AB8EC /* HomeHeadCollectionViewCell.swift in Sources */,
 				AD5B0B471DD098F300E39670 /* IssueViewController.swift in Sources */,
-				AD9C6C6C1DE07264009AB8EC /* ListCell.swift in Sources */,
+				AD9C6C6C1DE07264009AB8EC /* HomeListCell.swift in Sources */,
 				AD9C6C931DE1DC80009AB8EC /* UIImageView+Extension.swift in Sources */,
-				AD2800831DD2B54700483B8D /* Person.swift in Sources */,
+				AD2800831DD2B54700483B8D /* MePersonDetails.swift in Sources */,
 				AD5B0B151DD0982B00E39670 /* ViewController.swift in Sources */,
 				AD5B0B421DD098A800E39670 /* TabBarViewController.swift in Sources */,
 				AD5B0B131DD0982B00E39670 /* AppDelegate.swift in Sources */,
-				AD9C6C761DE07891009AB8EC /* CycleViewCell.swift in Sources */,
-				AD2800881DD2BC7000483B8D /* Sell.swift in Sources */,
-				AD9C6C971DE1E3B3009AB8EC /* RootViewController.swift in Sources */,
-				AD9C6C6A1DE07253009AB8EC /* ScrollCell.swift in Sources */,
-				AD9C6C991DE2CBD5009AB8EC /* TextScrollView.swift in Sources */,
-				AD9C6C8F1DE1AC6D009AB8EC /* HeadCollectionView.swift in Sources */,
-				AD9C6C741DE073C7009AB8EC /* CycleScrollView.swift in Sources */,
-				AD28008C1DD2BE6000483B8D /* Set.swift in Sources */,
-				AD9C6C5F1DE06BED009AB8EC /* HeadCell.swift in Sources */,
+				AD9C6C761DE07891009AB8EC /* HomeCycleViewCell.swift in Sources */,
+				AD2800881DD2BC7000483B8D /* MeSellDetails.swift in Sources */,
+				AD9C6C6A1DE07253009AB8EC /* HomeScrollCell.swift in Sources */,
+				AD9C6C991DE2CBD5009AB8EC /* HomeTextScrollView.swift in Sources */,
+				AD9C6C8F1DE1AC6D009AB8EC /* HomeHeadCollectionView.swift in Sources */,
+				AD9C6C741DE073C7009AB8EC /* HomeCycleScrollView.swift in Sources */,
+				AD28008C1DD2BE6000483B8D /* MeSetDetails.swift in Sources */,
+				AD9C6C5F1DE06BED009AB8EC /* HomeHeadCell.swift in Sources */,
 				AD5B0B451DD098E200E39670 /* HomeViewController.swift in Sources */,
 				AD9C6C791DE088E0009AB8EC /* UIImage+Extension.swift in Sources */,
-				AD2800861DD2BBF600483B8D /* Issue.swift in Sources */,
-				AD28008A1DD2BDAA00483B8D /* Buy.swift in Sources */,
-				AD9C6C9B1DE2D106009AB8EC /* TextScrollCell.swift in Sources */,
+				AD2800861DD2BBF600483B8D /* MeIssueDetails.swift in Sources */,
+				AD28008A1DD2BDAA00483B8D /* MeBuyDetails.swift in Sources */,
+				AD9C6C9B1DE2D106009AB8EC /* HomeTextScrollCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -787,7 +654,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9665182C5DC775E086232937 /* Pods-MyErShouJie.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 52R94S6J8U;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Pods",
@@ -804,7 +673,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5DEBD8417D0F983324339EB8 /* Pods-MyErShouJie.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 52R94S6J8U;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Pods",
@@ -819,7 +690,6 @@
 		};
 		AD5B0B3B1DD0982B00E39670 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BB85D319ECFCE6D4B1E4FCD4 /* Pods-MyErShouJieTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -834,7 +704,6 @@
 		};
 		AD5B0B3C1DD0982B00E39670 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4BC5850C5C533C684DF6D5E9 /* Pods-MyErShouJieTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -849,7 +718,6 @@
 		};
 		AD5B0B3E1DD0982B00E39670 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9D3532082D7F244791063CDD /* Pods-MyErShouJieUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = MyErShouJieUITests/Info.plist;
@@ -863,7 +731,6 @@
 		};
 		AD5B0B3F1DD0982B00E39670 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D98D2A569E5E19D43E347F8E /* Pods-MyErShouJieUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = MyErShouJieUITests/Info.plist;

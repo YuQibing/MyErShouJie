@@ -1,19 +1,6 @@
-# Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
-
+platform :ios, '10.0'
+use_frameworks!
+project 'MyErShouJie.xcodeproj'
 target 'MyErShouJie' do
-  #pod 'AFNetworking','~>3.1.0'
-
-  # Pods for MyErShouJie
-
-  target 'MyErShouJieTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
-  target 'MyErShouJieUITests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
+pod 'SnapKit', '~> 3.0.2'
 end
