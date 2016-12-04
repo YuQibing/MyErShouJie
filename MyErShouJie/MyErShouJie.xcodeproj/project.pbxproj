@@ -39,6 +39,16 @@
 		AD9C6C951DE1E090009AB8EC /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9C6C941DE1E090009AB8EC /* UILabel+Extension.swift */; };
 		AD9C6C991DE2CBD5009AB8EC /* HomeTextScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9C6C981DE2CBD5009AB8EC /* HomeTextScrollView.swift */; };
 		AD9C6C9B1DE2D106009AB8EC /* HomeTextScrollCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9C6C9A1DE2D106009AB8EC /* HomeTextScrollCell.swift */; };
+		ADBB48101DF4380E0046F73F /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBB48081DF435FE0046F73F /* Alamofire.framework */; };
+		ADBB48111DF438120046F73F /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBB480A1DF436060046F73F /* Kingfisher.framework */; };
+		ADBB48121DF438170046F73F /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBB480C1DF4360E0046F73F /* SwiftyJSON.framework */; };
+		ADBB48131DF439110046F73F /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBB48081DF435FE0046F73F /* Alamofire.framework */; };
+		ADBB48141DF439110046F73F /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ADBB48081DF435FE0046F73F /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		ADBB48161DF439190046F73F /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBB480A1DF436060046F73F /* Kingfisher.framework */; };
+		ADBB48171DF439190046F73F /* Kingfisher.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ADBB480A1DF436060046F73F /* Kingfisher.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		ADBB48181DF4391D0046F73F /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBB480C1DF4360E0046F73F /* SwiftyJSON.framework */; };
+		ADBB48191DF4391D0046F73F /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ADBB480C1DF4360E0046F73F /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		ADBB48211DF445CD0046F73F /* IssueTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBB48201DF445CD0046F73F /* IssueTableViewCell.swift */; };
 		CD76BC23472005021F9B8F1E /* Pods_MyErShouJie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9014CADF5676F4BAC045EBFA /* Pods_MyErShouJie.framework */; };
 /* End PBXBuildFile section */
 
@@ -60,12 +70,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		AD9C6C681DE06E39009AB8EC /* Embed Frameworks */ = {
+		ADBB48151DF439110046F73F /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				ADBB48171DF439190046F73F /* Kingfisher.framework in Embed Frameworks */,
+				ADBB48141DF439110046F73F /* Alamofire.framework in Embed Frameworks */,
+				ADBB48191DF4391D0046F73F /* SwiftyJSON.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -115,6 +128,10 @@
 		AD9C6C941DE1E090009AB8EC /* UILabel+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		AD9C6C981DE2CBD5009AB8EC /* HomeTextScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTextScrollView.swift; sourceTree = "<group>"; };
 		AD9C6C9A1DE2D106009AB8EC /* HomeTextScrollCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTextScrollCell.swift; sourceTree = "<group>"; };
+		ADBB48081DF435FE0046F73F /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../Library/Developer/Xcode/DerivedData/MyErShouJie-dchfnaftqkodnvdaapuogdunivkn/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
+		ADBB480A1DF436060046F73F /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = "../../Library/Developer/Xcode/DerivedData/MyErShouJie-dchfnaftqkodnvdaapuogdunivkn/Build/Products/Debug-iphonesimulator/Kingfisher/Kingfisher.framework"; sourceTree = "<group>"; };
+		ADBB480C1DF4360E0046F73F /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "../../Library/Developer/Xcode/DerivedData/MyErShouJie-dchfnaftqkodnvdaapuogdunivkn/Build/Products/Debug-iphonesimulator/SwiftyJSON/SwiftyJSON.framework"; sourceTree = "<group>"; };
+		ADBB48201DF445CD0046F73F /* IssueTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IssueTableViewCell.swift; sourceTree = "<group>"; };
 		D18C739FBB085E5DB4DEFD58 /* libPods-MyErShouJieUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MyErShouJieUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -123,6 +140,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADBB48181DF4391D0046F73F /* SwiftyJSON.framework in Frameworks */,
+				ADBB48121DF438170046F73F /* SwiftyJSON.framework in Frameworks */,
+				ADBB48161DF439190046F73F /* Kingfisher.framework in Frameworks */,
+				ADBB48131DF439110046F73F /* Alamofire.framework in Frameworks */,
+				ADBB48111DF438120046F73F /* Kingfisher.framework in Frameworks */,
+				ADBB48101DF4380E0046F73F /* Alamofire.framework in Frameworks */,
 				AD0F749C1DEFE8700090D6B3 /* SnapKit.framework in Frameworks */,
 				CD76BC23472005021F9B8F1E /* Pods_MyErShouJie.framework in Frameworks */,
 			);
@@ -157,6 +180,9 @@
 		0778994A08FEBB20C07AE5D4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				ADBB480C1DF4360E0046F73F /* SwiftyJSON.framework */,
+				ADBB480A1DF436060046F73F /* Kingfisher.framework */,
+				ADBB48081DF435FE0046F73F /* Alamofire.framework */,
 				AD0F749B1DEFE8700090D6B3 /* SnapKit.framework */,
 				467604BF395531271F0BEA7C /* libPods-MyErShouJieTests.a */,
 				D18C739FBB085E5DB4DEFD58 /* libPods-MyErShouJieUITests.a */,
@@ -169,6 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				AD5B0B461DD098F300E39670 /* IssueViewController.swift */,
+				ADBB48201DF445CD0046F73F /* IssueTableViewCell.swift */,
 			);
 			name = Issue;
 			sourceTree = "<group>";
@@ -303,7 +330,7 @@
 				AD5B0B0D1DD0982B00E39670 /* Resources */,
 				02BD5FE0E175C1D912F72608 /* [CP] Embed Pods Frameworks */,
 				0E92CADA1C0505C3A5CEF960 /* [CP] Copy Pods Resources */,
-				AD9C6C681DE06E39009AB8EC /* Embed Frameworks */,
+				ADBB48151DF439110046F73F /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -477,6 +504,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADBB48211DF445CD0046F73F /* IssueTableViewCell.swift in Sources */,
 				AD5B0B491DD0990400E39670 /* SearchViewController.swift in Sources */,
 				AD9C6C6E1DE0728C009AB8EC /* HomeDefaultCell.swift in Sources */,
 				AD5B0B4B1DD0990E00E39670 /* MeViewController.swift in Sources */,
@@ -654,7 +682,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9665182C5DC775E086232937 /* Pods-MyErShouJie.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 52R94S6J8U;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -666,6 +693,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = cn.yuqibing.MyErShouJie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				USER_HEADER_SEARCH_PATHS = "$(PODS_ROOT)/**";
 			};
 			name = Debug;
 		};
@@ -673,7 +701,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5DEBD8417D0F983324339EB8 /* Pods-MyErShouJie.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 52R94S6J8U;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -685,6 +712,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = cn.yuqibing.MyErShouJie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				USER_HEADER_SEARCH_PATHS = "$(PODS_ROOT)/**";
 			};
 			name = Release;
 		};
