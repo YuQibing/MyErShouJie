@@ -25,9 +25,9 @@ extension TabBarViewController {
     fileprivate func setupUI(){
         
         addChildViewController(title: "首页", vc: HomeViewController(), imageName: "Home")
-        addChildViewController(title: "发布", vc: IssueViewController(), imageName: "Issue")
+        addChildViewController(title: "发布", vc: PostViewController(), imageName: "Issue")
         addChildViewController(title: "发现", vc: SearchViewController(), imageName: "Search")
-        addChildViewController(title: "我", vc: MeViewController(), imageName: "Me")
+        addChildViewController(title: "我", vc: ProfileViewController(), imageName: "Me")
         
     }
     

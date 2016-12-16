@@ -1,5 +1,5 @@
 //
-//  MeSetDetails.swift
+//  ProfilePersonDetails.swift
 //  MyErShouJie
 //
 //  Created by bingbing on 16/11/9.
@@ -8,15 +8,15 @@
 
 import UIKit
 
-class MeSetDetails: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+class ProfilePersonDetails: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
     var dataTable:UITableView!
-    var ItemString = ["登录", "注册"]
+    var ItemString = ["昵称", "性别", "手机号"]
     var screenObject = UIScreen.main.bounds
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = "设置"
+        self.navigationItem.title = "个人信息"
         let dataTable: UITableView = UITableView(frame:CGRect(x: 0, y: 0, width: screenObject.width, height: screenObject.height),style:UITableViewStyle.grouped)
         dataTable.delegate = self
         dataTable.dataSource = self
@@ -28,7 +28,7 @@ class MeSetDetails: UIViewController, UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 3
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -57,6 +57,6 @@ class MeSetDetails: UIViewController, UITableViewDelegate, UITableViewDataSource
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
-    
+
     
 }

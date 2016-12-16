@@ -1,5 +1,5 @@
 //
-//  MeViewController.swift
+//  ProfileController.swift
 //  MyErShouJie
 //
 //  Created by bingbing on 16/11/7.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MeViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+class ProfileViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
     var dataTable:UITableView!
     var ItemString = ["我发布的", "我卖出的", "我买到的"]
@@ -88,27 +88,27 @@ class MeViewController: UIViewController,UITableViewDelegate,UITableViewDataSour
         
         switch indexPath.section {
         case 0:
-            let person = MePersonDetails()
+            let person = ProfilePersonDetails()
             person.hidesBottomBarWhenPushed = true
             self.navigationController?.pushViewController(person, animated: false)
         case 1:
             if(indexPath.row == 0){
-                let issue = MeIssueDetails()
+                let issue = ProfilePostDetails()
                 issue.hidesBottomBarWhenPushed = true  //隐藏tabbar
                 self.navigationController?.pushViewController(issue, animated: false)
             }
             if(indexPath.row == 1){
-                let sell = MeSellDetails()
+                let sell = ProfileSellDetails()
                 sell.hidesBottomBarWhenPushed = true
                 self.navigationController?.pushViewController(sell, animated: false)
             }
             if(indexPath.row == 2){
-                let buy = MeBuyDetails()
+                let buy = ProfileBuyDetails()
                 buy.hidesBottomBarWhenPushed = true
                 self.navigationController?.pushViewController(buy, animated: false)
             }
         case 2:
-            let set = MeSetDetails()
+            let set = ProfileSetDetails()
             set.hidesBottomBarWhenPushed = true
             self.navigationController?.pushViewController(set, animated: false)
         default:

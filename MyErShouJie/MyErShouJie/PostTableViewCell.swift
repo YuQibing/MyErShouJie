@@ -1,5 +1,5 @@
 //
-//  IssueTableViewCell.swift
+//  PostTableViewCell.swift
 //  MyErShouJie
 //
 //  Created by bingbing on 16/12/4.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class IssueTableViewCell: UITableViewCell {
+class PostTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()

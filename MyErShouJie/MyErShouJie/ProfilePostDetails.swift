@@ -1,5 +1,5 @@
 //
-//  MeSellDetails.swift
+//  ProfilePostDetails.swift
 //  MyErShouJie
 //
 //  Created by bingbing on 16/11/9.
@@ -8,11 +8,11 @@
 
 import UIKit
 
-class MeSellDetails: UIViewController {
+class ProfilePostDetails: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = "我卖出的"
+        self.navigationItem.title = "我发布的"
 
         // Do any additional setup after loading the view.
     }

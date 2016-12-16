@@ -1,26 +1,41 @@
 //
-//  MeIssueDetails.swift
+//  PostViewController.swift
 //  MyErShouJie
 //
-//  Created by bingbing on 16/11/9.
+//  Created by bingbing on 16/11/7.
 //  Copyright © 2016年 yuqibing. All rights reserved.
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
+import Kingfisher
 
-class MeIssueDetails: UIViewController {
+
+
+class PostViewController: UIViewController {
+    
+   
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = "我发布的"
-
-        // Do any additional setup after loading the view.
+        self.navigationItem.title = "发布"
+       
+        
+        
     }
-
-    override func didReceiveMemoryWarning() {
+    
+       override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+                
+            
+    
+    
+    
+    
+
     
 
     /*

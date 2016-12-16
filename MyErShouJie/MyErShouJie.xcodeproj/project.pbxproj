@@ -9,11 +9,11 @@
 /* Begin PBXBuildFile section */
 		AD0F749C1DEFE8700090D6B3 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD0F749B1DEFE8700090D6B3 /* SnapKit.framework */; };
 		AD0F74A01DEFED5D0090D6B3 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0F749F1DEFED5D0090D6B3 /* RootViewController.swift */; };
-		AD2800831DD2B54700483B8D /* MePersonDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2800821DD2B54700483B8D /* MePersonDetails.swift */; };
-		AD2800861DD2BBF600483B8D /* MeIssueDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2800851DD2BBF600483B8D /* MeIssueDetails.swift */; };
-		AD2800881DD2BC7000483B8D /* MeSellDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2800871DD2BC7000483B8D /* MeSellDetails.swift */; };
-		AD28008A1DD2BDAA00483B8D /* MeBuyDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2800891DD2BDAA00483B8D /* MeBuyDetails.swift */; };
-		AD28008C1DD2BE6000483B8D /* MeSetDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD28008B1DD2BE6000483B8D /* MeSetDetails.swift */; };
+		AD2800831DD2B54700483B8D /* ProfilePersonDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2800821DD2B54700483B8D /* ProfilePersonDetails.swift */; };
+		AD2800861DD2BBF600483B8D /* ProfilePostDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2800851DD2BBF600483B8D /* ProfilePostDetails.swift */; };
+		AD2800881DD2BC7000483B8D /* ProfileSellDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2800871DD2BC7000483B8D /* ProfileSellDetails.swift */; };
+		AD28008A1DD2BDAA00483B8D /* ProfileBuyDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2800891DD2BDAA00483B8D /* ProfileBuyDetails.swift */; };
+		AD28008C1DD2BE6000483B8D /* ProfileSetDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD28008B1DD2BE6000483B8D /* ProfileSetDetails.swift */; };
 		AD5B0B131DD0982B00E39670 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5B0B121DD0982B00E39670 /* AppDelegate.swift */; };
 		AD5B0B151DD0982B00E39670 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5B0B141DD0982B00E39670 /* ViewController.swift */; };
 		AD5B0B181DD0982B00E39670 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD5B0B161DD0982B00E39670 /* Main.storyboard */; };
@@ -23,9 +23,9 @@
 		AD5B0B331DD0982B00E39670 /* MyErShouJieUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5B0B321DD0982B00E39670 /* MyErShouJieUITests.swift */; };
 		AD5B0B421DD098A800E39670 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5B0B411DD098A800E39670 /* TabBarViewController.swift */; };
 		AD5B0B451DD098E200E39670 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5B0B441DD098E200E39670 /* HomeViewController.swift */; };
-		AD5B0B471DD098F300E39670 /* IssueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5B0B461DD098F300E39670 /* IssueViewController.swift */; };
+		AD5B0B471DD098F300E39670 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5B0B461DD098F300E39670 /* PostViewController.swift */; };
 		AD5B0B491DD0990400E39670 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5B0B481DD0990400E39670 /* SearchViewController.swift */; };
-		AD5B0B4B1DD0990E00E39670 /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5B0B4A1DD0990E00E39670 /* MeViewController.swift */; };
+		AD5B0B4B1DD0990E00E39670 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5B0B4A1DD0990E00E39670 /* ProfileViewController.swift */; };
 		AD9C6C5F1DE06BED009AB8EC /* HomeHeadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9C6C5E1DE06BED009AB8EC /* HomeHeadCell.swift */; };
 		AD9C6C6A1DE07253009AB8EC /* HomeScrollCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9C6C691DE07253009AB8EC /* HomeScrollCell.swift */; };
 		AD9C6C6C1DE07264009AB8EC /* HomeListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9C6C6B1DE07264009AB8EC /* HomeListCell.swift */; };
@@ -48,7 +48,7 @@
 		ADBB48171DF439190046F73F /* Kingfisher.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ADBB480A1DF436060046F73F /* Kingfisher.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		ADBB48181DF4391D0046F73F /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBB480C1DF4360E0046F73F /* SwiftyJSON.framework */; };
 		ADBB48191DF4391D0046F73F /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ADBB480C1DF4360E0046F73F /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		ADBB48211DF445CD0046F73F /* IssueTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBB48201DF445CD0046F73F /* IssueTableViewCell.swift */; };
+		ADBB48211DF445CD0046F73F /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBB48201DF445CD0046F73F /* PostTableViewCell.swift */; };
 		CD76BC23472005021F9B8F1E /* Pods_MyErShouJie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9014CADF5676F4BAC045EBFA /* Pods_MyErShouJie.framework */; };
 /* End PBXBuildFile section */
 
@@ -92,11 +92,11 @@
 		9665182C5DC775E086232937 /* Pods-MyErShouJie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyErShouJie.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyErShouJie/Pods-MyErShouJie.debug.xcconfig"; sourceTree = "<group>"; };
 		AD0F749B1DEFE8700090D6B3 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = "../../Library/Developer/Xcode/DerivedData/MyErShouJie-dchfnaftqkodnvdaapuogdunivkn/Build/Products/Debug-iphonesimulator/SnapKit/SnapKit.framework"; sourceTree = "<group>"; };
 		AD0F749F1DEFED5D0090D6B3 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
-		AD2800821DD2B54700483B8D /* MePersonDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MePersonDetails.swift; sourceTree = "<group>"; };
-		AD2800851DD2BBF600483B8D /* MeIssueDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeIssueDetails.swift; sourceTree = "<group>"; };
-		AD2800871DD2BC7000483B8D /* MeSellDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeSellDetails.swift; sourceTree = "<group>"; };
-		AD2800891DD2BDAA00483B8D /* MeBuyDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeBuyDetails.swift; sourceTree = "<group>"; };
-		AD28008B1DD2BE6000483B8D /* MeSetDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeSetDetails.swift; sourceTree = "<group>"; };
+		AD2800821DD2B54700483B8D /* ProfilePersonDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilePersonDetails.swift; sourceTree = "<group>"; };
+		AD2800851DD2BBF600483B8D /* ProfilePostDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilePostDetails.swift; sourceTree = "<group>"; };
+		AD2800871DD2BC7000483B8D /* ProfileSellDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileSellDetails.swift; sourceTree = "<group>"; };
+		AD2800891DD2BDAA00483B8D /* ProfileBuyDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileBuyDetails.swift; sourceTree = "<group>"; };
+		AD28008B1DD2BE6000483B8D /* ProfileSetDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileSetDetails.swift; sourceTree = "<group>"; };
 		AD5B0B0F1DD0982B00E39670 /* MyErShouJie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyErShouJie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD5B0B121DD0982B00E39670 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AD5B0B141DD0982B00E39670 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -112,9 +112,9 @@
 		AD5B0B341DD0982B00E39670 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AD5B0B411DD098A800E39670 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		AD5B0B441DD098E200E39670 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		AD5B0B461DD098F300E39670 /* IssueViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IssueViewController.swift; sourceTree = "<group>"; };
+		AD5B0B461DD098F300E39670 /* PostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		AD5B0B481DD0990400E39670 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
-		AD5B0B4A1DD0990E00E39670 /* MeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
+		AD5B0B4A1DD0990E00E39670 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		AD9C6C5E1DE06BED009AB8EC /* HomeHeadCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeHeadCell.swift; sourceTree = "<group>"; };
 		AD9C6C691DE07253009AB8EC /* HomeScrollCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeScrollCell.swift; sourceTree = "<group>"; };
 		AD9C6C6B1DE07264009AB8EC /* HomeListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeListCell.swift; sourceTree = "<group>"; };
@@ -131,7 +131,7 @@
 		ADBB48081DF435FE0046F73F /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../Library/Developer/Xcode/DerivedData/MyErShouJie-dchfnaftqkodnvdaapuogdunivkn/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
 		ADBB480A1DF436060046F73F /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = "../../Library/Developer/Xcode/DerivedData/MyErShouJie-dchfnaftqkodnvdaapuogdunivkn/Build/Products/Debug-iphonesimulator/Kingfisher/Kingfisher.framework"; sourceTree = "<group>"; };
 		ADBB480C1DF4360E0046F73F /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "../../Library/Developer/Xcode/DerivedData/MyErShouJie-dchfnaftqkodnvdaapuogdunivkn/Build/Products/Debug-iphonesimulator/SwiftyJSON/SwiftyJSON.framework"; sourceTree = "<group>"; };
-		ADBB48201DF445CD0046F73F /* IssueTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IssueTableViewCell.swift; sourceTree = "<group>"; };
+		ADBB48201DF445CD0046F73F /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		D18C739FBB085E5DB4DEFD58 /* libPods-MyErShouJieUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MyErShouJieUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -189,54 +189,6 @@
 				9014CADF5676F4BAC045EBFA /* Pods_MyErShouJie.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		AD0F749D1DEFECB20090D6B3 /* Issue */ = {
-			isa = PBXGroup;
-			children = (
-				AD5B0B461DD098F300E39670 /* IssueViewController.swift */,
-				ADBB48201DF445CD0046F73F /* IssueTableViewCell.swift */,
-			);
-			name = Issue;
-			sourceTree = "<group>";
-		};
-		AD0F749E1DEFECBA0090D6B3 /* Search */ = {
-			isa = PBXGroup;
-			children = (
-				AD5B0B481DD0990400E39670 /* SearchViewController.swift */,
-			);
-			name = Search;
-			sourceTree = "<group>";
-		};
-		AD2800841DD2BBC600483B8D /* Me */ = {
-			isa = PBXGroup;
-			children = (
-				AD5B0B4A1DD0990E00E39670 /* MeViewController.swift */,
-				AD2800821DD2B54700483B8D /* MePersonDetails.swift */,
-				AD2800851DD2BBF600483B8D /* MeIssueDetails.swift */,
-				AD2800871DD2BC7000483B8D /* MeSellDetails.swift */,
-				AD2800891DD2BDAA00483B8D /* MeBuyDetails.swift */,
-				AD28008B1DD2BE6000483B8D /* MeSetDetails.swift */,
-			);
-			name = Me;
-			sourceTree = "<group>";
-		};
-		AD42BF7F1DD9B332008C1874 /* Home */ = {
-			isa = PBXGroup;
-			children = (
-				AD5B0B441DD098E200E39670 /* HomeViewController.swift */,
-				AD9C6C5E1DE06BED009AB8EC /* HomeHeadCell.swift */,
-				AD9C6C691DE07253009AB8EC /* HomeScrollCell.swift */,
-				AD9C6C6B1DE07264009AB8EC /* HomeListCell.swift */,
-				AD9C6C6D1DE0728C009AB8EC /* HomeDefaultCell.swift */,
-				AD9C6C731DE073C7009AB8EC /* HomeCycleScrollView.swift */,
-				AD9C6C751DE07891009AB8EC /* HomeCycleViewCell.swift */,
-				AD9C6C8E1DE1AC6D009AB8EC /* HomeHeadCollectionView.swift */,
-				AD9C6C901DE1AF4E009AB8EC /* HomeHeadCollectionViewCell.swift */,
-				AD9C6C981DE2CBD5009AB8EC /* HomeTextScrollView.swift */,
-				AD9C6C9A1DE2D106009AB8EC /* HomeTextScrollCell.swift */,
-			);
-			name = Home;
 			sourceTree = "<group>";
 		};
 		AD5B0B061DD0982B00E39670 = {
@@ -299,10 +251,26 @@
 		AD5B0B431DD098C700E39670 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				AD42BF7F1DD9B332008C1874 /* Home */,
-				AD0F749D1DEFECB20090D6B3 /* Issue */,
-				AD0F749E1DEFECBA0090D6B3 /* Search */,
-				AD2800841DD2BBC600483B8D /* Me */,
+				AD5B0B441DD098E200E39670 /* HomeViewController.swift */,
+				AD9C6C5E1DE06BED009AB8EC /* HomeHeadCell.swift */,
+				AD9C6C691DE07253009AB8EC /* HomeScrollCell.swift */,
+				AD9C6C6B1DE07264009AB8EC /* HomeListCell.swift */,
+				AD9C6C6D1DE0728C009AB8EC /* HomeDefaultCell.swift */,
+				AD9C6C731DE073C7009AB8EC /* HomeCycleScrollView.swift */,
+				AD9C6C751DE07891009AB8EC /* HomeCycleViewCell.swift */,
+				AD9C6C8E1DE1AC6D009AB8EC /* HomeHeadCollectionView.swift */,
+				AD9C6C901DE1AF4E009AB8EC /* HomeHeadCollectionViewCell.swift */,
+				AD9C6C981DE2CBD5009AB8EC /* HomeTextScrollView.swift */,
+				AD9C6C9A1DE2D106009AB8EC /* HomeTextScrollCell.swift */,
+				AD5B0B461DD098F300E39670 /* PostViewController.swift */,
+				ADBB48201DF445CD0046F73F /* PostTableViewCell.swift */,
+				AD5B0B481DD0990400E39670 /* SearchViewController.swift */,
+				AD5B0B4A1DD0990E00E39670 /* ProfileViewController.swift */,
+				AD2800821DD2B54700483B8D /* ProfilePersonDetails.swift */,
+				AD2800851DD2BBF600483B8D /* ProfilePostDetails.swift */,
+				AD2800871DD2BC7000483B8D /* ProfileSellDetails.swift */,
+				AD2800891DD2BDAA00483B8D /* ProfileBuyDetails.swift */,
+				AD28008B1DD2BE6000483B8D /* ProfileSetDetails.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -504,32 +472,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ADBB48211DF445CD0046F73F /* IssueTableViewCell.swift in Sources */,
+				ADBB48211DF445CD0046F73F /* PostTableViewCell.swift in Sources */,
 				AD5B0B491DD0990400E39670 /* SearchViewController.swift in Sources */,
 				AD9C6C6E1DE0728C009AB8EC /* HomeDefaultCell.swift in Sources */,
-				AD5B0B4B1DD0990E00E39670 /* MeViewController.swift in Sources */,
+				AD5B0B4B1DD0990E00E39670 /* ProfileViewController.swift in Sources */,
 				AD9C6C951DE1E090009AB8EC /* UILabel+Extension.swift in Sources */,
 				AD0F74A01DEFED5D0090D6B3 /* RootViewController.swift in Sources */,
 				AD9C6C911DE1AF4E009AB8EC /* HomeHeadCollectionViewCell.swift in Sources */,
-				AD5B0B471DD098F300E39670 /* IssueViewController.swift in Sources */,
+				AD5B0B471DD098F300E39670 /* PostViewController.swift in Sources */,
 				AD9C6C6C1DE07264009AB8EC /* HomeListCell.swift in Sources */,
 				AD9C6C931DE1DC80009AB8EC /* UIImageView+Extension.swift in Sources */,
-				AD2800831DD2B54700483B8D /* MePersonDetails.swift in Sources */,
+				AD2800831DD2B54700483B8D /* ProfilePersonDetails.swift in Sources */,
 				AD5B0B151DD0982B00E39670 /* ViewController.swift in Sources */,
 				AD5B0B421DD098A800E39670 /* TabBarViewController.swift in Sources */,
 				AD5B0B131DD0982B00E39670 /* AppDelegate.swift in Sources */,
 				AD9C6C761DE07891009AB8EC /* HomeCycleViewCell.swift in Sources */,
-				AD2800881DD2BC7000483B8D /* MeSellDetails.swift in Sources */,
+				AD2800881DD2BC7000483B8D /* ProfileSellDetails.swift in Sources */,
 				AD9C6C6A1DE07253009AB8EC /* HomeScrollCell.swift in Sources */,
 				AD9C6C991DE2CBD5009AB8EC /* HomeTextScrollView.swift in Sources */,
 				AD9C6C8F1DE1AC6D009AB8EC /* HomeHeadCollectionView.swift in Sources */,
 				AD9C6C741DE073C7009AB8EC /* HomeCycleScrollView.swift in Sources */,
-				AD28008C1DD2BE6000483B8D /* MeSetDetails.swift in Sources */,
+				AD28008C1DD2BE6000483B8D /* ProfileSetDetails.swift in Sources */,
 				AD9C6C5F1DE06BED009AB8EC /* HomeHeadCell.swift in Sources */,
 				AD5B0B451DD098E200E39670 /* HomeViewController.swift in Sources */,
 				AD9C6C791DE088E0009AB8EC /* UIImage+Extension.swift in Sources */,
-				AD2800861DD2BBF600483B8D /* MeIssueDetails.swift in Sources */,
-				AD28008A1DD2BDAA00483B8D /* MeBuyDetails.swift in Sources */,
+				AD2800861DD2BBF600483B8D /* ProfilePostDetails.swift in Sources */,
+				AD28008A1DD2BDAA00483B8D /* ProfileBuyDetails.swift in Sources */,
 				AD9C6C9B1DE2D106009AB8EC /* HomeTextScrollCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
