@@ -7,89 +7,79 @@
 //
 
 import UIKit
-let homeIdentifier:String = "homecell"
-let scrollIdentifier:String = "scrollcell"
-let listIdentifier:String = "listcell"
-let defaultIdentifier:String = "defaultcell"
 
 
-class HomeViewController: RootViewController {
+
+class HomeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
+    var collection: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = "首页"
+        let layout = UICollectionViewFlowLayout()
         
-        tableView?.register(HomeHeadCell.self, forCellReuseIdentifier: homeIdentifier)
-        tableView?.register(HomeScrollCell.self, forCellReuseIdentifier: scrollIdentifier)
-        tableView?.register(HomeListCell.self, forCellReuseIdentifier: listIdentifier)
-        tableView?.register(HomeDefaultCell.self, forCellReuseIdentifier: defaultIdentifier)
-
+        collection = UICollectionView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height), collectionViewLayout: layout)
+        
+        collection.register(HomeCycleViewCell.self, forCellWithReuseIdentifier: "page")
+        collection.register(HomeproductCollectionViewCell.self, forCellWithReuseIdentifier: "product")
+        collection.dataSource = self
+        collection.delegate = self
+        layout.itemSize = CGSize(width: (UIScreen.main.bounds.width-30)/2, height: 250)
+        
+        self.view.addSubview(collection!)
     }
-
-}
-
-extension HomeViewController {
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        
-        return 4
-        
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        if section < 3 {
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 2
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if section == 0{
             return 1
+        }else{
+            return 50
         }
-        
-        return 100
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        var cell:UITableViewCell?
-        switch indexPath.section {
-        case 0:
-            cell = tableView.dequeueReusableCell(withIdentifier: homeIdentifier, for: indexPath) as! HomeHeadCell
-            break
-        case 1:
-            cell = tableView.dequeueReusableCell(withIdentifier: scrollIdentifier, for: indexPath) as! HomeScrollCell
-            break
-        case 2:
-            cell = tableView.dequeueReusableCell(withIdentifier: listIdentifier, for: indexPath)
-            break
-        default:
-            
-            let cell = tableView.dequeueReusableCell(withIdentifier: defaultIdentifier, for: indexPath) as! HomeDefaultCell
-            
-            cell.indexPath = indexPath
-            
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if indexPath.section == 0 {
+            let cell = collection.dequeueReusableCell(withReuseIdentifier: "page", for: indexPath) as! HomeCycleViewCell
+            //cell.label?.text = "hello"
+            return cell
+        }else{
+            let cell = collection.dequeueReusableCell(withReuseIdentifier: "product", for: indexPath) as! HomeproductCollectionViewCell
+            cell.layer.borderWidth = 0.3
+            cell.layer.borderColor = UIColor.lightGray.cgColor
+            cell.titleLabel!.text = "hello"
+            cell.priceLabel!.text = "￥ 111"
+            cell.readLabel!.text = "💗 520"
             return cell
         }
-        return cell!
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        print(indexPath.row)
-        
-    }
     
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
-        if indexPath.section == 0 && indexPath.row == 0 {
-            
-            return 200
-        }
-        else if indexPath.section == 1 && indexPath.row == 0 {
-            
-            return ScreenWidth/2
-        }
-        return 80
-    }
     
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 0.0
-    }
     
 }
+    
+   
+    
+    
+    
+    
+
+
+
+
+
+    
+    
+
+
+     
 

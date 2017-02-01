@@ -47,6 +47,7 @@ extension HomeCycleViewCell {
     fileprivate func setupUI(){
         //添加控件
         imageView = UIImageView(frame: bounds)
+        imageView?.backgroundColor = UIColor.white
         contentView.addSubview(imageView!)
         
     }
