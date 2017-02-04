@@ -37,8 +37,6 @@ public class MainController {
         return productService.queryProduct("from productdetail where latitude>0");
     }
 
-
-
     @RequestMapping(value = "/upload", method = RequestMethod.POST)
     @ResponseBody
     public String upload(@RequestParam(value = "title") String title,
