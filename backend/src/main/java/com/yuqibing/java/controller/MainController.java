@@ -51,6 +51,7 @@ public class MainController {
             queryStringhasWhere = true;
         }
 
+        
         if(type != 0){
             if (queryStringhasWhere) {
                 queryString = queryString+" and type="+type;
