@@ -27,14 +27,61 @@ import javax.servlet.http.HttpServletResponse;
 public class MainController {
     @Autowired
     private ProductService productService;
+    public static final String DEFAULT_MAX_PRICE = "99999999.0";
+    public static final String DEFAULT_MIN_PRICE = "0.0";
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     @ResponseBody
 
-    public List<Product> list(@RequestParam(value = "title") String title,
-                              @RequestParam(value = "price") double price){
-        System.out.println("-------------MainController--------");
-        System.out.println(title + price);
-        return productService.queryProduct("from productdetail where latitude>0");
+    public List<Product> list(@RequestParam(value = "searchKeyWords") String searchKeyWords,
+                              @RequestParam(value = "type", required = false, defaultValue = "0") int type,
+                              @RequestParam(value = "maxPrice", required = false, defaultValue = DEFAULT_MAX_PRICE) double maxPrice,
+                              @RequestParam(value = "minPrice", required = false, defaultValue = DEFAULT_MIN_PRICE) double minPrice,
+                              @RequestParam(value = "sinceTime", required = false, defaultValue = "0") int sinceTime,
+                              @RequestParam(value = "count",required = false,defaultValue = "20") int count,
+                              @RequestParam(value = "page",required = false,defaultValue = "1") int page) {
+        System.out.println("-------------ListAPI---------");
+        String queryString = new String();
+        Boolean queryStringhasWhere = false;
+
+        if(searchKeyWords.equalsIgnoreCase("*") ) {
+            queryString = "from productdetail";
+        } else {
+            queryString = "from productdetail where (title like '%"+searchKeyWords+"%'" +
+                          " or description like '%"+searchKeyWords+"%')";
+            queryStringhasWhere = true;
+        }
+
+        if(type != 0){
+            if (queryStringhasWhere) {
+                queryString = queryString+" and type="+type;
+            } else {
+                queryString = queryString+" where type="+type;
+            }
+            queryStringhasWhere = true;
+        }
+
+        if(Double.parseDouble(DEFAULT_MAX_PRICE)!=maxPrice){
+            if (queryStringhasWhere) {
+                queryString = queryString+" and price<="+maxPrice;
+            } else {
+                queryString = queryString+" where price<="+maxPrice;
+            }
+            queryStringhasWhere = true;
+        }
+
+        if(Double.parseDouble(DEFAULT_MIN_PRICE)!=minPrice){
+            if (queryStringhasWhere) {
+                queryString = queryString+" and price>="+minPrice;
+            } else {
+                queryString = queryString+" where price>="+minPrice;
+            }
+            queryStringhasWhere = true;
+        }
+
+
+        System.out.println("queryString="+queryString);
+
+        return productService.queryProduct(queryString);
     }
 
     @RequestMapping(value = "/upload", method = RequestMethod.POST)
