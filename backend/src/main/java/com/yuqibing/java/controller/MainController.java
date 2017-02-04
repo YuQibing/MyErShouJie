@@ -3,17 +3,19 @@ package com.yuqibing.java.controller;
 import com.yuqibing.java.entity.Product;
 import com.yuqibing.java.service.ProductService;
 import com.yuqibing.java.service.pictureUploadService;
-import org.json.JSONObject;
+import org.json.simple.JSONObject;
+import org.json.JSONArray;
+import org.mortbay.util.ajax.JSON;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-
-import java.util.List;
-
 import org.springframework.web.multipart.MultipartFile;
+
+import java.util.Date;
+import java.util.List;
 
 import javax.servlet.http.HttpServletResponse;
 
@@ -23,20 +25,8 @@ import javax.servlet.http.HttpServletResponse;
 @Controller
 @RequestMapping("/")
 public class MainController {
-
     @Autowired
     private ProductService productService;
-
-
-
-    @RequestMapping(value = "/insertData", method = RequestMethod.POST)
-    public String productadd(){
-        Product product = new Product();
-        product.setTitle("===+++---");
-        productService.saveProducts(product);
-        return "index";
-    }
-
     @RequestMapping(value = "/json", method = RequestMethod.GET)
     @ResponseBody
 
@@ -45,121 +35,72 @@ public class MainController {
         return productService.getAllData();
     }
 
-
-    @RequestMapping(value = "/uploadFile", method = RequestMethod.POST)
+    @RequestMapping(value = "/upload", method = RequestMethod.POST)
     @ResponseBody
-
-
-
-    public String uploadImg(@RequestParam(value = "img")MultipartFile[] img, HttpServletResponse response) {
+    public String upload(@RequestParam(value = "title") String title,
+                         @RequestParam(value = "type") int type,
+                         @RequestParam(value = "price") double price,
+                         @RequestParam(value = "img")MultipartFile[] files,
+                         @RequestParam(value = "description") String description,
+                         @RequestParam(value = "longitude", required = false, defaultValue = "0.0") double longitude,
+                         @RequestParam(value = "latitude", required = false, defaultValue = "0.0") double latitude,
+                         HttpServletResponse response) {
 
 
         JSONObject result = new JSONObject();
-        boolean flag = true;
+        JSONObject image_urls = new JSONObject();
+
+        Boolean returnVale = false;
+
         pictureUploadService picservice = new pictureUploadService();
 
+        Product product = new Product();
+
+        //FileUpLoad
         try {
-            flag = picservice.upload(img, result);
+            returnVale = picservice.uploadFiles(files, image_urls);
         } catch (Exception e) {
             result.put("mess", "调用失败");
-            flag = false;
+            returnVale = false;
             e.printStackTrace();
         }
-        result.put("flag", flag);
 
-        response.setContentType("text/html;charset=UTF-8");
+        product.setTitle(title);
+        product.setType(type);
+        product.setImage_urls(image_urls.toString());
+        product.setDescription(description);
+        product.setLiked(0);
+        product.setTime(new Date());
+        product.setPrice(price);
+        product.setLongitude(longitude);
+        product.setLatitude(latitude);
 
-        response.setHeader("Access-Control-Allow-Origin","*");
+        //String image_urlss = image_urls.toString();
+        result.put("return", returnVale);
+        result.put("image_urls",image_urls);
+        System.out.println("Product="+product);
+        //Insert data to database
+        InsertdatatoDB(product);
+
+
+
+//        response.setContentType("text/html;charset=UTF-8");
+
+  //      response.setHeader("Access-Control-Allow-Origin","*");
 
         return result.toString();
     }
 
-//    public String uploadImg(@RequestParam(value = "img")MultipartFile img) throws IOException {
-//
-//
-//        File file = new File ( "/dataimages/1.jpg");
-//
-//        System.out.println("-------------uplaadImg-----------"+file.getAbsolutePath());
-//        try {
-//            FileUtils.copyInputStreamToFile(img.getInputStream(), file);
-//
-//
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//        return "uploadimg";
-//    }
+    private int InsertdatatoDB(Product product){
+        pictureUploadService pictureservice = new pictureUploadService();
 
+        System.out.println("===========insertData========");
+
+
+        return productService.saveProducts(product);
+
+    }
 
 }
 
 
-
-
-
-
-
-
-
-
-
-//    public String add(){
-//        List<User> userArray = new ArrayList<User>();
-//        User user =new User();
-//        user.setUsername("+++");
-//        userArray.add(user);
-//        user = new User();
-//        user.setUsername("white");
-//        userArray.add(user);
-//        userService.saveUsers(userArray);
-//        return "index";
-//
-//    }
-
-
-
-//    @RequestMapping("")
-//    public String home(){
-//        System.out.println("-------------MainController index----------");
-//        List<User> us = new ArrayList<User>();
-//        User u = new User();
-//        u.setUsername("amy");
-//        us.add(u);
-//        u = new User();
-//        u.setUsername("alex");
-//        us.add(u);
-//        userService.saveUsers(us);
-//        return "index";
-//    }
-
-//    @RequestMapping("")
-//    public String index(){
-//        System.out.println("-------------MainController index--------");
-//
-//        return "index";
-//    }
-
-//        Map<String, String> result = new HashMap<String, String>();
-//        result.put("MarK", "hello");
-//        result.put("Ken", "Hehe");
-//        result.put("Fowafolo", "fool");
-
-//public class MainController {
-//
-//
-//
-//    @RequestMapping(value = "{name}/{id}", method = RequestMethod.GET)
-//    public @ResponseBody hop getShopInJSON(@PathVariable String name, @PathVariable String id) {
-//        System.out.print("aaa");
-//        hop shop = new hop();
-//        shop.setName(name);
-//        shop.setStaffName(new String[]{"1111", "2222"});
-//        shop.setID(id);
-//
-//        return shop;
-//
-//
-//    }
-//
-//
-//}

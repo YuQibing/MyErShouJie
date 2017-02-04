@@ -19,6 +19,7 @@ public class ProductDAOImpl implements ProductDAO{
 
     public int save(Product product) {
         return (Integer) sessionFactory.getCurrentSession().save(product);
+
     }
 
     public List<Product> findAll() {

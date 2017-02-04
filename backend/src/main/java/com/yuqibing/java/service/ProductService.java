@@ -9,7 +9,7 @@ import java.util.List;
 public interface ProductService {
     //public List<String> getAllUsernames();
 
-    public void saveProducts(Product product);
+    public int saveProducts(Product product);
     public  List<Product> getAllData();
 
 

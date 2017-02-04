@@ -20,10 +20,10 @@
         <property name="jdbcUrl" value="${url}"></property>
         <property name="user" value="root"></property>
         <property name="password" value="yqb19941001"></property>
-        <property name="maxPoolSize" value="40"></property>
+        <property name="maxPoolSize" value="100"></property>
         <property name="minPoolSize" value="1"></property>
         <property name="initialPoolSize" value="1"></property>
-        <property name="maxIdleTime" value="20"></property>
+        <property name="maxIdleTime" value="50"></property>
     </bean>
 
     <!-- session工厂 -->

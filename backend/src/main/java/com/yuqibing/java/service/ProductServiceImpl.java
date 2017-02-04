@@ -11,15 +11,16 @@ import java.util.List;
 /**
  * Created by yuqibing on 25/01/2017.
  */
-@Service("userService")
+@Service("productService")
 @Transactional
 public class ProductServiceImpl implements ProductService {
 
     @Autowired
     private ProductDAO productDAO;
-    public void saveProducts(Product product) {
+    public int saveProducts(Product product) {
 
-        productDAO.save(product);
+       return productDAO.save(product);
+
 
     }
 
