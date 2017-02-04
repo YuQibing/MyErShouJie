@@ -9,4 +9,5 @@ import java.util.List;
 public interface ProductDAO {
     public int save(Product product);
     public List<Product> findAll();
+    public List<Product> qureyProduct(String queryString);
 }

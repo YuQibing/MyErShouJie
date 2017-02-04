@@ -18,7 +18,7 @@ import org.json.JSONArray;
 /**
  * Created by yuqibing on 25/01/2017.
  */
-@Entity
+@Entity(name = "productdetail")
 @Table(name = "productdetail")
 public class Product implements Serializable {
     @Id

@@ -11,6 +11,6 @@ public interface ProductService {
 
     public int saveProducts(Product product);
     public  List<Product> getAllData();
-
+    public List<Product>  queryProduct(String querySting);
 
 }

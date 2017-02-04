@@ -2,6 +2,7 @@ package com.yuqibing.java.DAO;
 
 import com.yuqibing.java.entity.Product;
 import org.hibernate.Criteria;
+import org.hibernate.Query;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -19,11 +20,17 @@ public class ProductDAOImpl implements ProductDAO{
 
     public int save(Product product) {
         return (Integer) sessionFactory.getCurrentSession().save(product);
-
     }
 
     public List<Product> findAll() {
         Criteria criteria = sessionFactory.getCurrentSession().createCriteria(Product.class);
         return criteria.list();
     }
+
+    public List<Product>  qureyProduct(String queryString){
+        Query query = sessionFactory.getCurrentSession().createQuery(queryString);
+        return  query.list();
+    }
+
+
 }

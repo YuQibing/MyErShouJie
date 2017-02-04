@@ -32,8 +32,13 @@ public class ProductServiceImpl implements ProductService {
 //        }
 //
 //    }
+
     public List<Product> getAllData() {
         return productDAO.findAll();
+    }
+
+    public List<Product>  queryProduct(String queryString){
+        return productDAO.qureyProduct(queryString);
     }
 }
 

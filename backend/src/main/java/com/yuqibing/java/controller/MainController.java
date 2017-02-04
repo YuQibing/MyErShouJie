@@ -27,13 +27,17 @@ import javax.servlet.http.HttpServletResponse;
 public class MainController {
     @Autowired
     private ProductService productService;
-    @RequestMapping(value = "/json", method = RequestMethod.GET)
+    @RequestMapping(value = "/list", method = RequestMethod.GET)
     @ResponseBody
 
-    public List<Product> json(){
+    public List<Product> list(@RequestParam(value = "title") String title,
+                              @RequestParam(value = "price") double price){
         System.out.println("-------------MainController--------");
-        return productService.getAllData();
+        System.out.println(title + price);
+        return productService.queryProduct("from productdetail where latitude>0");
     }
+
+
 
     @RequestMapping(value = "/upload", method = RequestMethod.POST)
     @ResponseBody
