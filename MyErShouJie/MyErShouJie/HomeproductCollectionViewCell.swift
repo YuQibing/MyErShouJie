@@ -13,6 +13,7 @@ class HomeproductCollectionViewCell: UICollectionViewCell {
     var imgView : UIImageView?
     var titleLabel:UILabel?
     var priceLabel:UILabel?
+    var descriptionLabel:UILabel?
     var readLabel:UILabel?
     
     override init(frame: CGRect){
@@ -39,6 +40,13 @@ class HomeproductCollectionViewCell: UICollectionViewCell {
         readLabel?.font = UIFont.boldSystemFont(ofSize: 14.0)
         readLabel?.textColor = UIColor.lightGray
         self.addSubview(readLabel!)
+        
+        descriptionLabel = UILabel(frame: CGRect(x: (width-30)/2, y: imgView!.frame.maxY, width: (width-40)/2/2, height: 20))
+        descriptionLabel?.numberOfLines = 0
+        descriptionLabel?.textAlignment = NSTextAlignment.right
+        descriptionLabel?.font = UIFont.boldSystemFont(ofSize: 14.0)
+        descriptionLabel?.textColor = UIColor.lightGray
+        self.addSubview(descriptionLabel!)
     }
     
     required init?(coder aDecoder: NSCoder) {

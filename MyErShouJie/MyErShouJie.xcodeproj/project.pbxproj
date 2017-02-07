@@ -42,6 +42,8 @@
 		ADBB48171DF439190046F73F /* Kingfisher.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ADBB480A1DF436060046F73F /* Kingfisher.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		ADBB48181DF4391D0046F73F /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBB480C1DF4360E0046F73F /* SwiftyJSON.framework */; };
 		ADBB48191DF4391D0046F73F /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ADBB480C1DF4360E0046F73F /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		ADBBB4DB1E48014900E85610 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBBB4DA1E48014900E85610 /* Product.swift */; };
+		ADBBB4DD1E48056700E85610 /* ServerAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBBB4DC1E48056700E85610 /* ServerAPI.swift */; };
 		ADEC5A841E107F3C00C30547 /* HomepageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEC5A831E107F3C00C30547 /* HomepageCollectionViewCell.swift */; };
 		ADEC5A861E107F5900C30547 /* HomeproductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEC5A851E107F5900C30547 /* HomeproductCollectionViewCell.swift */; };
 		ADEC5A881E108A7100C30547 /* ClassBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEC5A871E108A7100C30547 /* ClassBook.swift */; };
@@ -130,6 +132,8 @@
 		ADBB48081DF435FE0046F73F /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../Library/Developer/Xcode/DerivedData/MyErShouJie-dchfnaftqkodnvdaapuogdunivkn/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
 		ADBB480A1DF436060046F73F /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = "../../Library/Developer/Xcode/DerivedData/MyErShouJie-dchfnaftqkodnvdaapuogdunivkn/Build/Products/Debug-iphonesimulator/Kingfisher/Kingfisher.framework"; sourceTree = "<group>"; };
 		ADBB480C1DF4360E0046F73F /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "../../Library/Developer/Xcode/DerivedData/MyErShouJie-dchfnaftqkodnvdaapuogdunivkn/Build/Products/Debug-iphonesimulator/SwiftyJSON/SwiftyJSON.framework"; sourceTree = "<group>"; };
+		ADBBB4DA1E48014900E85610 /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		ADBBB4DC1E48056700E85610 /* ServerAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerAPI.swift; sourceTree = "<group>"; };
 		ADEC5A831E107F3C00C30547 /* HomepageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomepageCollectionViewCell.swift; sourceTree = "<group>"; };
 		ADEC5A851E107F5900C30547 /* HomeproductCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeproductCollectionViewCell.swift; sourceTree = "<group>"; };
 		ADEC5A871E108A7100C30547 /* ClassBook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassBook.swift; sourceTree = "<group>"; };
@@ -260,6 +264,7 @@
 		AD5B0B431DD098C700E39670 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				ADBBB4D91E48014900E85610 /* DataModel */,
 				AD5B0B441DD098E200E39670 /* HomeViewController.swift */,
 				ADEC5A831E107F3C00C30547 /* HomepageCollectionViewCell.swift */,
 				ADEC5A851E107F5900C30547 /* HomeproductCollectionViewCell.swift */,
@@ -298,6 +303,15 @@
 				AD9C6C941DE1E090009AB8EC /* UILabel+Extension.swift */,
 			);
 			name = Common;
+			sourceTree = "<group>";
+		};
+		ADBBB4D91E48014900E85610 /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				ADBBB4DA1E48014900E85610 /* Product.swift */,
+				ADBBB4DC1E48056700E85610 /* ServerAPI.swift */,
+			);
+			path = DataModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -494,6 +508,7 @@
 				AD9C6C951DE1E090009AB8EC /* UILabel+Extension.swift in Sources */,
 				AD9C6C911DE1AF4E009AB8EC /* HomeHeadCollectionViewCell.swift in Sources */,
 				AD5B0B471DD098F300E39670 /* ClassViewController.swift in Sources */,
+				ADBBB4DB1E48014900E85610 /* Product.swift in Sources */,
 				ADEC5A981E1097AB00C30547 /* ClassDailyCollectionViewCell.swift in Sources */,
 				AD9C6C931DE1DC80009AB8EC /* UIImageView+Extension.swift in Sources */,
 				AD2800831DD2B54700483B8D /* ProfilePersonDetails.swift in Sources */,
@@ -516,6 +531,7 @@
 				AD28008C1DD2BE6000483B8D /* ProfileSetDetails.swift in Sources */,
 				AD5B0B451DD098E200E39670 /* HomeViewController.swift in Sources */,
 				AD9C6C791DE088E0009AB8EC /* UIImage+Extension.swift in Sources */,
+				ADBBB4DD1E48056700E85610 /* ServerAPI.swift in Sources */,
 				AD2800861DD2BBF600483B8D /* ProfilePostDetails.swift in Sources */,
 				ADA133551E09D7FD00F1ABF5 /* HomeCycle.swift in Sources */,
 				AD28008A1DD2BDAA00483B8D /* ProfileBuyDetails.swift in Sources */,

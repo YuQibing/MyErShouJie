@@ -7,26 +7,33 @@
 //
 
 import UIKit
-
-
+import Alamofire
+import SwiftyJSON
 
 class HomeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
-    var collection: UICollectionView!
+    var product = Product()
+    var productArray: Array<Product> = []
+    var collectionView: UICollectionView!
+    
+    convenience init(){
+        self.init(nibName:nil, bundle:nil)
+        self.getDataFromServer()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         let layout = UICollectionViewFlowLayout()
         
-        collection = UICollectionView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height), collectionViewLayout: layout)
+        collectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height), collectionViewLayout: layout)
         
-        collection.register(HomeCycleViewCell.self, forCellWithReuseIdentifier: "page")
-        collection.register(HomeproductCollectionViewCell.self, forCellWithReuseIdentifier: "product")
-        collection.dataSource = self
-        collection.delegate = self
+        collectionView.register(HomeCycleViewCell.self, forCellWithReuseIdentifier: "page")
+        collectionView.register(HomeproductCollectionViewCell.self, forCellWithReuseIdentifier: "product")
+        collectionView.dataSource = self
+        collectionView.delegate = self
         layout.itemSize = CGSize(width: (UIScreen.main.bounds.width-30)/2, height: 250)
         
-        self.view.addSubview(collection!)
+        self.view.addSubview(collectionView!)
     }
     
     override func didReceiveMemoryWarning() {
@@ -38,6 +45,8 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         return 2
     }
     
+    
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if section == 0{
             return 1
@@ -46,18 +55,32 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         }
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func getDataFromServer(){
+        
+        var serverAPI = ServerAPI()
+        print("-----getDataFromServer------")
+        serverAPI.list()
+        
+    }
+    
+    
+    
+    
+    
+     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.section == 0 {
-            let cell = collection.dequeueReusableCell(withReuseIdentifier: "page", for: indexPath) as! HomeCycleViewCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "page", for: indexPath) as! HomeCycleViewCell
             //cell.label?.text = "hello"
             return cell
         }else{
-            let cell = collection.dequeueReusableCell(withReuseIdentifier: "product", for: indexPath) as! HomeproductCollectionViewCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "product", for: indexPath) as! HomeproductCollectionViewCell
+            print("-------collectionView cell text--------")
             cell.layer.borderWidth = 0.3
             cell.layer.borderColor = UIColor.lightGray.cgColor
+            
             cell.titleLabel!.text = "hello"
-            cell.priceLabel!.text = "￥ 111"
-            cell.readLabel!.text = "💗 520"
+            cell.priceLabel!.text = "44"
+            cell.readLabel!.text = "8"
             return cell
         }
     }
