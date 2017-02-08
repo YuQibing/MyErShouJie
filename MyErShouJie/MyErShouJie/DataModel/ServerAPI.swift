@@ -12,21 +12,29 @@ import SwiftyJSON
 
 class ServerAPI: NSObject {
     
-    func list() -> JSON {
+    
+    func list(completion : @escaping (JSON) -> ()){
+        
         var json: JSON = []
+        
         
         let str = "*"
         let url = URL(string:"http://localhost:8080/list?searchKeyWords="+str)!
         print("----ServerAPI list:-------", url)
-        Alamofire.request(url).responseJSON { response in
-            if let value = response.result.value {
-                json = JSON(value)
-                print("JSON Count=",json.count)
-                print("JSON =",json)
+        
+        Alamofire.request(url).responseJSON{ response in
+            if response.result.isSuccess{
+            let value = response.result.value
+                json = JSON(value!)
+                //print("JSON COUNT = ", json.count)
+                //print("JSON VALUE = ", json)
+                completion(json)
+                
+               
             }
         }
-        return json
     }
+    
 }
 //                print("value: ",value)
 //                    let json = JSON(value)

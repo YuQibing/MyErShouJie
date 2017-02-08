@@ -12,18 +12,24 @@ import SwiftyJSON
 
 class HomeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
-    var product = Product()
+    
     var productArray: Array<Product> = []
     var collectionView: UICollectionView!
+    var refreshControl = UIRefreshControl()
+    
     
     convenience init(){
         self.init(nibName:nil, bundle:nil)
-        self.getDataFromServer()
+        
+        getDataFromServer()            
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         let layout = UICollectionViewFlowLayout()
+        
+        refreshControl.addTarget(self, action: #selector(HomeViewController.refreshData), for: .valueChanged)
+        refreshControl.attributedTitle = NSAttributedString(string: "刷新商品")
         
         collectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height), collectionViewLayout: layout)
         
@@ -33,12 +39,20 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         collectionView.delegate = self
         layout.itemSize = CGSize(width: (UIScreen.main.bounds.width-30)/2, height: 250)
         
+        self.view.addSubview(refreshControl)
         self.view.addSubview(collectionView!)
+        
+        refreshData()
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func refreshData(){
+        self.collectionView.reloadData()
+        
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -47,21 +61,40 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func  collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if section == 0{
             return 1
         }else{
-            return 50
+            return self.productArray.count
         }
     }
     
     func getDataFromServer(){
         
-        var serverAPI = ServerAPI()
+        let serverAPI = ServerAPI()
         print("-----getDataFromServer------")
-        serverAPI.list()
-        
+        serverAPI.list(){ jsonReturn in
+            
+            print("JSON COUNT = ", jsonReturn.count)
+            //print("JSONVALUE = ", jsonReturn)
+            
+            for index in 0...jsonReturn.count-1{
+                let product = Product()
+                product.id = jsonReturn[index]["id"].int
+                product.descriptions = jsonReturn[index]["descriptions"].string
+                product.image_urls = jsonReturn[index]["image_urls"].arrayValue
+                product.latitude = jsonReturn[index]["latitude"].double
+                product.longitude = jsonReturn[index]["longitude"].double
+                product.liked = jsonReturn[index]["liked"].int
+                product.price = jsonReturn[index]["price"].double
+                product.time = jsonReturn[index]["time"].string
+                self.productArray.append(product)
+            }
+            print("productArrayCount = ",self.productArray.count)
+            
+        }
     }
+    
     
     
     
@@ -78,9 +111,9 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             cell.layer.borderWidth = 0.3
             cell.layer.borderColor = UIColor.lightGray.cgColor
             
-            cell.titleLabel!.text = "hello"
-            cell.priceLabel!.text = "44"
-            cell.readLabel!.text = "8"
+            cell.titleLabel!.text = productArray[indexPath.row].title
+            cell.priceLabel!.text = String(describing: productArray[indexPath.row].price)
+            cell.readLabel!.text = String(describing: productArray[indexPath.row].liked)
             return cell
         }
     }

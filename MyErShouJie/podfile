@@ -14,5 +14,8 @@ pod 'Alamofire', '~> 4.2.0’
 use_frameworks!
 pod 'Kingfisher', '~> 3.2.1'
 
+use_frameworks!
+pod 'MJRefresh', '~> 3.1.12'
+
 
 end

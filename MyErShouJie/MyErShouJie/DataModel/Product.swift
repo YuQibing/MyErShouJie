@@ -10,10 +10,16 @@ import UIKit
 
 class Product: NSObject {
     
-    var title: String?
+    var time: String?
+    var id: Int?
     var price: Double?
+    var title: String?
+    var longitude: Double?
+    var latitude: Double?
     var liked: Int?
+    var type: Int?
     var descriptions: String?
+    var image_urls: Array<Any> = []
     
     
 }
