@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (4.2.0)
+  - Haneke (1.0.2)
   - Kingfisher (3.2.1)
   - MJRefresh (3.1.12)
   - SnapKit (3.0.2)
@@ -7,6 +8,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 4.2.0)
+  - Haneke (~> 1.0.2)
   - Kingfisher (~> 3.2.1)
   - MJRefresh (~> 3.1.12)
   - SnapKit (~> 3.0.2)
@@ -14,11 +16,12 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Alamofire: aa2e09d871c9160ac53c90e83c68064a94e3dfbe
+  Haneke: 01454a67322faa0dd9d81fc0f447885044e71521
   Kingfisher: 64ef28c6d3d6f344e3ae2d7f5c9da80439505d99
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   SnapKit: 2e456761aa92d4d4067a7a5594c18769d451a8ad
   SwiftyJSON: 38a8ea2006779c0fc4c310cb2ee8195327740faf
 
-PODFILE CHECKSUM: e1f4bddd53ac56682004fe983ca0af527ef75b06
+PODFILE CHECKSUM: 9dfa796f67d0aa5e92a12c1ee8791d4c980f917d
 
 COCOAPODS: 1.1.1

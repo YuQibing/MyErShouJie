@@ -8,7 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		AD0F749C1DEFE8700090D6B3 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD0F749B1DEFE8700090D6B3 /* SnapKit.framework */; };
-		AD1219CA1E4BD14F00B1F117 /* MJRefresh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD1219C91E4BD14F00B1F117 /* MJRefresh.framework */; };
+		AD1219DD1E4CF3EC00B1F117 /* Haneke.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD1219DC1E4CF3EC00B1F117 /* Haneke.framework */; };
+		AD1219DF1E4CF48C00B1F117 /* MJRefresh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD1219DE1E4CF48C00B1F117 /* MJRefresh.framework */; };
 		AD2800831DD2B54700483B8D /* ProfilePersonDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2800821DD2B54700483B8D /* ProfilePersonDetails.swift */; };
 		AD2800861DD2BBF600483B8D /* ProfilePostDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2800851DD2BBF600483B8D /* ProfilePostDetails.swift */; };
 		AD2800881DD2BC7000483B8D /* ProfileSellDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2800871DD2BC7000483B8D /* ProfileSellDetails.swift */; };
@@ -100,6 +101,8 @@
 		9665182C5DC775E086232937 /* Pods-MyErShouJie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyErShouJie.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyErShouJie/Pods-MyErShouJie.debug.xcconfig"; sourceTree = "<group>"; };
 		AD0F749B1DEFE8700090D6B3 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = "../../Library/Developer/Xcode/DerivedData/MyErShouJie-dchfnaftqkodnvdaapuogdunivkn/Build/Products/Debug-iphonesimulator/SnapKit/SnapKit.framework"; sourceTree = "<group>"; };
 		AD1219C91E4BD14F00B1F117 /* MJRefresh.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MJRefresh.framework; path = "Pods/../build/Debug-iphoneos/MJRefresh/MJRefresh.framework"; sourceTree = "<group>"; };
+		AD1219DC1E4CF3EC00B1F117 /* Haneke.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Haneke.framework; path = "Pods/../build/Debug-iphoneos/Haneke/Haneke.framework"; sourceTree = "<group>"; };
+		AD1219DE1E4CF48C00B1F117 /* MJRefresh.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MJRefresh.framework; path = "../../Library/Developer/Xcode/DerivedData/MyErShouJie-dchfnaftqkodnvdaapuogdunivkn/Build/Products/Debug-iphonesimulator/MJRefresh/MJRefresh.framework"; sourceTree = "<group>"; };
 		AD2800821DD2B54700483B8D /* ProfilePersonDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilePersonDetails.swift; sourceTree = "<group>"; };
 		AD2800851DD2BBF600483B8D /* ProfilePostDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilePostDetails.swift; sourceTree = "<group>"; };
 		AD2800871DD2BC7000483B8D /* ProfileSellDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileSellDetails.swift; sourceTree = "<group>"; };
@@ -156,7 +159,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD1219CA1E4BD14F00B1F117 /* MJRefresh.framework in Frameworks */,
+				AD1219DF1E4CF48C00B1F117 /* MJRefresh.framework in Frameworks */,
+				AD1219DD1E4CF3EC00B1F117 /* Haneke.framework in Frameworks */,
 				ADBB48181DF4391D0046F73F /* SwiftyJSON.framework in Frameworks */,
 				ADBB48121DF438170046F73F /* SwiftyJSON.framework in Frameworks */,
 				ADBB48161DF439190046F73F /* Kingfisher.framework in Frameworks */,
@@ -197,6 +201,8 @@
 		0778994A08FEBB20C07AE5D4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AD1219DE1E4CF48C00B1F117 /* MJRefresh.framework */,
+				AD1219DC1E4CF3EC00B1F117 /* Haneke.framework */,
 				AD1219C91E4BD14F00B1F117 /* MJRefresh.framework */,
 				ADBB480C1DF4360E0046F73F /* SwiftyJSON.framework */,
 				ADBB480A1DF436060046F73F /* Kingfisher.framework */,
@@ -696,11 +702,13 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Pods",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/MJRefresh",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/Haneke",
 				);
 				INFOPLIST_FILE = MyErShouJie/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.yuqibing.MyErShouJie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = /Users/yuqibing/MyErShouJie/MyErShouJie/Pods/MJRefresh/Header.h;
 				SWIFT_VERSION = 3.0;
 				USER_HEADER_SEARCH_PATHS = "$(PODS_ROOT)/**";
 			};
@@ -716,11 +724,13 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Pods",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/MJRefresh",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/Haneke",
 				);
 				INFOPLIST_FILE = MyErShouJie/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.yuqibing.MyErShouJie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = /Users/yuqibing/MyErShouJie/MyErShouJie/Pods/MJRefresh/Header.h;
 				SWIFT_VERSION = 3.0;
 				USER_HEADER_SEARCH_PATHS = "$(PODS_ROOT)/**";
 			};

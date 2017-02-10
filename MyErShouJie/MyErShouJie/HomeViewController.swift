@@ -9,13 +9,15 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import MJRefresh
+import Haneke
 
 class HomeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     
     var productArray: Array<Product> = []
     var collectionView: UICollectionView!
-    var refreshControl = UIRefreshControl()
+    let header = MJRefreshNormalHeader()
     
     
     convenience init(){
@@ -28,8 +30,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         super.viewDidLoad()
         let layout = UICollectionViewFlowLayout()
         
-        refreshControl.addTarget(self, action: #selector(HomeViewController.refreshData), for: .valueChanged)
-        refreshControl.attributedTitle = NSAttributedString(string: "刷新商品")
+        header.setRefreshingTarget(self, refreshingAction: #selector(HomeViewController.refreshData))
         
         collectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height), collectionViewLayout: layout)
         
@@ -39,7 +40,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         collectionView.delegate = self
         layout.itemSize = CGSize(width: (UIScreen.main.bounds.width-30)/2, height: 250)
         
-        self.view.addSubview(refreshControl)
+        self.collectionView!.mj_header = header
         self.view.addSubview(collectionView!)
         
         refreshData()
@@ -51,7 +52,9 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     func refreshData(){
+        
         self.collectionView.reloadData()
+        self.collectionView!.mj_header.endRefreshing()
         
     }
     
@@ -78,19 +81,49 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             print("JSON COUNT = ", jsonReturn.count)
             //print("JSONVALUE = ", jsonReturn)
             
-            for index in 0...jsonReturn.count-1{
+            for index in 0...jsonReturn.count-1 {
                 let product = Product()
-                product.id = jsonReturn[index]["id"].int
-                product.descriptions = jsonReturn[index]["descriptions"].string
-                product.image_urls = jsonReturn[index]["image_urls"].arrayValue
-                product.latitude = jsonReturn[index]["latitude"].double
-                product.longitude = jsonReturn[index]["longitude"].double
-                product.liked = jsonReturn[index]["liked"].int
-                product.price = jsonReturn[index]["price"].double
-                product.time = jsonReturn[index]["time"].string
+                var oneProductJson = jsonReturn[index]
+                var imageUrlsArray: Array<Any>
+                var imageUrlsDic = [String: String]()
+                let imgUrlsText = (oneProductJson["image_urls"].string)?
+                    .data(using: String.Encoding.utf8)
+                do {
+                    let imgUrlsJson = try JSONSerialization.jsonObject(with: imgUrlsText!, options: .mutableContainers)
+                    if let imageUrlsJson = imgUrlsJson as? [String:Any] {
+                        print("imageUrlsJson = ", imageUrlsJson)
+                        imageUrlsArray = imageUrlsJson["ImageUrls"] as! [Any]
+                        imageUrlsDic = imageUrlsArray[0] as! [String : String]
+                        
+                        print("----------------imageUrlsArray Values = ", imageUrlsDic["ImageUrl"])
+//                        for index in 0...imageUrlsArray.count-1 {
+//                            
+//                            
+//                        }
+                        
+                    }
+                } catch {
+                    print(error.localizedDescription)
+                }
+                
+                
+                product.id = oneProductJson["id"].int
+                product.title = oneProductJson["title"].string
+                product.type = oneProductJson["type"].int
+                product.descriptions = oneProductJson["description"].string
+                product.image_urls = imageUrlsDic
+                product.latitude = oneProductJson["latitude"].double
+                product.longitude = oneProductJson["longitude"].double
+                product.liked = oneProductJson["liked"].int
+                product.price = oneProductJson["price"].double
+                product.time = oneProductJson["time"].string
                 self.productArray.append(product)
+                
+                print("index=", index)
+//                print("Product.image_urls =", product.image_urls)
+//                print("jsonReturn =", oneProductJson["image_urls"].string)
             }
-            print("productArrayCount = ",self.productArray.count)
+            print("productArrayCount = ", self.productArray.count)
             
         }
     }
@@ -111,9 +144,18 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             cell.layer.borderWidth = 0.3
             cell.layer.borderColor = UIColor.lightGray.cgColor
             
-            cell.titleLabel!.text = productArray[indexPath.row].title
-            cell.priceLabel!.text = String(describing: productArray[indexPath.row].price)
-            cell.readLabel!.text = String(describing: productArray[indexPath.row].liked)
+            var product = Product()
+            product = productArray[indexPath.row]
+            
+            let url : URL = URL(string: (product.image_urls?["ImageUrl"] as? String)!)!
+            print("------imageURL-------", url)
+            let str = "http://pic6.huitu.com/res/20130116/84481_20130116142820494200_1.jpg"
+            let urlimage: URL = URL(string: str as String)!
+            
+            cell.imgView?.hnk_setImage(from: urlimage)
+            cell.titleLabel!.text = product.title
+            cell.priceLabel!.text = String(describing: (product.price)!)
+            cell.readLabel!.text = String(describing: (product.type)!)
             return cell
         }
     }

@@ -17,5 +17,7 @@ pod 'Kingfisher', '~> 3.2.1'
 use_frameworks!
 pod 'MJRefresh', '~> 3.1.12'
 
+use_frameworks!
+pod 'Haneke', '~> 1.0.2'
 
 end

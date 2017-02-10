@@ -19,7 +19,7 @@ class Product: NSObject {
     var liked: Int?
     var type: Int?
     var descriptions: String?
-    var image_urls: Array<Any> = []
+    var image_urls: Dictionary<String, Any>?
     
     
 }
