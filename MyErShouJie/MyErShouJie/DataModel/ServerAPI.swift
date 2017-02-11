@@ -19,7 +19,7 @@ class ServerAPI: NSObject {
         
         
         let str = "*"
-        let url = URL(string:"http://localhost:8080/list?searchKeyWords="+str)!
+        let url = URL(string:baseUrl+"/ershoujie/list?searchKeyWords="+str)!
         print("----ServerAPI list:-------", url)
         
         Alamofire.request(url).responseJSON{ response in

@@ -84,23 +84,22 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             for index in 0...jsonReturn.count-1 {
                 let product = Product()
                 var oneProductJson = jsonReturn[index]
-                var imageUrlsArray: Array<Any>
+                var imageUrlsJsonArray: Array<Any>
                 var imageUrlsDic = [String: String]()
+                var imageUrlsArray = [String]()
                 let imgUrlsText = (oneProductJson["image_urls"].string)?
                     .data(using: String.Encoding.utf8)
                 do {
                     let imgUrlsJson = try JSONSerialization.jsonObject(with: imgUrlsText!, options: .mutableContainers)
                     if let imageUrlsJson = imgUrlsJson as? [String:Any] {
                         print("imageUrlsJson = ", imageUrlsJson)
-                        imageUrlsArray = imageUrlsJson["ImageUrls"] as! [Any]
-                        imageUrlsDic = imageUrlsArray[0] as! [String : String]
+                        imageUrlsJsonArray = imageUrlsJson["ImageUrls"] as! [Any]
                         
-                        print("----------------imageUrlsArray Values = ", imageUrlsDic["ImageUrl"])
-//                        for index in 0...imageUrlsArray.count-1 {
-//                            
-//                            
-//                        }
-                        
+                        for imageUrlsIndex in 0...imageUrlsJsonArray.count-1 {
+                            imageUrlsDic = imageUrlsJsonArray[imageUrlsIndex] as! [String : String]
+                            imageUrlsArray.append(imageUrlsDic["ImageUrl"]!)
+                        }
+                        print("----------------imageUrlsArray Values = ", imageUrlsDic["ImageUrl"]!)
                     }
                 } catch {
                     print(error.localizedDescription)
@@ -111,7 +110,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
                 product.title = oneProductJson["title"].string
                 product.type = oneProductJson["type"].int
                 product.descriptions = oneProductJson["description"].string
-                product.image_urls = imageUrlsDic
+                product.image_urls = imageUrlsArray
                 product.latitude = oneProductJson["latitude"].double
                 product.longitude = oneProductJson["longitude"].double
                 product.liked = oneProductJson["liked"].int
@@ -147,10 +146,13 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             var product = Product()
             product = productArray[indexPath.row]
             
-            let url : URL = URL(string: (product.image_urls?["ImageUrl"] as? String)!)!
-            print("------imageURL-------", url)
-            let str = "http://pic6.huitu.com/res/20130116/84481_20130116142820494200_1.jpg"
-            let urlimage: URL = URL(string: str as String)!
+//            let url : URL = URL(string: (product.image_urls?["ImageUrl"] as? String)!)!
+//            print("------imageURL-------", url)
+//            let str = "http://pic6.huitu.com/res/20130116/84481_20130116142820494200_1.jpg"
+            
+            let imgStr = (product.image_urls?[0])!
+            let urlimage = URL(string: baseUrl + imgStr)
+            
             
             cell.imgView?.hnk_setImage(from: urlimage)
             cell.titleLabel!.text = product.title

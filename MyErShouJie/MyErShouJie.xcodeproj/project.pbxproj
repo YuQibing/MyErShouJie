@@ -10,6 +10,7 @@
 		AD0F749C1DEFE8700090D6B3 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD0F749B1DEFE8700090D6B3 /* SnapKit.framework */; };
 		AD1219DD1E4CF3EC00B1F117 /* Haneke.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD1219DC1E4CF3EC00B1F117 /* Haneke.framework */; };
 		AD1219DF1E4CF48C00B1F117 /* MJRefresh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD1219DE1E4CF48C00B1F117 /* MJRefresh.framework */; };
+		AD234B2E1E4EA28B0064F115 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD234B2D1E4EA28B0064F115 /* Constant.swift */; };
 		AD2800831DD2B54700483B8D /* ProfilePersonDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2800821DD2B54700483B8D /* ProfilePersonDetails.swift */; };
 		AD2800861DD2BBF600483B8D /* ProfilePostDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2800851DD2BBF600483B8D /* ProfilePostDetails.swift */; };
 		AD2800881DD2BC7000483B8D /* ProfileSellDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2800871DD2BC7000483B8D /* ProfileSellDetails.swift */; };
@@ -103,6 +104,7 @@
 		AD1219C91E4BD14F00B1F117 /* MJRefresh.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MJRefresh.framework; path = "Pods/../build/Debug-iphoneos/MJRefresh/MJRefresh.framework"; sourceTree = "<group>"; };
 		AD1219DC1E4CF3EC00B1F117 /* Haneke.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Haneke.framework; path = "Pods/../build/Debug-iphoneos/Haneke/Haneke.framework"; sourceTree = "<group>"; };
 		AD1219DE1E4CF48C00B1F117 /* MJRefresh.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MJRefresh.framework; path = "../../Library/Developer/Xcode/DerivedData/MyErShouJie-dchfnaftqkodnvdaapuogdunivkn/Build/Products/Debug-iphonesimulator/MJRefresh/MJRefresh.framework"; sourceTree = "<group>"; };
+		AD234B2D1E4EA28B0064F115 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		AD2800821DD2B54700483B8D /* ProfilePersonDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilePersonDetails.swift; sourceTree = "<group>"; };
 		AD2800851DD2BBF600483B8D /* ProfilePostDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilePostDetails.swift; sourceTree = "<group>"; };
 		AD2800871DD2BC7000483B8D /* ProfileSellDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileSellDetails.swift; sourceTree = "<group>"; };
@@ -320,6 +322,7 @@
 			children = (
 				ADBBB4DA1E48014900E85610 /* Product.swift */,
 				ADBBB4DC1E48056700E85610 /* ServerAPI.swift */,
+				AD234B2D1E4EA28B0064F115 /* Constant.swift */,
 			);
 			path = DataModel;
 			sourceTree = "<group>";
@@ -518,6 +521,7 @@
 				AD9C6C951DE1E090009AB8EC /* UILabel+Extension.swift in Sources */,
 				AD9C6C911DE1AF4E009AB8EC /* HomeHeadCollectionViewCell.swift in Sources */,
 				AD5B0B471DD098F300E39670 /* ClassViewController.swift in Sources */,
+				AD234B2E1E4EA28B0064F115 /* Constant.swift in Sources */,
 				ADBBB4DB1E48014900E85610 /* Product.swift in Sources */,
 				ADEC5A981E1097AB00C30547 /* ClassDailyCollectionViewCell.swift in Sources */,
 				AD9C6C931DE1DC80009AB8EC /* UIImageView+Extension.swift in Sources */,
