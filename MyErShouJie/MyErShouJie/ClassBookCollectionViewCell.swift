@@ -19,7 +19,7 @@ class ClassBookCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect){
         super.init(frame: frame)
         
-        imgView = UIImageView(frame: CGRect(x: 0, y: -10, width: (width-30)/2, height: 200))
+        imgView = UIImageView(frame: CGRect(x: 0, y:-10, width: (width-30)/2, height: 200))
         self.addSubview(imgView!)
         
         titleLabel = UILabel(frame: CGRect(x: 5, y: imgView!.frame.maxY-12, width: (width-40)/2, height: 50))

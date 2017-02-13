@@ -14,15 +14,26 @@ class HomeCycle: UICollectionViewCell {
     
     override init (frame: CGRect){
         super.init(frame: frame)
-        
-        label = UILabel(frame: CGRect(x: 0, y: 0, width: width, height: 200))
-        label?.font = UIFont.boldSystemFont(ofSize: 14.0)
-        self.addSubview(label!)
+        setupUI()
         
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
 
+}
+
+extension HomeCycle {
+    
+    fileprivate func setupUI(){
+        
+        let cycleView = HomeCycleScrollView(frame: CGRect(x: 0, y: 0, width: width, height: 200))
+        
+        contentView.addSubview(cycleView)
+        
+        
+    }
+    
 }

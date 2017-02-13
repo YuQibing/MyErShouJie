@@ -34,11 +34,11 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
         collectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height), collectionViewLayout: layout)
         
-        collectionView.register(HomeCycleViewCell.self, forCellWithReuseIdentifier: "page")
+        collectionView.register(HomeCycle.self, forCellWithReuseIdentifier: "page")
         collectionView.register(HomeproductCollectionViewCell.self, forCellWithReuseIdentifier: "product")
         collectionView.dataSource = self
         collectionView.delegate = self
-        layout.itemSize = CGSize(width: (UIScreen.main.bounds.width-30)/2, height: 250)
+        layout.itemSize = CGSize(width: (UIScreen.main.bounds.width-10)/2, height: 250)
         
         self.collectionView!.mj_header = header
         self.view.addSubview(collectionView!)
@@ -134,8 +134,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
      func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.section == 0 {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "page", for: indexPath) as! HomeCycleViewCell
-            //cell.label?.text = "hello"
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "page", for: indexPath) as! HomeCycle
             return cell
         }else{
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "product", for: indexPath) as! HomeproductCollectionViewCell
@@ -145,11 +144,6 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             
             var product = Product()
             product = productArray[indexPath.row]
-            
-//            let url : URL = URL(string: (product.image_urls?["ImageUrl"] as? String)!)!
-//            print("------imageURL-------", url)
-//            let str = "http://pic6.huitu.com/res/20130116/84481_20130116142820494200_1.jpg"
-            
             let imgStr = (product.image_urls?[0])!
             let urlimage = URL(string: baseUrl + imgStr)
             

@@ -22,6 +22,7 @@ import java.util.List;
  */
 public class pictureUploadService {
 
+
     public  boolean uploadFiles(MultipartFile[] imgs, JSONObject image)throws Exception {
 
         if(imgs!=null && imgs.length>0) {
@@ -42,7 +43,7 @@ public class pictureUploadService {
     public boolean uploadOneFile(MultipartFile file, JSONObject images) throws IOException {
         String fileName = file.getOriginalFilename();
         String suffix = fileName.substring(fileName.lastIndexOf(".") + 1);
-        String allowSuffixs = "gif,jpg,jpeg,bmp,png,ico,JPG";
+        String allowSuffixs = "gif,jpg,jpeg,bmp,png,ico,JPG,PNG";
         if (allowSuffixs.indexOf(suffix) == -1) {
             images.put("resultStr", "not support the file type!");
             return false;

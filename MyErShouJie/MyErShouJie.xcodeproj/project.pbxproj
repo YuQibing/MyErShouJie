@@ -280,6 +280,7 @@
 				AD5B0B441DD098E200E39670 /* HomeViewController.swift */,
 				ADEC5A831E107F3C00C30547 /* HomepageCollectionViewCell.swift */,
 				ADEC5A851E107F5900C30547 /* HomeproductCollectionViewCell.swift */,
+				ADA133541E09D7FD00F1ABF5 /* HomeCycle.swift */,
 				AD9C6C731DE073C7009AB8EC /* HomeCycleScrollView.swift */,
 				AD9C6C751DE07891009AB8EC /* HomeCycleViewCell.swift */,
 				AD9C6C8E1DE1AC6D009AB8EC /* HomeHeadCollectionView.swift */,
@@ -302,7 +303,6 @@
 				AD2800871DD2BC7000483B8D /* ProfileSellDetails.swift */,
 				AD2800891DD2BDAA00483B8D /* ProfileBuyDetails.swift */,
 				AD28008B1DD2BE6000483B8D /* ProfileSetDetails.swift */,
-				ADA133541E09D7FD00F1ABF5 /* HomeCycle.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
