@@ -102,17 +102,4 @@ class ClassViewController: UIViewController, UITableViewDataSource, UITableViewD
             break
         }
     }
-    
-    
-    
-    
-            
-    
-    
-    
-    
-
-    
-
-
 }

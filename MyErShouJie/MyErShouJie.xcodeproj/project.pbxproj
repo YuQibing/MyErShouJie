@@ -11,6 +11,8 @@
 		AD1219DD1E4CF3EC00B1F117 /* Haneke.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD1219DC1E4CF3EC00B1F117 /* Haneke.framework */; };
 		AD1219DF1E4CF48C00B1F117 /* MJRefresh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD1219DE1E4CF48C00B1F117 /* MJRefresh.framework */; };
 		AD234B2E1E4EA28B0064F115 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD234B2D1E4EA28B0064F115 /* Constant.swift */; };
+		AD234B381E52B2C90064F115 /* ButtonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD234B371E52B2C90064F115 /* ButtonController.swift */; };
+		AD234B461E53AC000064F115 /* PostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD234B451E53AC000064F115 /* PostController.swift */; };
 		AD2800831DD2B54700483B8D /* ProfilePersonDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2800821DD2B54700483B8D /* ProfilePersonDetails.swift */; };
 		AD2800861DD2BBF600483B8D /* ProfilePostDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2800851DD2BBF600483B8D /* ProfilePostDetails.swift */; };
 		AD2800881DD2BC7000483B8D /* ProfileSellDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2800871DD2BC7000483B8D /* ProfileSellDetails.swift */; };
@@ -26,7 +28,7 @@
 		AD5B0B421DD098A800E39670 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5B0B411DD098A800E39670 /* TabBarViewController.swift */; };
 		AD5B0B451DD098E200E39670 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5B0B441DD098E200E39670 /* HomeViewController.swift */; };
 		AD5B0B471DD098F300E39670 /* ClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5B0B461DD098F300E39670 /* ClassViewController.swift */; };
-		AD5B0B491DD0990400E39670 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5B0B481DD0990400E39670 /* SearchViewController.swift */; };
+		AD5B0B491DD0990400E39670 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5B0B481DD0990400E39670 /* PostViewController.swift */; };
 		AD5B0B4B1DD0990E00E39670 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5B0B4A1DD0990E00E39670 /* ProfileViewController.swift */; };
 		AD9C6C741DE073C7009AB8EC /* HomeCycleScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9C6C731DE073C7009AB8EC /* HomeCycleScrollView.swift */; };
 		AD9C6C761DE07891009AB8EC /* HomeCycleViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9C6C751DE07891009AB8EC /* HomeCycleViewCell.swift */; };
@@ -105,6 +107,8 @@
 		AD1219DC1E4CF3EC00B1F117 /* Haneke.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Haneke.framework; path = "Pods/../build/Debug-iphoneos/Haneke/Haneke.framework"; sourceTree = "<group>"; };
 		AD1219DE1E4CF48C00B1F117 /* MJRefresh.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MJRefresh.framework; path = "../../Library/Developer/Xcode/DerivedData/MyErShouJie-dchfnaftqkodnvdaapuogdunivkn/Build/Products/Debug-iphonesimulator/MJRefresh/MJRefresh.framework"; sourceTree = "<group>"; };
 		AD234B2D1E4EA28B0064F115 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		AD234B371E52B2C90064F115 /* ButtonController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonController.swift; sourceTree = "<group>"; };
+		AD234B451E53AC000064F115 /* PostController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostController.swift; sourceTree = "<group>"; };
 		AD2800821DD2B54700483B8D /* ProfilePersonDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilePersonDetails.swift; sourceTree = "<group>"; };
 		AD2800851DD2BBF600483B8D /* ProfilePostDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilePostDetails.swift; sourceTree = "<group>"; };
 		AD2800871DD2BC7000483B8D /* ProfileSellDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileSellDetails.swift; sourceTree = "<group>"; };
@@ -126,7 +130,7 @@
 		AD5B0B411DD098A800E39670 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		AD5B0B441DD098E200E39670 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		AD5B0B461DD098F300E39670 /* ClassViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassViewController.swift; sourceTree = "<group>"; };
-		AD5B0B481DD0990400E39670 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		AD5B0B481DD0990400E39670 /* PostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		AD5B0B4A1DD0990E00E39670 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		AD9C6C731DE073C7009AB8EC /* HomeCycleScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCycleScrollView.swift; sourceTree = "<group>"; };
 		AD9C6C751DE07891009AB8EC /* HomeCycleViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCycleViewCell.swift; sourceTree = "<group>"; };
@@ -296,7 +300,9 @@
 				ADEC5A971E1097AB00C30547 /* ClassDailyCollectionViewCell.swift */,
 				ADEC5A8F1E108B0700C30547 /* ClassTraffic.swift */,
 				ADEC5A991E1097B900C30547 /* ClassTrafficCollectionViewCell.swift */,
-				AD5B0B481DD0990400E39670 /* SearchViewController.swift */,
+				AD234B371E52B2C90064F115 /* ButtonController.swift */,
+				AD5B0B481DD0990400E39670 /* PostViewController.swift */,
+				AD234B451E53AC000064F115 /* PostController.swift */,
 				AD5B0B4A1DD0990E00E39670 /* ProfileViewController.swift */,
 				AD2800821DD2B54700483B8D /* ProfilePersonDetails.swift */,
 				AD2800851DD2BBF600483B8D /* ProfilePostDetails.swift */,
@@ -514,7 +520,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD5B0B491DD0990400E39670 /* SearchViewController.swift in Sources */,
+				AD5B0B491DD0990400E39670 /* PostViewController.swift in Sources */,
 				ADEC5A881E108A7100C30547 /* ClassBook.swift in Sources */,
 				ADEC5A901E108B0700C30547 /* ClassTraffic.swift in Sources */,
 				AD5B0B4B1DD0990E00E39670 /* ProfileViewController.swift in Sources */,
@@ -534,11 +540,13 @@
 				ADEC5A921E10976C00C30547 /* ClassBookCollectionViewCell.swift in Sources */,
 				ADEC5A8E1E108AEA00C30547 /* ClassDaily.swift in Sources */,
 				AD5B0B131DD0982B00E39670 /* AppDelegate.swift in Sources */,
+				AD234B461E53AC000064F115 /* PostController.swift in Sources */,
 				ADEC5A8C1E108AD200C30547 /* ClassSports.swift in Sources */,
 				ADEC5A8A1E108AA900C30547 /* ClassElectronic.swift in Sources */,
 				ADEC5A9A1E1097B900C30547 /* ClassTrafficCollectionViewCell.swift in Sources */,
 				AD9C6C761DE07891009AB8EC /* HomeCycleViewCell.swift in Sources */,
 				AD2800881DD2BC7000483B8D /* ProfileSellDetails.swift in Sources */,
+				AD234B381E52B2C90064F115 /* ButtonController.swift in Sources */,
 				AD9C6C8F1DE1AC6D009AB8EC /* HomeHeadCollectionView.swift in Sources */,
 				ADEC5A861E107F5900C30547 /* HomeproductCollectionViewCell.swift in Sources */,
 				AD9C6C741DE073C7009AB8EC /* HomeCycleScrollView.swift in Sources */,
