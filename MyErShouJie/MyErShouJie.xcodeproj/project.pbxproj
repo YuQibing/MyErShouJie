@@ -9,10 +9,12 @@
 /* Begin PBXBuildFile section */
 		AD0F749C1DEFE8700090D6B3 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD0F749B1DEFE8700090D6B3 /* SnapKit.framework */; };
 		AD1219DD1E4CF3EC00B1F117 /* Haneke.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD1219DC1E4CF3EC00B1F117 /* Haneke.framework */; };
-		AD1219DF1E4CF48C00B1F117 /* MJRefresh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD1219DE1E4CF48C00B1F117 /* MJRefresh.framework */; };
 		AD234B2E1E4EA28B0064F115 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD234B2D1E4EA28B0064F115 /* Constant.swift */; };
 		AD234B381E52B2C90064F115 /* ButtonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD234B371E52B2C90064F115 /* ButtonController.swift */; };
 		AD234B461E53AC000064F115 /* PostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD234B451E53AC000064F115 /* PostController.swift */; };
+		AD234B891E57855D0064F115 /* DKImagePickerController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD234B871E5785220064F115 /* DKImagePickerController.framework */; };
+		AD234B8A1E57855D0064F115 /* DKImagePickerController.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AD234B871E5785220064F115 /* DKImagePickerController.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		AD234B8B1E57856B0064F115 /* MJRefresh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD1219DE1E4CF48C00B1F117 /* MJRefresh.framework */; };
 		AD2800831DD2B54700483B8D /* ProfilePersonDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2800821DD2B54700483B8D /* ProfilePersonDetails.swift */; };
 		AD2800861DD2BBF600483B8D /* ProfilePostDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2800851DD2BBF600483B8D /* ProfilePostDetails.swift */; };
 		AD2800881DD2BC7000483B8D /* ProfileSellDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2800871DD2BC7000483B8D /* ProfileSellDetails.swift */; };
@@ -91,6 +93,7 @@
 				ADBB48171DF439190046F73F /* Kingfisher.framework in Embed Frameworks */,
 				ADBB48141DF439110046F73F /* Alamofire.framework in Embed Frameworks */,
 				ADBB48191DF4391D0046F73F /* SwiftyJSON.framework in Embed Frameworks */,
+				AD234B8A1E57855D0064F115 /* DKImagePickerController.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -109,6 +112,9 @@
 		AD234B2D1E4EA28B0064F115 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		AD234B371E52B2C90064F115 /* ButtonController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonController.swift; sourceTree = "<group>"; };
 		AD234B451E53AC000064F115 /* PostController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostController.swift; sourceTree = "<group>"; };
+		AD234B821E577E350064F115 /* QBImagePickerController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QBImagePickerController.framework; path = "Pods/../build/Debug-iphoneos/QBImagePickerController/QBImagePickerController.framework"; sourceTree = "<group>"; };
+		AD234B841E577F280064F115 /* QBImagePickerController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QBImagePickerController.framework; path = "Pods/../build/Debug-iphoneos/QBImagePickerController/QBImagePickerController.framework"; sourceTree = "<group>"; };
+		AD234B871E5785220064F115 /* DKImagePickerController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DKImagePickerController.framework; path = "../../Library/Developer/Xcode/DerivedData/MyErShouJie-dchfnaftqkodnvdaapuogdunivkn/Build/Products/Debug-iphonesimulator/DKImagePickerController/DKImagePickerController.framework"; sourceTree = "<group>"; };
 		AD2800821DD2B54700483B8D /* ProfilePersonDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilePersonDetails.swift; sourceTree = "<group>"; };
 		AD2800851DD2BBF600483B8D /* ProfilePostDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilePostDetails.swift; sourceTree = "<group>"; };
 		AD2800871DD2BC7000483B8D /* ProfileSellDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileSellDetails.swift; sourceTree = "<group>"; };
@@ -165,7 +171,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD1219DF1E4CF48C00B1F117 /* MJRefresh.framework in Frameworks */,
+				AD234B8B1E57856B0064F115 /* MJRefresh.framework in Frameworks */,
 				AD1219DD1E4CF3EC00B1F117 /* Haneke.framework in Frameworks */,
 				ADBB48181DF4391D0046F73F /* SwiftyJSON.framework in Frameworks */,
 				ADBB48121DF438170046F73F /* SwiftyJSON.framework in Frameworks */,
@@ -175,6 +181,7 @@
 				ADBB48101DF4380E0046F73F /* Alamofire.framework in Frameworks */,
 				AD0F749C1DEFE8700090D6B3 /* SnapKit.framework in Frameworks */,
 				CD76BC23472005021F9B8F1E /* Pods_MyErShouJie.framework in Frameworks */,
+				AD234B891E57855D0064F115 /* DKImagePickerController.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,6 +214,9 @@
 		0778994A08FEBB20C07AE5D4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AD234B871E5785220064F115 /* DKImagePickerController.framework */,
+				AD234B841E577F280064F115 /* QBImagePickerController.framework */,
+				AD234B821E577E350064F115 /* QBImagePickerController.framework */,
 				AD1219DE1E4CF48C00B1F117 /* MJRefresh.framework */,
 				AD1219DC1E4CF3EC00B1F117 /* Haneke.framework */,
 				AD1219C91E4BD14F00B1F117 /* MJRefresh.framework */,
@@ -715,6 +725,7 @@
 					"$(PROJECT_DIR)/Pods",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/MJRefresh",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/Haneke",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/QBImagePickerController",
 				);
 				INFOPLIST_FILE = MyErShouJie/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -737,6 +748,7 @@
 					"$(PROJECT_DIR)/Pods",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/MJRefresh",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/Haneke",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/QBImagePickerController",
 				);
 				INFOPLIST_FILE = MyErShouJie/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

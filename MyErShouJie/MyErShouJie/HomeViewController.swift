@@ -76,7 +76,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
         let serverAPI = ServerAPI()
         print("-----getDataFromServer------")
-        serverAPI.list(){ jsonReturn in
+        serverAPI.list() { jsonReturn in
             
             print("JSON COUNT = ", jsonReturn.count)
             //print("JSONVALUE = ", jsonReturn)
