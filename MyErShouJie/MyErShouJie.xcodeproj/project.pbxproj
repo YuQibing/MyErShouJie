@@ -32,6 +32,7 @@
 		AD5B0B471DD098F300E39670 /* ClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5B0B461DD098F300E39670 /* ClassViewController.swift */; };
 		AD5B0B491DD0990400E39670 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5B0B481DD0990400E39670 /* PostViewController.swift */; };
 		AD5B0B4B1DD0990E00E39670 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5B0B4A1DD0990E00E39670 /* ProfileViewController.swift */; };
+		AD9199181E5CB47D00DAEAB9 /* PostPreviewImagesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9199171E5CB47D00DAEAB9 /* PostPreviewImagesCell.swift */; };
 		AD9C6C741DE073C7009AB8EC /* HomeCycleScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9C6C731DE073C7009AB8EC /* HomeCycleScrollView.swift */; };
 		AD9C6C761DE07891009AB8EC /* HomeCycleViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9C6C751DE07891009AB8EC /* HomeCycleViewCell.swift */; };
 		AD9C6C791DE088E0009AB8EC /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9C6C781DE088E0009AB8EC /* UIImage+Extension.swift */; };
@@ -138,6 +139,7 @@
 		AD5B0B461DD098F300E39670 /* ClassViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClassViewController.swift; sourceTree = "<group>"; };
 		AD5B0B481DD0990400E39670 /* PostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		AD5B0B4A1DD0990E00E39670 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		AD9199171E5CB47D00DAEAB9 /* PostPreviewImagesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostPreviewImagesCell.swift; sourceTree = "<group>"; };
 		AD9C6C731DE073C7009AB8EC /* HomeCycleScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCycleScrollView.swift; sourceTree = "<group>"; };
 		AD9C6C751DE07891009AB8EC /* HomeCycleViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCycleViewCell.swift; sourceTree = "<group>"; };
 		AD9C6C781DE088E0009AB8EC /* UIImage+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
@@ -313,6 +315,7 @@
 				AD234B371E52B2C90064F115 /* ButtonController.swift */,
 				AD5B0B481DD0990400E39670 /* PostViewController.swift */,
 				AD234B451E53AC000064F115 /* PostController.swift */,
+				AD9199171E5CB47D00DAEAB9 /* PostPreviewImagesCell.swift */,
 				AD5B0B4A1DD0990E00E39670 /* ProfileViewController.swift */,
 				AD2800821DD2B54700483B8D /* ProfilePersonDetails.swift */,
 				AD2800851DD2BBF600483B8D /* ProfilePostDetails.swift */,
@@ -562,6 +565,7 @@
 				AD9C6C741DE073C7009AB8EC /* HomeCycleScrollView.swift in Sources */,
 				AD28008C1DD2BE6000483B8D /* ProfileSetDetails.swift in Sources */,
 				AD5B0B451DD098E200E39670 /* HomeViewController.swift in Sources */,
+				AD9199181E5CB47D00DAEAB9 /* PostPreviewImagesCell.swift in Sources */,
 				AD9C6C791DE088E0009AB8EC /* UIImage+Extension.swift in Sources */,
 				ADBBB4DD1E48056700E85610 /* ServerAPI.swift in Sources */,
 				AD2800861DD2BBF600483B8D /* ProfilePostDetails.swift in Sources */,

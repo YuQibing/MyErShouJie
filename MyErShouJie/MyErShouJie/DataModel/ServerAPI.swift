@@ -35,6 +35,10 @@ class ServerAPI: NSObject {
         }
     }
     
+    func upload(){
+        
+    }
+    
 }
 //                print("value: ",value)
 //                    let json = JSON(value)

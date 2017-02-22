@@ -10,8 +10,9 @@ import UIKit
 //import QBImagePickerController
 import DKImagePickerController
 
-class PostController: UIViewController, UINavigationControllerDelegate{
+class PostController: UIViewController, UINavigationControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     var navigationBar: UINavigationBar?
+    var collectionView: UICollectionView!
     
     lazy public var UIDelegate: DKImagePickerControllerUIDelegate = {
         return DKImagePickerControllerDefaultUIDelegate()
@@ -31,8 +32,10 @@ class PostController: UIViewController, UINavigationControllerDelegate{
         navigationbar.barStyle = UIBarStyle.default
         let navigationItem = UINavigationItem()
         let dismissButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.cancel, target: self, action: #selector(PostController.dismiss as (PostController) -> () -> ()))
+        let postButton = UIBarButtonItem(title: "Post", style: UIBarButtonItemStyle.done, target: self, action: #selector(PostController.post))
         navigationItem.title = "发布"
-        navigationItem.setRightBarButton(dismissButton, animated: true)
+        navigationItem.setLeftBarButton(dismissButton, animated: true)
+        navigationItem.setRightBarButton(postButton, animated: true)
         navigationbar.pushItem(navigationItem, animated: true)
         return navigationbar
     }()
@@ -73,17 +76,32 @@ class PostController: UIViewController, UINavigationControllerDelegate{
         return selectphotobutton
     }()
 
-    private lazy var photoView: UIImageView = {
-        let photoView = UIImageView()
-        photoView.backgroundColor = UIColor.cyan
-        return photoView
+    private lazy var previewImages: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        let previewImages = UICollectionView(frame: CGRect(), collectionViewLayout: layout)
+        
+        previewImages.register(PostPreviewImagesCell.self, forCellWithReuseIdentifier: "previewimages")
+        previewImages.delegate = self
+        previewImages.dataSource = self
+        previewImages.backgroundColor = UIColor.gray
+        return previewImages
     }()
     
-    private lazy var photoView1: UIImageView = {
-        let photoView = UIImageView()
-        photoView.backgroundColor = UIColor.cyan
-        return photoView
+    private lazy var priceText: UITextField = {
+        let priceText = UITextField()
+        //titleText.borderStyle = UITextBorderStyle.bezel
+        priceText.placeholder = "你想卖多少钱"
+        return priceText
+        
+        
     }()
+    
+    private lazy var pricehorizontalLine: UIView = {
+        let pricehorizontalLine = UIView()
+        pricehorizontalLine.backgroundColor = UIColor.lightGray
+        return pricehorizontalLine
+    }()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -95,8 +113,9 @@ class PostController: UIViewController, UINavigationControllerDelegate{
         self.view.addSubview(descriptionText)
         //self.view.addSubview(takephotoButton)
         self.view.addSubview(selectphotoButton)
-        self.view.addSubview(photoView)
-        self.view.addSubview(photoView1)
+        self.view.addSubview(previewImages)
+        self.view.addSubview(priceText)
+        self.view.addSubview(pricehorizontalLine)
         
         newNavigationBar.translatesAutoresizingMaskIntoConstraints = false
         titleText.translatesAutoresizingMaskIntoConstraints = false
@@ -104,11 +123,9 @@ class PostController: UIViewController, UINavigationControllerDelegate{
         descriptionText.translatesAutoresizingMaskIntoConstraints = false
         //takephotoButton.translatesAutoresizingMaskIntoConstraints = false
         selectphotoButton.translatesAutoresizingMaskIntoConstraints = false
-        photoView.translatesAutoresizingMaskIntoConstraints = false
-        photoView1.translatesAutoresizingMaskIntoConstraints = false
-        
-        
-        
+        previewImages.translatesAutoresizingMaskIntoConstraints = false
+        priceText.translatesAutoresizingMaskIntoConstraints = false
+        pricehorizontalLine.translatesAutoresizingMaskIntoConstraints = false
     }
     override func updateViewConstraints() {
         defer { super.updateViewConstraints() }
@@ -119,15 +136,16 @@ class PostController: UIViewController, UINavigationControllerDelegate{
             "descriptionText": descriptionText,
             "newnavigationBar": newNavigationBar,
             "horizontalLine": horizontalLine,
-            "photoView": photoView,
-            "photoView1": photoView1
+            "previewImages": previewImages,
+            "priceText": priceText,
+            "pricehorizontalLine": pricehorizontalLine
             
         ] as [String : Any]
         
         let metrics = [
             "smallButtonSize": Constraints.smallButtonSize,
             "largeButtonSize": Constraints.largeButtonSize,
-            "titleTextHeight": Constraints.titleTextHeight,
+            "textHeight": Constraints.titleTextHeight,
             "descriptionTextHeight": Constraints.descriptionTextHeight,
             "horizontalLineHeight": Constraints.horizontalLineHeight,
             "sidePadding": 10,
@@ -135,17 +153,15 @@ class PostController: UIViewController, UINavigationControllerDelegate{
             "sideParentPadding": 70,
             "navigationBarWidth": ScreenWidth,
             "navigationBarHeight": 64,
+            "previewImagesHeight": 200,
             "photoViewSize": Constraints.photoViewSize
-            
-            
-
         ] as [String : Any]
         
         customConstraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:|-(0)-[newnavigationBar]-(0)-|", options:NSLayoutFormatOptions.alignAllTop, metrics: metrics, views: views))
         customConstraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "V:|-[newnavigationBar(navigationBarHeight)]", metrics: metrics, views: views))
         
         customConstraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:|-(sidePadding)-[titleText]-|",  metrics: metrics, views: views))
-        customConstraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "V:[newnavigationBar]-(sidePadding)-[titleText(titleTextHeight)]", metrics: metrics, views: views))
+        customConstraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "V:[newnavigationBar]-(sidePadding)-[titleText(textHeight)]", metrics: metrics, views: views))
         
         customConstraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:|-(sidePadding)-[horizontalLine]-|", metrics: metrics, views: views))
         customConstraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "V:[titleText]-[horizontalLine(horizontalLineHeight)]", metrics: metrics, views: views))
@@ -156,11 +172,13 @@ class PostController: UIViewController, UINavigationControllerDelegate{
         customConstraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:|-(sidePadding)-[selectphotoButton(smallButtonSize)]", metrics: metrics, views: views))
         customConstraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "V:[descriptionText]-[selectphotoButton(smallButtonSize)]", metrics: metrics, views: views))
         
-        customConstraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:|-(sidePadding)-[photoView(photoViewSize)]", metrics: metrics, views: views))
-        customConstraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "V:[selectphotoButton]-[photoView(photoViewSize)]", metrics: metrics, views: views))
+        customConstraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:|-(sidePadding)-[previewImages]-|", metrics: metrics, views: views))
+        customConstraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "V:[selectphotoButton]-[previewImages(previewImagesHeight)]", metrics: metrics, views: views))
         
-        customConstraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:[photoView]-(sidePadding)-[photoView1(photoViewSize)]", metrics: metrics, views: views))
-        customConstraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "V:[selectphotoButton]-[photoView1(photoViewSize)]", metrics: metrics, views: views))
+        customConstraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:|-(sidePadding)-[priceText]-|", metrics: metrics, views: views))
+        customConstraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "V:[previewImages]-(sidePadding)-[priceText(textHeight)]-[pricehorizontalLine(horizontalLineHeight)]", metrics: metrics, views: views))
+        
+        customConstraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:|-(sidePadding)-[pricehorizontalLine]-|", metrics: metrics, views: views))
         
         
         NSLayoutConstraint.activate(customConstraints)
@@ -179,6 +197,11 @@ class PostController: UIViewController, UINavigationControllerDelegate{
         dismiss(animated: true, completion: nil)
     }
     
+    func post() {
+        
+        
+    }
+    
 //    func takePhoto() {
 //        let takephoto = UIImagePickerController()
 //        takephoto.delegate = self
@@ -194,24 +217,53 @@ class PostController: UIViewController, UINavigationControllerDelegate{
 //        self.present(selectphoto, animated: true, completion: nil)
 //        
 //    }
-    
-    
-    
- 
+
     var assets: [DKAsset]?
     func selectPhoto() {
         let pickerController = DKImagePickerController()
-        pickerController.didSelectAssets = { (assets: [DKAsset]) in
+        pickerController.defaultSelectedAssets = self.assets
+        pickerController.didSelectAssets = { [unowned self] (assets: [DKAsset]) in
             
             self.assets = assets
-            print("images count = ", assets)
+            print("images count = ", assets.count)
+            self.previewImages.reloadData()
         }
         self.present(pickerController, animated: true, completion: nil)
         
     }
     
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.assets?.count ?? 0
+    }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 5
+    }
     
-   
-
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let layout = UICollectionViewFlowLayout()
+        layout.minimumInteritemSpacing = 10
+        
+        return CGSize(width: CGFloat((collectionView.frame.size.width / 3) - 10 ), height: CGFloat((collectionView.frame.size.width / 3)))
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+       
+        let asset = self.assets![indexPath.row]
+        
+ 
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "previewimages", for: indexPath) as! PostPreviewImagesCell
+        let imageView = cell.images! as UIImageView
+        let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        let tag = indexPath.row + 1
+        cell.tag = tag
+        asset.fetchImageWithSize(layout.itemSize.toPixel(), completeBlock: { image, info in
+            if cell.tag == tag {
+                imageView.image = image
+                print("image info", info!)
+            }
+        })
+        
+        return cell
+    }
 }
