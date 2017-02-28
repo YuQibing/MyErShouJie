@@ -89,7 +89,7 @@ public class MainController {
     public String upload(@RequestParam(value = "title") String title,
                          @RequestParam(value = "type") int type,
                          @RequestParam(value = "price") double price,
-                         @RequestParam(value = "img")MultipartFile[] files,
+                         @RequestParam(value = "image_urls")MultipartFile[] files,
                          @RequestParam(value = "description") String description,
                          @RequestParam(value = "longitude", required = false, defaultValue = "0.0") double longitude,
                          @RequestParam(value = "latitude", required = false, defaultValue = "0.0") double latitude,

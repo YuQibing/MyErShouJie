@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProfilePersonDetails: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ProfilePersonDetailsController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var dataTable:UITableView!
     var ItemString = ["昵称", "性别", "手机号"]

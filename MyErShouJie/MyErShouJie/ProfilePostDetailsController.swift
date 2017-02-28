@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProfilePostDetails: UIViewController {
+class ProfilePostDetailsController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

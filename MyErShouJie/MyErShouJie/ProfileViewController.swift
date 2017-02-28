@@ -88,27 +88,27 @@ class ProfileViewController: UIViewController,UITableViewDelegate,UITableViewDat
         
         switch indexPath.section {
         case 0:
-            let person = ProfilePersonDetails()
+            let person = ProfilePersonDetailsController()
             person.hidesBottomBarWhenPushed = true
             self.navigationController?.pushViewController(person, animated: false)
         case 1:
             if(indexPath.row == 0){
-                let issue = ProfilePostDetails()
+                let issue = ProfilePersonDetailsController()
                 issue.hidesBottomBarWhenPushed = true  //隐藏tabbar
                 self.navigationController?.pushViewController(issue, animated: false)
             }
             if(indexPath.row == 1){
-                let sell = ProfileSellDetails()
+                let sell = ProfileSellDetailsController()
                 sell.hidesBottomBarWhenPushed = true
                 self.navigationController?.pushViewController(sell, animated: false)
             }
             if(indexPath.row == 2){
-                let buy = ProfileBuyDetails()
+                let buy = ProfileBuyDetailsController()
                 buy.hidesBottomBarWhenPushed = true
                 self.navigationController?.pushViewController(buy, animated: false)
             }
         case 2:
-            let set = ProfileSetDetails()
+            let set = ProfileSetDetailsController()
             set.hidesBottomBarWhenPushed = true
             self.navigationController?.pushViewController(set, animated: false)
         default:

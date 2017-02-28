@@ -1,5 +1,5 @@
 //
-//  ProfileBuyDetails.swift
+//  ProfileSellDetails.swift
 //  MyErShouJie
 //
 //  Created by bingbing on 16/11/9.
@@ -8,11 +8,11 @@
 
 import UIKit
 
-class ProfileBuyDetails: UIViewController {
+class ProfileSellDetailsController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = "我买到的"
+        self.navigationItem.title = "我卖出的"
 
         // Do any additional setup after loading the view.
     }

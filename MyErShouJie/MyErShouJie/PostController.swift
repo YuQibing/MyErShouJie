@@ -7,12 +7,15 @@
 //
 
 import UIKit
+import SwiftyJSON
 //import QBImagePickerController
 import DKImagePickerController
-
+import Photos
 class PostController: UIViewController, UINavigationControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     var navigationBar: UINavigationBar?
     var collectionView: UICollectionView!
+    var imageUrl: NSURL?
+    
     
     lazy public var UIDelegate: DKImagePickerControllerUIDelegate = {
         return DKImagePickerControllerDefaultUIDelegate()
@@ -32,7 +35,7 @@ class PostController: UIViewController, UINavigationControllerDelegate, UICollec
         navigationbar.barStyle = UIBarStyle.default
         let navigationItem = UINavigationItem()
         let dismissButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.cancel, target: self, action: #selector(PostController.dismiss as (PostController) -> () -> ()))
-        let postButton = UIBarButtonItem(title: "Post", style: UIBarButtonItemStyle.done, target: self, action: #selector(PostController.post))
+        let postButton = UIBarButtonItem(title: "Upload", style: UIBarButtonItemStyle.done, target: self, action: #selector(PostController.upload))
         navigationItem.title = "发布"
         navigationItem.setLeftBarButton(dismissButton, animated: true)
         navigationItem.setRightBarButton(postButton, animated: true)
@@ -197,10 +200,6 @@ class PostController: UIViewController, UINavigationControllerDelegate, UICollec
         dismiss(animated: true, completion: nil)
     }
     
-    func post() {
-        
-        
-    }
     
 //    func takePhoto() {
 //        let takephoto = UIImagePickerController()
@@ -225,7 +224,7 @@ class PostController: UIViewController, UINavigationControllerDelegate, UICollec
         pickerController.didSelectAssets = { [unowned self] (assets: [DKAsset]) in
             
             self.assets = assets
-            print("images count = ", assets.count)
+            print("images count = ", assets)
             self.previewImages.reloadData()
         }
         self.present(pickerController, animated: true, completion: nil)
@@ -250,20 +249,56 @@ class PostController: UIViewController, UINavigationControllerDelegate, UICollec
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
        
         let asset = self.assets![indexPath.row]
-        
- 
+
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "previewimages", for: indexPath) as! PostPreviewImagesCell
         let imageView = cell.images! as UIImageView
-        let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
-        let tag = indexPath.row + 1
-        cell.tag = tag
-        asset.fetchImageWithSize(layout.itemSize.toPixel(), completeBlock: { image, info in
-            if cell.tag == tag {
-                imageView.image = image
-                print("image info", info!)
-            }
+        asset.fetchFullScreenImage(false, completeBlock: { image, info in
+            
+            print("images = ", info!)
+            self.imageUrl = info!["PHImageFileURLKey"] as? NSURL
+            //print("imageUrl = ", imageUrl)
+            imageView.image = image
+            
         })
-        
         return cell
     }
+    
+    
+    func upload() {
+        let serverAPI = ServerAPI()
+        let paramsTitleValue = titleText.text!
+        let paramsDescriptionValue = descriptionText.text!
+        let paramsPriceValue = priceText.text!
+        let paramsImageUrl = String(describing: imageUrl)
+        
+        
+        //        let params: [String:Any] = ["title": paramsTitleValue, "price":paramsPriceValue, "descriptiong":paramsDescriptionValue]
+        let params: [String:String] = ["title": paramsTitleValue, "price": paramsPriceValue, "description": paramsDescriptionValue, "image_urls": paramsImageUrl, "type": "1" ]
+        print("--------params = ------", params)
+//        serverAPI.upLoad(params: params as! [String : String], data: imageArrayData, name: imageArrayName, success: { response in
+//            let json = JSON(response)
+//            //            guard json["RET_CODE"] == "000000" else{
+//            //                return self.showHint(in: self.view, hint: json["RET_DESC"].stringValue)
+//            //
+//            //            }
+//            //self.showHintInKeywindow(hint: "照片上传成功！")
+//        }, failure: { error in
+//            print(error)
+//        })
+        serverAPI.upLoad(params: params, success: { response in
+            let json = JSON(response)
+            print("return json = ", json)
+            //            guard json["RET_CODE"] == "000000" else{
+            //                return self.showHint(in: self.view, hint: json["RET_DESC"].stringValue)
+            //
+            //            }
+            //self.showHintInKeywindow(hint: "照片上传成功！")
+        }, failure: { error in
+            print("return error = ", error)
+        })
+        
+        
+    }
+    
+    
 }

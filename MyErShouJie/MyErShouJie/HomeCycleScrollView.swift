@@ -59,8 +59,7 @@ extension HomeCycleScrollView {
     fileprivate func setupUI(){
         //数据
         imageArray = [String]()
-        for i in 0..<count{
-            
+        for i in 0..<count {
             imageArray?.append("scroll\(i+1)")
         }
         

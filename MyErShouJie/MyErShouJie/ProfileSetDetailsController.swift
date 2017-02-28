@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProfileSetDetails: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ProfileSetDetailsController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     var dataTable:UITableView!
     var ItemString = ["登录", "注册"]

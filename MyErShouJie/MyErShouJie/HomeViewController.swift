@@ -23,7 +23,8 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     convenience init(){
         self.init(nibName:nil, bundle:nil)
         
-        getDataFromServer()            
+        
+        getDataFromServer()
     }
     
     override func viewDidLoad() {
@@ -43,7 +44,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         self.collectionView!.mj_header = header
         self.view.addSubview(collectionView!)
         
-        refreshData()
+    //    refreshData()
     }
     
     override func didReceiveMemoryWarning() {
@@ -52,10 +53,10 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     func refreshData(){
-        
-        self.collectionView.reloadData()
-        self.collectionView!.mj_header.endRefreshing()
-        
+        if self.collectionView != nil {
+            self.collectionView.reloadData()
+            self.collectionView!.mj_header.endRefreshing()
+        }
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -65,7 +66,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     
     func  collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if section == 0{
+        if section == 0 {
             return 1
         }else{
             return self.productArray.count
@@ -92,6 +93,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
                 do {
                     let imgUrlsJson = try JSONSerialization.jsonObject(with: imgUrlsText!, options: .mutableContainers)
                     if let imageUrlsJson = imgUrlsJson as? [String:Any] {
+                        
                         print("imageUrlsJson = ", imageUrlsJson)
                         imageUrlsJsonArray = imageUrlsJson["ImageUrls"] as! [Any]
                         
@@ -123,15 +125,11 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
 //                print("jsonReturn =", oneProductJson["image_urls"].string)
             }
             print("productArrayCount = ", self.productArray.count)
-            
+            self.refreshData()
         }
+        
     }
-    
-    
-    
-    
-    
-    
+ 
      func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.section == 0 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "page", for: indexPath) as! HomeCycle
@@ -152,13 +150,29 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             cell.titleLabel!.text = product.title
             cell.priceLabel!.text = String(describing: (product.price)!)
             cell.readLabel!.text = String(describing: (product.type)!)
+            
             return cell
         }
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        var product = Product()
+        product = productArray[indexPath.row]
+        
+        let productDetail = HomeProductDetailsController()
+        productDetail.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(productDetail, animated: true)
+        
+        productDetail.productTitle = product.title!
+        productDetail.productPrice = product.price!
+        productDetail.productDescription = product.descriptions!
+ 
+        print("indexpath row = ", product.descriptions!)
+ 
+    }
     
     
-    
+ 
 }
     
    
