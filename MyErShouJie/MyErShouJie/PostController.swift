@@ -8,13 +8,13 @@
 
 import UIKit
 import SwiftyJSON
-//import QBImagePickerController
 import DKImagePickerController
 import Photos
 class PostController: UIViewController, UINavigationControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     var navigationBar: UINavigationBar?
     var collectionView: UICollectionView!
     var imageUrl: NSURL?
+    var assets: [DKAsset]?
     
     
     lazy public var UIDelegate: DKImagePickerControllerUIDelegate = {
@@ -217,7 +217,7 @@ class PostController: UIViewController, UINavigationControllerDelegate, UICollec
 //        
 //    }
 
-    var assets: [DKAsset]?
+    
     func selectPhoto() {
         let pickerController = DKImagePickerController()
         pickerController.defaultSelectedAssets = self.assets

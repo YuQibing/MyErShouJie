@@ -30,7 +30,7 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
         collection = UICollectionView(frame: CGRect(x: 0, y: 0, width: ScreenWidth, height: ScreenHeight), collectionViewLayout: layout)
         layout.itemSize = CGSize(width: (ScreenWidth-10)/2, height: 250)
         collection?.register(CategoryCollectionViewCell.self, forCellWithReuseIdentifier: "category")
-        
+        collection.backgroundColor = UIColor.white
         collection?.delegate = self
         collection?.dataSource = self
         self.view.addSubview(collection!)
@@ -152,7 +152,7 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
         var product = Product()
         product = productArray[indexPath.row]
         
-        let productDetail = HomeProductDetailsController()
+        let productDetail = ProductDetailsController()
         productDetail.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(productDetail, animated: true)
         

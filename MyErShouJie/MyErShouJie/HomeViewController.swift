@@ -39,8 +39,8 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         collectionView.register(HomeproductCollectionViewCell.self, forCellWithReuseIdentifier: "product")
         collectionView.dataSource = self
         collectionView.delegate = self
+        collectionView.backgroundColor = UIColor.white
         layout.itemSize = CGSize(width: (UIScreen.main.bounds.width-10)/2, height: 250)
-        
         self.collectionView!.mj_header = header
         self.view.addSubview(collectionView!)
         
@@ -155,24 +155,35 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         }
     }
     
+//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        var product = Product()
+//        product = productArray[indexPath.row]
+//        
+//        let productDetail = ProductDetailsController()
+//        productDetail.hidesBottomBarWhenPushed = true
+//        self.navigationController?.pushViewController(productDetail, animated: true)
+//        
+//        productDetail.productTitle = product.title!
+//        productDetail.productPrice = product.price!
+//        productDetail.productDescription = product.descriptions!
+//        productDetail.imagesUrl = product.image_urls!
+//        print("indexpath row = ", product.descriptions!)
+//    }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         var product = Product()
         product = productArray[indexPath.row]
         
-        let productDetail = HomeProductDetailsController()
-        productDetail.hidesBottomBarWhenPushed = true
-        self.navigationController?.pushViewController(productDetail, animated: true)
+        let productWebView = ProductWebViewController()
+        productWebView.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(productWebView, animated: true)
         
-        productDetail.productTitle = product.title!
-        productDetail.productPrice = product.price!
-        productDetail.productDescription = product.descriptions!
- 
-        print("indexpath row = ", product.descriptions!)
- 
+//        productDetail.productTitle = product.title!
+//        productDetail.productPrice = product.price!
+//        productDetail.productDescription = product.descriptions!
+//        productDetail.imagesUrl = product.image_urls!
+//        print("indexpath row = ", product.descriptions!)
     }
-    
-    
- 
 }
     
    

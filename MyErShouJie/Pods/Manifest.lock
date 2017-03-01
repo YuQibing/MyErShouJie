@@ -8,7 +8,6 @@ PODS:
   - Haneke (1.0.2)
   - Kingfisher (3.2.1)
   - MJRefresh (3.1.12)
-  - QBImagePickerController (3.4.0)
   - SnapKit (3.0.2)
   - SwiftyJSON (3.1.3)
 
@@ -18,7 +17,6 @@ DEPENDENCIES:
   - Haneke (~> 1.0.2)
   - Kingfisher (~> 3.2.1)
   - MJRefresh (~> 3.1.12)
-  - QBImagePickerController (~> 3.4.0)
   - SnapKit (~> 3.0.2)
   - SwiftyJSON (~> 3.1.3)
 
@@ -28,10 +26,9 @@ SPEC CHECKSUMS:
   Haneke: 01454a67322faa0dd9d81fc0f447885044e71521
   Kingfisher: 64ef28c6d3d6f344e3ae2d7f5c9da80439505d99
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
-  QBImagePickerController: d54cf93db6decf26baf6ed3472f336ef35cae022
   SnapKit: 2e456761aa92d4d4067a7a5594c18769d451a8ad
   SwiftyJSON: 38a8ea2006779c0fc4c310cb2ee8195327740faf
 
-PODFILE CHECKSUM: 993d5d932f5c26e3b5fa84405d5fe40b3b52771a
+PODFILE CHECKSUM: 4d1581cddb19aff44e0615fa95d6542bc886ac1c
 
 COCOAPODS: 1.1.1
