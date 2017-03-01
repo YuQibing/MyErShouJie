@@ -20,10 +20,9 @@ class ProductWebViewController: UIViewController, UIWebViewDelegate {
         let webview = UIWebView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
         self.view.addSubview(webview)
         webview.loadRequest(urlrequest)
+        
         // Do any additional setup after loading the view.
     }
-    
-    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

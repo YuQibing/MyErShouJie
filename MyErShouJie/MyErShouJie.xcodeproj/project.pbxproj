@@ -12,8 +12,6 @@
 		AD234B2E1E4EA28B0064F115 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD234B2D1E4EA28B0064F115 /* Constant.swift */; };
 		AD234B381E52B2C90064F115 /* ButtonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD234B371E52B2C90064F115 /* ButtonController.swift */; };
 		AD234B461E53AC000064F115 /* PostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD234B451E53AC000064F115 /* PostController.swift */; };
-		AD234B891E57855D0064F115 /* DKImagePickerController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD234B871E5785220064F115 /* DKImagePickerController.framework */; };
-		AD234B8A1E57855D0064F115 /* DKImagePickerController.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AD234B871E5785220064F115 /* DKImagePickerController.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AD234B8B1E57856B0064F115 /* MJRefresh.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD1219DE1E4CF48C00B1F117 /* MJRefresh.framework */; };
 		AD2432331E664BCA009234DC /* ProductDetailsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2432321E664BCA009234DC /* ProductDetailsCollectionViewCell.swift */; };
 		AD2432381E6735F9009234DC /* ProductWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2432371E6735F9009234DC /* ProductWebViewController.swift */; };
@@ -43,12 +41,6 @@
 		AD9C6C931DE1DC80009AB8EC /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9C6C921DE1DC80009AB8EC /* UIImageView+Extension.swift */; };
 		AD9C6C951DE1E090009AB8EC /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9C6C941DE1E090009AB8EC /* UILabel+Extension.swift */; };
 		ADA133551E09D7FD00F1ABF5 /* HomeCycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA133541E09D7FD00F1ABF5 /* HomeCycle.swift */; };
-		ADBB48131DF439110046F73F /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBB48081DF435FE0046F73F /* Alamofire.framework */; };
-		ADBB48141DF439110046F73F /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ADBB48081DF435FE0046F73F /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		ADBB48161DF439190046F73F /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBB480A1DF436060046F73F /* Kingfisher.framework */; };
-		ADBB48171DF439190046F73F /* Kingfisher.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ADBB480A1DF436060046F73F /* Kingfisher.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		ADBB48181DF4391D0046F73F /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBB480C1DF4360E0046F73F /* SwiftyJSON.framework */; };
-		ADBB48191DF4391D0046F73F /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ADBB480C1DF4360E0046F73F /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		ADBBB4DB1E48014900E85610 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBBB4DA1E48014900E85610 /* Product.swift */; };
 		ADBBB4DD1E48056700E85610 /* ServerAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBBB4DC1E48056700E85610 /* ServerAPI.swift */; };
 		ADE878191E64D06200A527E6 /* ProductDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE878181E64D06200A527E6 /* ProductDetailsController.swift */; };
@@ -75,23 +67,6 @@
 			remoteInfo = MyErShouJie;
 		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		ADBB48151DF439110046F73F /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				ADBB48171DF439190046F73F /* Kingfisher.framework in Embed Frameworks */,
-				ADBB48141DF439110046F73F /* Alamofire.framework in Embed Frameworks */,
-				ADBB48191DF4391D0046F73F /* SwiftyJSON.framework in Embed Frameworks */,
-				AD234B8A1E57855D0064F115 /* DKImagePickerController.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		467604BF395531271F0BEA7C /* libPods-MyErShouJieTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MyErShouJieTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -162,12 +137,8 @@
 			files = (
 				AD234B8B1E57856B0064F115 /* MJRefresh.framework in Frameworks */,
 				AD1219DD1E4CF3EC00B1F117 /* Haneke.framework in Frameworks */,
-				ADBB48181DF4391D0046F73F /* SwiftyJSON.framework in Frameworks */,
-				ADBB48161DF439190046F73F /* Kingfisher.framework in Frameworks */,
-				ADBB48131DF439110046F73F /* Alamofire.framework in Frameworks */,
 				AD0F749C1DEFE8700090D6B3 /* SnapKit.framework in Frameworks */,
 				CD76BC23472005021F9B8F1E /* Pods_MyErShouJie.framework in Frameworks */,
-				AD234B891E57855D0064F115 /* DKImagePickerController.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,7 +309,6 @@
 				AD5B0B0D1DD0982B00E39670 /* Resources */,
 				02BD5FE0E175C1D912F72608 /* [CP] Embed Pods Frameworks */,
 				0E92CADA1C0505C3A5CEF960 /* [CP] Copy Pods Resources */,
-				ADBB48151DF439110046F73F /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -696,7 +666,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9665182C5DC775E086232937 /* Pods-MyErShouJie.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 52R94S6J8U;
@@ -721,7 +690,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5DEBD8417D0F983324339EB8 /* Pods-MyErShouJie.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 52R94S6J8U;

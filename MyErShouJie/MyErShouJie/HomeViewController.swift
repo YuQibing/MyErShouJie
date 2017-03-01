@@ -128,6 +128,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             self.refreshData()
         }
     }
+    
  
      func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.section == 0 {
