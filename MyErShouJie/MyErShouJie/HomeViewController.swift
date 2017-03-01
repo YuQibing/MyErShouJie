@@ -171,18 +171,20 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
 //    }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        var product = Product()
-        product = productArray[indexPath.row]
+        
         
         let productWebView = ProductWebViewController()
         productWebView.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(productWebView, animated: true)
         
+//        var product = Product()
+//        product = productArray[indexPath.row]
 //        productDetail.productTitle = product.title!
 //        productDetail.productPrice = product.price!
 //        productDetail.productDescription = product.descriptions!
 //        productDetail.imagesUrl = product.image_urls!
 //        print("indexpath row = ", product.descriptions!)
+        
     }
 }
     

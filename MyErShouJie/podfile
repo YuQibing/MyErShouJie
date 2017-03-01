@@ -21,9 +21,6 @@ use_frameworks!
 pod 'Haneke', '~> 1.0.2'
 
 use_frameworks!
-pod 'QBImagePickerController', '~> 3.4.0'
-
-use_frameworks!
 pod 'DKImagePickerController', '~> 3.4.2'
 
 end
