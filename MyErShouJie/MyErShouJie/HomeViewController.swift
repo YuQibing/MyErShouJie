@@ -127,7 +127,6 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             print("productArrayCount = ", self.productArray.count)
             self.refreshData()
         }
-        
     }
  
      func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
