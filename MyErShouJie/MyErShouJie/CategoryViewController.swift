@@ -37,17 +37,6 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
         self.collection!.mj_header = header
     }
     
-    func alertView(){
-        let alertController = UIAlertController(title: "",
-                                                message: "该类物品暂时还没有", preferredStyle: .alert)
-        let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
-        let okAction = UIAlertAction(title: "好的", style: .default, handler: {
-            action in
-        })
-        alertController.addAction(cancelAction)
-        alertController.addAction(okAction)
-        self.present(alertController, animated: true, completion: nil)
-    }
     
     func refreshData(){
         if self.collection != nil {
@@ -58,13 +47,14 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
     
     func getDataFromServer(){
         let serverAPI = ServerAPI()
+        let alertCategory = Alert()
         print("-----getDataFromServer------")
         serverAPI.listByType(type: type) { jsonReturn in
             
             print("JSON COUNT = ", jsonReturn.count)
             //print("JSONVALUE = ", jsonReturn)
             if  jsonReturn.count == 0 {
-                self.alertView()
+                alertCategory.alertView(message: "该类物品暂时还没有", okActionTitle: "好的", fromViewController: self, dismissParentViewController: false)
 
             } else {
                 for index in 0...jsonReturn.count-1 {

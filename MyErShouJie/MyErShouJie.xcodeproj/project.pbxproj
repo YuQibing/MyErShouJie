@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AD0F749C1DEFE8700090D6B3 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD0F749B1DEFE8700090D6B3 /* SnapKit.framework */; };
+		AD1890131E68856800BACBF7 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1890121E68856800BACBF7 /* Alert.swift */; };
 		AD234B2E1E4EA28B0064F115 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD234B2D1E4EA28B0064F115 /* Constant.swift */; };
 		AD234B381E52B2C90064F115 /* ButtonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD234B371E52B2C90064F115 /* ButtonController.swift */; };
 		AD234B461E53AC000064F115 /* PostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD234B451E53AC000064F115 /* PostController.swift */; };
@@ -74,6 +75,7 @@
 		9665182C5DC775E086232937 /* Pods-MyErShouJie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyErShouJie.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyErShouJie/Pods-MyErShouJie.debug.xcconfig"; sourceTree = "<group>"; };
 		AD0F749B1DEFE8700090D6B3 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = "../../Library/Developer/Xcode/DerivedData/MyErShouJie-dchfnaftqkodnvdaapuogdunivkn/Build/Products/Debug-iphonesimulator/SnapKit/SnapKit.framework"; sourceTree = "<group>"; };
 		AD1219DE1E4CF48C00B1F117 /* MJRefresh.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MJRefresh.framework; path = "../../Library/Developer/Xcode/DerivedData/MyErShouJie-dchfnaftqkodnvdaapuogdunivkn/Build/Products/Debug-iphonesimulator/MJRefresh/MJRefresh.framework"; sourceTree = "<group>"; };
+		AD1890121E68856800BACBF7 /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		AD234B2D1E4EA28B0064F115 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		AD234B371E52B2C90064F115 /* ButtonController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonController.swift; sourceTree = "<group>"; };
 		AD234B451E53AC000064F115 /* PostController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostController.swift; sourceTree = "<group>"; };
@@ -286,6 +288,7 @@
 				ADBBB4DA1E48014900E85610 /* Product.swift */,
 				ADBBB4DC1E48056700E85610 /* ServerAPI.swift */,
 				AD234B2D1E4EA28B0064F115 /* Constant.swift */,
+				AD1890121E68856800BACBF7 /* Alert.swift */,
 			);
 			path = DataModel;
 			sourceTree = "<group>";
@@ -496,6 +499,7 @@
 				AD234B461E53AC000064F115 /* PostController.swift in Sources */,
 				ADE878191E64D06200A527E6 /* ProductDetailsController.swift in Sources */,
 				AD9C6C761DE07891009AB8EC /* HomeCycleViewCell.swift in Sources */,
+				AD1890131E68856800BACBF7 /* Alert.swift in Sources */,
 				AD2800881DD2BC7000483B8D /* ProfileSellDetailsController.swift in Sources */,
 				AD234B381E52B2C90064F115 /* ButtonController.swift in Sources */,
 				AD9C6C8F1DE1AC6D009AB8EC /* HomeHeadCollectionView.swift in Sources */,
@@ -667,8 +671,26 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Pods",
 				);
+				GCC_OPTIMIZATION_LEVEL = 0;
 				INFOPLIST_FILE = MyErShouJie/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_CFLAGS = (
+					"$(inherited)",
+					"-iquote",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/Alamofire/Alamofire.framework/Headers\"",
+					"-iquote",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/DKImagePickerController/DKImagePickerController.framework/Headers\"",
+					"-iquote",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/Haneke/Haneke.framework/Headers\"",
+					"-iquote",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/Kingfisher/Kingfisher.framework/Headers\"",
+					"-iquote",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/MJRefresh/MJRefresh.framework/Headers\"",
+					"-iquote",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/SnapKit/SnapKit.framework/Headers\"",
+					"-iquote",
+					"\"$PODS_CONFIGURATION_BUILD_DIR/SwiftyJSON/SwiftyJSON.framework/Headers\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = cn.yuqibing.MyErShouJie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/Pods/MJRefresh/Header.h";

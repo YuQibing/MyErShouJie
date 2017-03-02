@@ -9,10 +9,10 @@
 import Foundation
 
 
-#if TARGET_IPHONE_SIMULATOR
-let baseUrl = "http://localhost:8080"
+#if true
+let baseUrl = "http://localhost:8080/er"
 #else
-let baseUrl = "http://192.168.1.110:8080"
+let baseUrl = "http://192.168.1.102:8080"
 #endif
 
 

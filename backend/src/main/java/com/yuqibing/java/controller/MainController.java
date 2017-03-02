@@ -141,7 +141,7 @@ public class MainController {
     }
 
     private int InsertdatatoDB(Product product){
-        pictureUploadService pictureservice = new pictureUploadService();
+        //pictureUploadService pictureservice = new pictureUploadService();
 
         System.out.println("===========insertData========");
 

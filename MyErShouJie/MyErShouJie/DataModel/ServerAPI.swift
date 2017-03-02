@@ -16,7 +16,7 @@ class ServerAPI: NSObject {
     func list(completion : @escaping (JSON) -> ()){
         var json: JSON = []
         let str = "*"
-        let url = URL(string: baseUrl+"/ershoujie/list?searchKeyWords="+str)!
+        let url = URL(string: baseUrl+"/list?searchKeyWords="+str)!
         print("----ServerAPI list:-------", url)
         
         Alamofire.request(url).responseJSON{ response in
@@ -33,7 +33,7 @@ class ServerAPI: NSObject {
     func listByType(type: Int, completion : @escaping (JSON) -> ()){
         var json: JSON = []
         let str = "*&type="+String(type+1)
-        let url = URL(string: baseUrl+"/ershoujie/list?searchKeyWords="+str)!
+        let url = URL(string: baseUrl+"/list?searchKeyWords="+str)!
         print("----ServerAPI list:-------", url)
         
         Alamofire.request(url).responseJSON{ response in
@@ -49,26 +49,28 @@ class ServerAPI: NSObject {
         }
     }
 
-    func upLoad(params:[String:String], success: @escaping (_ response : [String : AnyObject])->(),
+    func upLoad(params:[String:String], paramsImageUrls:Array<String>, success: @escaping (_ response : [String : AnyObject])->(),
                             failure : @escaping (_ error : Error)->()){
-        let url = URL(string: baseUrl+"/ershoujie/upload")!
+        let url = URL(string: baseUrl+"/upload")!
+        print("uploadURL======= ", url)
         let headers = ["content-type":"multipart/form-data"]
+        //print("params iamge_ruls", params["image_urls"]!)
+        
+        
+        
         Alamofire.upload(
             multipartFormData: { multipartFormData in
-                let uiimage = UIImage(contentsOfFile: "/Users/yuqibing/Library/Developer/CoreSimulator/Devices/AF04C24B-5660-4E27-86D2-4AB808D7676D/data/Media/DCIM/100APPLE/IMG_0002.JPG")
-
-                let imagedata = UIImageJPEGRepresentation(uiimage!, 0.3)
-                let imagename = "ImageName.png"
-                print("imagedata = ", imagedata!)
-                //let paramsImagesUrl = params["image_urls"]
-                
+                print("paramsAll =====", params)
                 multipartFormData.append((params["title"]?.data(using: String.Encoding.utf8)!)!, withName: "title")
                 multipartFormData.append((params["description"]?.data(using: String.Encoding.utf8)!)!, withName: "description")
                 multipartFormData.append((params["price"]?.data(using: String.Encoding.utf8)!)!, withName: "price")
                 multipartFormData.append((params["type"]?.data(using: String.Encoding.utf8)!)!, withName: "type")
-                //multipartFormData.append((paramsImagesUrl?.data(using: String.Encoding.utf8)!)!, withName: "image_urls")
-                multipartFormData.append(imagedata!, withName: "image_urls", fileName: imagename, mimeType: "image/png")
-        },
+                for index in 0...paramsImageUrls.count - 1 {
+                    let uiimage = UIImage(contentsOfFile: paramsImageUrls[index])
+                    let imagedata = UIImageJPEGRepresentation(uiimage!, 0.1)
+                    multipartFormData.append(imagedata!, withName: "image_urls", fileName: "ImageName.JPG", mimeType: "image/jpeg")
+                }
+            },
             to: url,
             headers: headers,
             encodingCompletion: { encodingResult in

@@ -13,7 +13,7 @@ import Photos
 class PostController: UIViewController, UINavigationControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     var navigationBar: UINavigationBar?
     var collectionView: UICollectionView!
-    var imageUrl: NSURL?
+    var imageUrls: Array<String>!
     var assets: [DKAsset]?
     
     
@@ -46,6 +46,7 @@ class PostController: UIViewController, UINavigationControllerDelegate, UICollec
         let titleText = UITextField()
         //titleText.borderStyle = UITextBorderStyle.bezel
         titleText.placeholder = "标题 物品的品牌型号"
+        titleText.text = "title"
         return titleText
     }()
     private lazy var horizontalLine: UIView = {
@@ -59,7 +60,7 @@ class PostController: UIViewController, UINavigationControllerDelegate, UICollec
         //descriptionText.layer.borderWidth = 0.5
         descriptiontext.layer.borderColor = UIColor.gray.cgColor
         descriptiontext.font = UIFont.systemFont(ofSize: 16)
-        descriptiontext.text = "物品描述"
+        descriptiontext.text = "1"
         return descriptiontext
     }()
 //    private lazy var takephotoButton: UIButton = {
@@ -94,6 +95,7 @@ class PostController: UIViewController, UINavigationControllerDelegate, UICollec
         let priceText = UITextField()
         //titleText.borderStyle = UITextBorderStyle.bezel
         priceText.placeholder = "你想卖多少钱"
+        priceText.text = "100"
         return priceText
         
         
@@ -255,8 +257,13 @@ class PostController: UIViewController, UINavigationControllerDelegate, UICollec
         asset.fetchFullScreenImage(false, completeBlock: { image, info in
             
             print("images = ", info!)
-            self.imageUrl = info!["PHImageFileURLKey"] as? NSURL
-            //print("imageUrl = ", imageUrl)
+            if self.imageUrls == nil {
+                self.imageUrls = Array<String>()
+            }
+            let ImageUrlValue = info!["PHImageFileURLKey"] as! NSURL
+            let ImageUrlString = ImageUrlValue.absoluteString?.replacingOccurrences(of: "file://", with: "")
+
+            self.imageUrls?.append(ImageUrlString!)
             imageView.image = image
             
         })
@@ -264,37 +271,40 @@ class PostController: UIViewController, UINavigationControllerDelegate, UICollec
     }
     
     
+    
     func upload() {
         let serverAPI = ServerAPI()
         let paramsTitleValue = titleText.text!
         let paramsDescriptionValue = descriptionText.text!
         let paramsPriceValue = priceText.text!
-        let paramsImageUrl = String(describing: imageUrl)
+        let alertView = Alert()
+        print("pricetext = ", priceText.text!)
+        var alertMessage = ""
+        if (titleText.text! == "") {
+            alertMessage = "标题"
+        } else if (priceText.text! == "") {
+            alertMessage = "价格"
+        } else if (descriptionText.text! == "") {
+            alertMessage = "物品描述"
+        } else if (self.imageUrls == nil) {
+            alertMessage = "图片"
+        }
         
-        
-        //        let params: [String:Any] = ["title": paramsTitleValue, "price":paramsPriceValue, "descriptiong":paramsDescriptionValue]
-        let params: [String:String] = ["title": paramsTitleValue, "price": paramsPriceValue, "description": paramsDescriptionValue, "image_urls": paramsImageUrl, "type": "1" ]
-        print("--------params = ------", params)
-//        serverAPI.upLoad(params: params as! [String : String], data: imageArrayData, name: imageArrayName, success: { response in
-//            let json = JSON(response)
-//            //            guard json["RET_CODE"] == "000000" else{
-//            //                return self.showHint(in: self.view, hint: json["RET_DESC"].stringValue)
-//            //
-//            //            }
-//            //self.showHintInKeywindow(hint: "照片上传成功！")
-//        }, failure: { error in
-//            print(error)
-//        })
-        serverAPI.upLoad(params: params, success: { response in
+        if alertMessage != "" {
+            alertView.alertView(message: alertMessage+"不能为空", okActionTitle: "好的", fromViewController: self, dismissParentViewController: false)
+            return
+        }
+        let params: [String:String] = ["title": paramsTitleValue, "price": paramsPriceValue, "description": paramsDescriptionValue, "type": "1" ]
+
+        serverAPI.upLoad(params: params,paramsImageUrls: imageUrls!, success: { response in
             let json = JSON(response)
             print("return json = ", json)
-            //            guard json["RET_CODE"] == "000000" else{
-            //                return self.showHint(in: self.view, hint: json["RET_DESC"].stringValue)
-            //
-            //            }
-            //self.showHintInKeywindow(hint: "照片上传成功！")
+            let alertUploadSuccess = Alert()
+            alertUploadSuccess.alertView(message: "上传成功", okActionTitle: "好的", fromViewController: self, dismissParentViewController: true)
         }, failure: { error in
             print("return error = ", error)
+            let alertUploadFailure = Alert()
+            alertUploadFailure.alertView(message: "上传失败", okActionTitle: "好的", fromViewController: self, dismissParentViewController: false)
         })
         
         
