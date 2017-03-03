@@ -10,7 +10,7 @@ import Foundation
 
 
 #if true
-let baseUrl = "http://localhost:8080/er"
+let baseUrl = "http://localhost:8080"
 #else
 let baseUrl = "http://192.168.1.102:8080"
 #endif

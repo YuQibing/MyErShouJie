@@ -14,8 +14,9 @@ class ProductWebViewController: UIViewController, UIWebViewDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let url = URL(string: "https://www.baidu.com")
-        let urlrequest = URLRequest(url: url!)
+        //let url = URL(string: "https://www.baidu.com")
+        let path = Bundle.main.resourcePath! + "/productDetail.html"
+        let urlrequest = URLRequest(url: URL(string: path)!)
         
         let webview = UIWebView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
         self.view.addSubview(webview)
@@ -29,6 +30,46 @@ class ProductWebViewController: UIViewController, UIWebViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    func setProductDetail(title: String, description: String, imageUrls: [String], price: String){
+        
+        let tempPath = Bundle.main.resourcePath! + "/productDetailTemp.html"
+        let viewPath = Bundle.main.resourcePath! + "/productDetail.html"
+        let data = NSMutableData()
+        var productDetailNewWebString = String()
+        //var productDetailNewWebString = ""
+//        data.append("hello".data(using: String.Encoding.utf8, allowLossyConversion:true)!)
+//        data.write(toFile: path, atomically: true)
+        
+        
+        if let readData = NSData(contentsOfFile: tempPath) {
+            let productDetailWebString = String(data: readData as Data, encoding: String.Encoding(rawValue: String.Encoding.utf8.rawValue))!
+            print("productDetailWebString:", productDetailWebString)
+            
+            
+            productDetailNewWebString = productDetailWebString.replacingOccurrences(of: "TITLE_VALUE", with: title)
+            productDetailNewWebString = productDetailNewWebString.replacingOccurrences(of: "PRICE_VALUE", with: price)
+            productDetailNewWebString = productDetailNewWebString.replacingOccurrences(of: "DESCRIPTION_VALUE", with: description)
+           
+            var imageSrc = String()
+            for index in 0...imageUrls.count - 1 {
+                let imageUrl = imageUrls[index]
+                
+                imageSrc += " <img style= \"width: 100%\" src=\""+imageUrl+"\"> "
+                
+                print("imageSrc", imageSrc)
+                
+            }
+                productDetailNewWebString = productDetailNewWebString.replacingOccurrences(of: "IMAGURLS_VALUE", with: imageSrc)
+            
+            print("productDetailNewWebString", productDetailNewWebString)
+            data.append(productDetailNewWebString.data(using: String.Encoding.utf8, allowLossyConversion: true)!)
+            data.write(toFile: viewPath, atomically: true)
+        }
+        
+        
+    }
+}
+    
 
     /*
     // MARK: - Navigation
@@ -40,4 +81,4 @@ class ProductWebViewController: UIViewController, UIWebViewDelegate {
     }
     */
 
-}
+

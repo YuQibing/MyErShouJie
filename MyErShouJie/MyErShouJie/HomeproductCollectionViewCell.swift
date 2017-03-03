@@ -10,43 +10,78 @@ import UIKit
 
 class HomeproductCollectionViewCell: UICollectionViewCell {
     let width = UIScreen.main.bounds.size.width
-    var imgView : UIImageView?
-    var titleLabel:UILabel?
-    var priceLabel:UILabel?
-    var descriptionLabel:UILabel?
-    var readLabel:UILabel?
+//    var imgView : UIImageView?
+//    var titleLabel:UILabel?
+//    var priceLabel:UILabel?
+//    var descriptionLabel:UILabel?
+//    var readLabel:UILabel?
+    
+    private var customConstraints: [NSLayoutConstraint] = []
+
+    public lazy var imageView: UIImageView = {
+    
+        let imageView = UIImageView()
+        imageView.frame = CGRect(x: 0, y: 0, width: (UIScreen.main.bounds.width-10)/2, height: 200)
+        return imageView
+    }()
+    
+    public lazy var titleLabel: UILabel = {
+        let titleLabel = UILabel()
+        return titleLabel
+    }()
+    
+    public lazy var priceLabel: UILabel = {
+        let priceLabel = UILabel()
+        priceLabel.textAlignment = NSTextAlignment.right
+        return priceLabel
+    }()
+    
+    public lazy var descriptionLabel: UILabel = {
+        let descriptionLabel = UILabel()
+        return descriptionLabel
+    }()
     
     override init(frame: CGRect){
         super.init(frame: frame)
         
-        imgView = UIImageView(frame: CGRect(x: 0, y: 0, width: (width-10)/2, height: 200))
-        self.addSubview(imgView!)
+        self.setNeedsUpdateConstraints()
+        self.addSubview(imageView)
+        self.addSubview(titleLabel)
+        self.addSubview(priceLabel)
+        self.addSubview(descriptionLabel)
         
-        titleLabel = UILabel(frame: CGRect(x: 5, y: imgView!.frame.maxY-12, width: (width-40)/2, height: 50))
-        titleLabel?.numberOfLines = 0
-        titleLabel?.font = UIFont.boldSystemFont(ofSize: 14.0)
-        titleLabel?.textColor = UIColor.lightGray
-        self.addSubview(titleLabel!)
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        priceLabel.translatesAutoresizingMaskIntoConstraints = false
+        descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        priceLabel = UILabel(frame: CGRect(x: 5, y: imgView!.frame.maxY-12, width: (width-40)/2/2, height: 20))
-        priceLabel?.numberOfLines = 0
-        titleLabel?.font = UIFont.boldSystemFont(ofSize: 14.0)
-        titleLabel?.textColor = UIColor.lightGray
-        self.addSubview(priceLabel!)
+
+    }
+    
+    override func updateConstraints() {
+        super.updateConstraints()
+        let views = [
+            "imageView": imageView,
+            "titleLabel": titleLabel,
+            "priceLabel": priceLabel,
+            "descriptionLabel": descriptionLabel
+        ] as [String : Any]
         
-        readLabel = UILabel(frame: CGRect(x: (width-30)/2/2, y: imgView!.frame.maxY, width: (width-40)/2/2, height: 20))
-        readLabel?.numberOfLines = 0
-        readLabel?.textAlignment = NSTextAlignment.right
-        readLabel?.font = UIFont.boldSystemFont(ofSize: 14.0)
-        readLabel?.textColor = UIColor.lightGray
-        self.addSubview(readLabel!)
+        let metrics = [
+            "descriptionLabelWidth": Float((UIScreen.main.bounds.width-10)/2)
+        ]
+//        
+//        customConstraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:|-[imageView(200)]-|", options:NSLayoutFormatOptions.alignAllLeading, metrics: nil, views: views))
+        print("==========titlelabelwidth", Float((UIScreen.main.bounds.width-10)/2) )
+        customConstraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:|-[titleLabel]", options:NSLayoutFormatOptions.alignAllLeading, metrics: nil, views: views))
+        customConstraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:[priceLabel]-|", options:NSLayoutFormatOptions.alignAllRight, metrics: nil, views: views))
+        customConstraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "V:|-(205)-[priceLabel]-[descriptionLabel]-|", options:NSLayoutFormatOptions.alignAllLeading, metrics: nil, views: views))
+        customConstraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "V:|-(205)-[titleLabel]", options:NSLayoutFormatOptions.alignAllTop, metrics: metrics, views: views))
+        customConstraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:|-[descriptionLabel]-|", options:NSLayoutFormatOptions.alignAllTop, metrics: nil, views: views))
+//         customConstraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "V:[titleLabel]-[descriptionLabel(25)]", options:NSLayoutFormatOptions.alignAllTop, metrics: nil, views: views))
         
-        descriptionLabel = UILabel(frame: CGRect(x: (width-30)/2, y: imgView!.frame.maxY, width: (width-40)/2/2, height: 20))
-        descriptionLabel?.numberOfLines = 0
-        descriptionLabel?.textAlignment = NSTextAlignment.right
-        descriptionLabel?.font = UIFont.boldSystemFont(ofSize: 14.0)
-        descriptionLabel?.textColor = UIColor.lightGray
-        self.addSubview(descriptionLabel!)
+//        customConstraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:|-(0)-[descriptionLabel]-(0)-|", options:NSLayoutFormatOptions.alignAllTop, metrics: nil, views: views))
+        NSLayoutConstraint.activate(customConstraints)
     }
     
     required init?(coder aDecoder: NSCoder) {

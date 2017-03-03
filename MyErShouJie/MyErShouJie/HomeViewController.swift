@@ -40,7 +40,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.backgroundColor = UIColor.white
-        layout.itemSize = CGSize(width: (UIScreen.main.bounds.width-10)/2, height: 250)
+        
         self.collectionView!.mj_header = header
         self.view.addSubview(collectionView!)
         
@@ -130,6 +130,19 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
  
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        if indexPath.section == 0{
+            return CGSize(width: CGFloat(collectionView.frame.size.width ), height: CGFloat(205))
+          
+            
+        } else {
+            return CGSize(width: CGFloat((collectionView.frame.size.width-10)/2), height: CGFloat(255))
+            
+        }
+        
+    }
+    
      func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if indexPath.section == 0 {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "page", for: indexPath) as! HomeCycle
@@ -146,10 +159,12 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             let urlimage = URL(string: baseUrl + imgStr)
             
             
-            cell.imgView?.hnk_setImage(from: urlimage)
-            cell.titleLabel!.text = product.title
-            cell.priceLabel!.text = String(describing: (product.price)!)
-            cell.readLabel!.text = String(describing: (product.type)!)
+            
+            cell.imageView.hnk_setImage(from: urlimage)
+            cell.titleLabel.text = product.title
+            cell.priceLabel.text = String(describing: (product.price)!)
+            cell.descriptionLabel.text = product.descriptions
+            print("cell.titleLabel.text", cell.titleLabel.text!)
             
             return cell
         }
@@ -171,20 +186,13 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
 //    }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        var product = Product()
+        product = productArray[indexPath.row]
         
         let productWebView = ProductWebViewController()
+        productWebView.setProductDetail(title: product.title!, description: product.descriptions!, imageUrls: product.image_urls!, price: String(describing: product.price!))
         productWebView.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(productWebView, animated: true)
-        
-//        var product = Product()
-//        product = productArray[indexPath.row]
-//        productDetail.productTitle = product.title!
-//        productDetail.productPrice = product.price!
-//        productDetail.productDescription = product.descriptions!
-//        productDetail.imagesUrl = product.image_urls!
-//        print("indexpath row = ", product.descriptions!)
-        
     }
 }
     

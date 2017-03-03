@@ -79,43 +79,5 @@ class CategoriesViewController: UIViewController, UITableViewDataSource, UITable
         categoryViewController.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(categoryViewController, animated: false)
     }
-/*
-        switch indexPath.section {
-        case 0:
-            if(indexPath.row == 0){
-                let bookViewController = CategoryViewController()
-                bookViewController.navigationItem.title = item[indexPath.row]
-                bookViewController.
-                bookViewController.hidesBottomBarWhenPushed = true
-                self.navigationController?.pushViewController(bookViewController, animated: false)
-            }
-            if(indexPath.row == 1){
-                let electronic = CategoryViewController()
-                electronic.navigationItem.title = item[indexPath.row]
-                electronic.hidesBottomBarWhenPushed = true
-                self.navigationController?.pushViewController(electronic, animated: false)
-            }
-            if(indexPath.row == 2){
-                let sports = CategoryViewController()
-                sports.navigationItem.title = item[indexPath.row]
-                sports.hidesBottomBarWhenPushed = true
-                self.navigationController?.pushViewController(sports, animated: false)
-            }
-            if(indexPath.row == 3){
-                let daily = CategoryViewController()
-                daily.navigationItem.title = item[indexPath.row]
-                daily.hidesBottomBarWhenPushed = true
-                self.navigationController?.pushViewController(daily, animated: false)
-            }
-            if(indexPath.row == 4){
-                let trafic = CategoryViewController()
-                trafic.navigationItem.title = item[indexPath.row]
-                trafic.hidesBottomBarWhenPushed = true
-                self.navigationController?.pushViewController(trafic, animated: false)
-            }
-        default:
-            break
-        }
-    } */
 
 }

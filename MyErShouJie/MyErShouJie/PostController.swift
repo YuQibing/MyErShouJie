@@ -238,13 +238,13 @@ class PostController: UIViewController, UINavigationControllerDelegate, UICollec
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 5
+        return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let layout = UICollectionViewFlowLayout()
-        layout.minimumInteritemSpacing = 10
-        
+//      let layout = UICollectionViewFlowLayout()
+//        layout.minimumInteritemSpacing = 10  
+//        
         return CGSize(width: CGFloat((collectionView.frame.size.width / 3) - 10 ), height: CGFloat((collectionView.frame.size.width / 3)))
     }
     

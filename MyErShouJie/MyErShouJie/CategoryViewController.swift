@@ -29,7 +29,7 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
         header.setRefreshingTarget(self, refreshingAction: #selector(CategoryViewController.refreshData))
         collection = UICollectionView(frame: CGRect(x: 0, y: 0, width: ScreenWidth, height: ScreenHeight), collectionViewLayout: layout)
         layout.itemSize = CGSize(width: (ScreenWidth-10)/2, height: 250)
-        collection?.register(CategoryCollectionViewCell.self, forCellWithReuseIdentifier: "category")
+        collection?.register(HomeproductCollectionViewCell.self, forCellWithReuseIdentifier: "category")
         collection.backgroundColor = UIColor.white
         collection?.delegate = self
         collection?.dataSource = self
@@ -118,7 +118,7 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
     
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "category", for: indexPath) as! CategoryCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "category", for: indexPath) as! HomeproductCollectionViewCell
         print("-------collectionView cell text--------")
         cell.layer.borderWidth = 0.3
         cell.layer.borderColor = UIColor.lightGray.cgColor
@@ -129,29 +129,24 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
         let urlimage = URL(string: baseUrl + imgStr)
             
             
-        cell.imgView?.hnk_setImage(from: urlimage)
-        cell.titleLabel!.text = product.title
-        cell.priceLabel!.text = String(describing: (product.price)!)
-        cell.readLabel!.text = String(describing: (product.type)!)
-            
+        cell.imageView.hnk_setImage(from: urlimage)
+        cell.titleLabel.text = product.title
+        cell.priceLabel.text = String(describing: (product.price)!)
+        cell.descriptionLabel.text = String(describing: (product.type)!)
         return cell
-        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: CGFloat((collectionView.frame.size.width-10)/2), height: CGFloat(255))
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         var product = Product()
         product = productArray[indexPath.row]
-        
-        let productDetail = ProductDetailsController()
-        productDetail.hidesBottomBarWhenPushed = true
-        self.navigationController?.pushViewController(productDetail, animated: true)
-        
-        productDetail.productTitle = product.title!
-        productDetail.productPrice = product.price!
-        productDetail.productDescription = product.descriptions!
-        
-        print("indexpath row = ", product.descriptions!)
-        
+        let productWebView = ProductWebViewController()
+        productWebView.setProductDetail(title: product.title!, description: product.descriptions!, imageUrls: product.image_urls!, price: String(describing: product.price!))
+        productWebView.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(productWebView, animated: true)
     }
     
 }
