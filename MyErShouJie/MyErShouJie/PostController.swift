@@ -46,7 +46,6 @@ class PostController: UIViewController, UINavigationControllerDelegate, UICollec
         let titleText = UITextField()
         //titleText.borderStyle = UITextBorderStyle.bezel
         titleText.placeholder = "标题 物品的品牌型号"
-        titleText.text = "title"
         return titleText
     }()
     private lazy var horizontalLine: UIView = {
@@ -60,7 +59,6 @@ class PostController: UIViewController, UINavigationControllerDelegate, UICollec
         //descriptionText.layer.borderWidth = 0.5
         descriptiontext.layer.borderColor = UIColor.gray.cgColor
         descriptiontext.font = UIFont.systemFont(ofSize: 16)
-        descriptiontext.text = "1"
         return descriptiontext
     }()
 //    private lazy var takephotoButton: UIButton = {
@@ -95,7 +93,6 @@ class PostController: UIViewController, UINavigationControllerDelegate, UICollec
         let priceText = UITextField()
         //titleText.borderStyle = UITextBorderStyle.bezel
         priceText.placeholder = "你想卖多少钱"
-        priceText.text = "100"
         return priceText
         
         

@@ -10,13 +10,26 @@ import UIKit
 
 class ProductWebViewController: UIViewController, UIWebViewDelegate {
     
+    var path = String()
     var webview: UIWebView?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //let url = URL(string: "https://www.baidu.com")
-        let path = Bundle.main.resourcePath! + "/productDetail.html"
+        
+
+        print("view Path =======", path)
+//        let path = Bundle.main.resourcePath! + "/productDetail.html"
+//        let urlrequest = URLRequest(url: URL(string: path)!)
+//        print("htmldata = ", NSData(contentsOfFile: path)!)
+//        let tempDirectory = NSTemporaryDirectory()
+//        let fileName = NSUUID().uuidString
+//        
+//        let cacheURL = NSURL.fileURL(withPathComponents: [tempDirectory, fileName])
+//        let path = String(describing: cacheURL)
+    
         let urlrequest = URLRequest(url: URL(string: path)!)
+        
+        
         
         let webview = UIWebView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
         self.view.addSubview(webview)
@@ -54,7 +67,7 @@ class ProductWebViewController: UIViewController, UIWebViewDelegate {
             for index in 0...imageUrls.count - 1 {
                 let imageUrl = imageUrls[index]
                 
-                imageSrc += " <img style= \"width: 100%\" src=\""+imageUrl+"\"> "
+                imageSrc += " <img style= \"width: 100%\" src=\""+baseUrl+imageUrl+"\"> "
                 
                 print("imageSrc", imageSrc)
                 
@@ -63,7 +76,31 @@ class ProductWebViewController: UIViewController, UIWebViewDelegate {
             
             print("productDetailNewWebString", productDetailNewWebString)
             data.append(productDetailNewWebString.data(using: String.Encoding.utf8, allowLossyConversion: true)!)
-            data.write(toFile: viewPath, atomically: true)
+            print("viewPath =====", viewPath, tempPath)
+//            let tempDirectory = NSTemporaryDirectory()
+//            let fileName = NSUUID().uuidString
+//            
+//            let cacheURL = NSURL.fileURL(withPathComponents: [tempDirectory, fileName])
+//            let path = String(describing: cacheURL) + "/" + "productDetail.html"
+            
+            let applicationSupportDirectory = FileManager.SearchPathDirectory.cachesDirectory
+            let nsUserDomainMask = FileManager.SearchPathDomainMask.userDomainMask
+            let paths = NSSearchPathForDirectoriesInDomains( applicationSupportDirectory, nsUserDomainMask, true )
+            let fileManager = FileManager.default
+            self.path = paths[0] + "/" + "productDetail.html"
+            
+            //  check if the folder already exists
+            if fileManager.fileExists( atPath: path ) == false
+            {
+                
+                fileManager.createFile(atPath: path, contents: nil, attributes: nil)
+            }
+
+            
+            data.write(toFile: String(describing: path), atomically: true)
+            
+            print("fullURL", path)
+//            data.write(toFile: viewPath, atomically: true)
         }
         
         

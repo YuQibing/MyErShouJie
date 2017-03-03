@@ -53,10 +53,12 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     func refreshData(){
-        if self.collectionView != nil {
-            self.collectionView.reloadData()
-            self.collectionView!.mj_header.endRefreshing()
-        }
+//        if self.collectionView != nil {
+//            self.collectionView.reloadData()
+        
+//        }
+        getDataFromServer()
+        self.collectionView!.mj_header.endRefreshing()
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -125,7 +127,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
 //                print("jsonReturn =", oneProductJson["image_urls"].string)
             }
             print("productArrayCount = ", self.productArray.count)
-            self.refreshData()
+            self.collectionView.reloadData()
         }
     }
     
@@ -157,9 +159,6 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             product = productArray[indexPath.row]
             let imgStr = (product.image_urls?[0])!
             let urlimage = URL(string: baseUrl + imgStr)
-            
-            
-            
             cell.imageView.hnk_setImage(from: urlimage)
             cell.titleLabel.text = product.title
             cell.priceLabel.text = String(describing: (product.price)!)

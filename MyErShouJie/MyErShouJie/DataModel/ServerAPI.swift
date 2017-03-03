@@ -16,7 +16,7 @@ class ServerAPI: NSObject {
     func list(completion : @escaping (JSON) -> ()){
         var json: JSON = []
         let str = "*"
-        let url = URL(string: baseUrl+"/list?searchKeyWords="+str)!
+        let url = URL(string: baseUrl+"/ershoujie/list?searchKeyWords="+str)!
         print("----ServerAPI list:-------", url)
         
         Alamofire.request(url).responseJSON{ response in
@@ -33,7 +33,7 @@ class ServerAPI: NSObject {
     func listByType(type: Int, completion : @escaping (JSON) -> ()){
         var json: JSON = []
         let str = "*&type="+String(type+1)
-        let url = URL(string: baseUrl+"/list?searchKeyWords="+str)!
+        let url = URL(string: baseUrl+"/ershoujie/list?searchKeyWords="+str)!
         print("----ServerAPI list:-------", url)
         
         Alamofire.request(url).responseJSON{ response in
@@ -51,7 +51,7 @@ class ServerAPI: NSObject {
 
     func upLoad(params:[String:String], paramsImageUrls:Array<String>, success: @escaping (_ response : [String : AnyObject])->(),
                             failure : @escaping (_ error : Error)->()){
-        let url = URL(string: baseUrl+"/upload")!
+        let url = URL(string: baseUrl+"/ershoujie/upload")!
         print("uploadURL======= ", url)
         let headers = ["content-type":"multipart/form-data"]
         //print("params iamge_ruls", params["image_urls"]!)

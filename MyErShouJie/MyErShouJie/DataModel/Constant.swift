@@ -9,10 +9,10 @@
 import Foundation
 
 
-#if true
+#if false
 let baseUrl = "http://localhost:8080"
 #else
-let baseUrl = "http://192.168.1.102:8080"
+let baseUrl = "http://192.168.1.110:8080"
 #endif
 
 

@@ -668,6 +668,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9665182C5DC775E086232937 /* Pods-MyErShouJie.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 52R94S6J8U;
@@ -708,6 +709,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5DEBD8417D0F983324339EB8 /* Pods-MyErShouJie.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 52R94S6J8U;
