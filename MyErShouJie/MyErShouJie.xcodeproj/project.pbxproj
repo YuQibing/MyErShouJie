@@ -27,7 +27,6 @@
 		AD5B0B131DD0982B00E39670 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5B0B121DD0982B00E39670 /* AppDelegate.swift */; };
 		AD5B0B151DD0982B00E39670 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5B0B141DD0982B00E39670 /* ViewController.swift */; };
 		AD5B0B181DD0982B00E39670 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD5B0B161DD0982B00E39670 /* Main.storyboard */; };
-		AD5B0B1A1DD0982B00E39670 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD5B0B191DD0982B00E39670 /* Assets.xcassets */; };
 		AD5B0B1D1DD0982B00E39670 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD5B0B1B1DD0982B00E39670 /* LaunchScreen.storyboard */; };
 		AD5B0B281DD0982B00E39670 /* MyErShouJieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5B0B271DD0982B00E39670 /* MyErShouJieTests.swift */; };
 		AD5B0B331DD0982B00E39670 /* MyErShouJieUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5B0B321DD0982B00E39670 /* MyErShouJieUITests.swift */; };
@@ -45,6 +44,7 @@
 		AD9C6C931DE1DC80009AB8EC /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9C6C921DE1DC80009AB8EC /* UIImageView+Extension.swift */; };
 		AD9C6C951DE1E090009AB8EC /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9C6C941DE1E090009AB8EC /* UILabel+Extension.swift */; };
 		ADA133551E09D7FD00F1ABF5 /* HomeCycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA133541E09D7FD00F1ABF5 /* HomeCycle.swift */; };
+		ADA9126F1E6A07A7002850F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADA9126E1E6A07A7002850F9 /* Assets.xcassets */; };
 		ADBBB4DB1E48014900E85610 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBBB4DA1E48014900E85610 /* Product.swift */; };
 		ADBBB4DD1E48056700E85610 /* ServerAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBBB4DC1E48056700E85610 /* ServerAPI.swift */; };
 		ADE878191E64D06200A527E6 /* ProductDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE878181E64D06200A527E6 /* ProductDetailsController.swift */; };
@@ -96,7 +96,6 @@
 		AD5B0B121DD0982B00E39670 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AD5B0B141DD0982B00E39670 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AD5B0B171DD0982B00E39670 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		AD5B0B191DD0982B00E39670 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AD5B0B1C1DD0982B00E39670 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AD5B0B1E1DD0982B00E39670 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AD5B0B231DD0982B00E39670 /* MyErShouJieTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyErShouJieTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -119,6 +118,7 @@
 		AD9C6C921DE1DC80009AB8EC /* UIImageView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		AD9C6C941DE1E090009AB8EC /* UILabel+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		ADA133541E09D7FD00F1ABF5 /* HomeCycle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCycle.swift; sourceTree = "<group>"; };
+		ADA9126E1E6A07A7002850F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ADBB48081DF435FE0046F73F /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../../Library/Developer/Xcode/DerivedData/MyErShouJie-dchfnaftqkodnvdaapuogdunivkn/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
 		ADBB480A1DF436060046F73F /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = "../../Library/Developer/Xcode/DerivedData/MyErShouJie-dchfnaftqkodnvdaapuogdunivkn/Build/Products/Debug-iphonesimulator/Kingfisher/Kingfisher.framework"; sourceTree = "<group>"; };
 		ADBB480C1DF4360E0046F73F /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "../../Library/Developer/Xcode/DerivedData/MyErShouJie-dchfnaftqkodnvdaapuogdunivkn/Build/Products/Debug-iphonesimulator/SwiftyJSON/SwiftyJSON.framework"; sourceTree = "<group>"; };
@@ -217,7 +217,7 @@
 				AD5B0B431DD098C700E39670 /* ViewController */,
 				AD5B0B141DD0982B00E39670 /* ViewController.swift */,
 				AD5B0B161DD0982B00E39670 /* Main.storyboard */,
-				AD5B0B191DD0982B00E39670 /* Assets.xcassets */,
+				ADA9126E1E6A07A7002850F9 /* Assets.xcassets */,
 				AD1890181E68DD4900BACBF7 /* productDetailTemp.html */,
 				AD1890161E68A55C00BACBF7 /* productDetail.html */,
 				AD5B0B1B1DD0982B00E39670 /* LaunchScreen.storyboard */,
@@ -409,9 +409,9 @@
 			files = (
 				AD5B0B1D1DD0982B00E39670 /* LaunchScreen.storyboard in Resources */,
 				AD1890171E68A55C00BACBF7 /* productDetail.html in Resources */,
-				AD5B0B1A1DD0982B00E39670 /* Assets.xcassets in Resources */,
 				AD1890191E68DD4900BACBF7 /* productDetailTemp.html in Resources */,
 				AD5B0B181DD0982B00E39670 /* Main.storyboard in Resources */,
+				ADA9126F1E6A07A7002850F9 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

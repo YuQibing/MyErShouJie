@@ -56,7 +56,7 @@ extension TabBarViewController {
         addChildViewController(title: "首页", vc: HomeViewController(), imageName: "Home")
         addChildViewController(title: "分类", vc: CategoriesViewController(), imageName: "Class")
         //addChildViewController(title: "", vc: ButtonController(), imageName: "")
-        addChildViewController(title: "发布", vc: PostViewController(), imageName: "Search")
+        addChildViewController(title: "发布", vc: PostViewController(), imageName: "Upload")
         //addChildViewController(title: "我", vc: ProfileViewController(), imageName: "Me")
         
     }
