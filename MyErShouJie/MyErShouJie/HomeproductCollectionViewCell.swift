@@ -62,8 +62,8 @@ class HomeproductCollectionViewCell: UICollectionViewCell {
             "descriptionLabelWidth": Float((UIScreen.main.bounds.width-10)/2)
         ]
         print("==========titlelabelwidth", Float((UIScreen.main.bounds.width-10)/2) )
-        customConstraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:|-[titleLabel]", options:NSLayoutFormatOptions.alignAllLeading, metrics: nil, views: views))
-        customConstraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:[priceLabel]-|", options:NSLayoutFormatOptions.alignAllRight, metrics: nil, views: views))
+        customConstraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:|-[titleLabel(100)]", options:NSLayoutFormatOptions.alignAllTrailing, metrics: nil, views: views))
+        customConstraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:[priceLabel]-|", options:NSLayoutFormatOptions.alignAllTrailing, metrics: nil, views: views))
         customConstraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "V:|-(205)-[priceLabel]-[descriptionLabel]-|", options:NSLayoutFormatOptions.alignAllLeading, metrics: nil, views: views))
         customConstraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "V:|-(205)-[titleLabel]", options:NSLayoutFormatOptions.alignAllTop, metrics: metrics, views: views))
         customConstraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:|-[descriptionLabel]-|", options:NSLayoutFormatOptions.alignAllTop, metrics: nil, views: views))

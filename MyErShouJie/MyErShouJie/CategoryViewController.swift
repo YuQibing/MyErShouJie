@@ -132,7 +132,7 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
         cell.imageView.hnk_setImage(from: urlimage)
         cell.titleLabel.text = product.title
         cell.priceLabel.text = String(describing: (product.price)!)
-        cell.descriptionLabel.text = String(describing: (product.type)!)
+        cell.descriptionLabel.text = String(describing: (product.descriptions)!)
         return cell
     }
     
