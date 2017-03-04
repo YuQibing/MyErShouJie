@@ -21,5 +21,4 @@ class Product: NSObject {
     var descriptions: String?
     var image_urls: Array<String>?
     
-    
 }

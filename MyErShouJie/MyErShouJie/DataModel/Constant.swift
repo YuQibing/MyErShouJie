@@ -15,4 +15,6 @@ let baseUrl = "http://localhost:8080"
 let baseUrl = "http://192.168.1.110:8080"
 #endif
 
+var productType = ["书籍", "电子产品", "体育用品", "生活用品", "交通工具"]
+
 

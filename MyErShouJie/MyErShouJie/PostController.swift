@@ -11,11 +11,9 @@ import SwiftyJSON
 import DKImagePickerController
 import Photos
 class PostController: UIViewController, UINavigationControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    var navigationBar: UINavigationBar?
     var collectionView: UICollectionView!
     var imageUrls: Array<String>!
     var assets: [DKAsset]?
-    
     
     lazy public var UIDelegate: DKImagePickerControllerUIDelegate = {
         return DKImagePickerControllerDefaultUIDelegate()
@@ -30,52 +28,50 @@ class PostController: UIViewController, UINavigationControllerDelegate, UICollec
         static let horizontalLineHeight = 0.5
         static let photoViewSize = 80
     }
-    private lazy var newNavigationBar: UINavigationBar =  {
-        let navigationbar = UINavigationBar()
-        navigationbar.barStyle = UIBarStyle.default
+    private lazy var navigationBar: UINavigationBar =  {
+        let navigationBar = UINavigationBar()
+        navigationBar.barStyle = UIBarStyle.default
         let navigationItem = UINavigationItem()
         let dismissButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.cancel, target: self, action: #selector(PostController.dismiss as (PostController) -> () -> ()))
         let postButton = UIBarButtonItem(title: "Upload", style: UIBarButtonItemStyle.done, target: self, action: #selector(PostController.upload))
         navigationItem.title = "发布"
         navigationItem.setLeftBarButton(dismissButton, animated: true)
         navigationItem.setRightBarButton(postButton, animated: true)
-        navigationbar.pushItem(navigationItem, animated: true)
-        return navigationbar
+        navigationBar.pushItem(navigationItem, animated: true)
+        navigationBar.translatesAutoresizingMaskIntoConstraints = false
+        return navigationBar
     }()
     private lazy var titleText: UITextField = {
         let titleText = UITextField()
         //titleText.borderStyle = UITextBorderStyle.bezel
         titleText.placeholder = "标题 物品的品牌型号"
+        titleText.translatesAutoresizingMaskIntoConstraints = false
         return titleText
     }()
     private lazy var horizontalLine: UIView = {
         let horizontalLine = UIView()
         horizontalLine.backgroundColor = UIColor.lightGray
+        horizontalLine.translatesAutoresizingMaskIntoConstraints = false
         return horizontalLine
     }()
     private lazy var descriptionText: UITextView = {
-        let descriptiontext = UITextView()
-        descriptiontext.textAlignment = NSTextAlignment.left
+        let descriptionText = UITextView()
+        descriptionText.textAlignment = NSTextAlignment.left
         //descriptionText.layer.borderWidth = 0.5
-        descriptiontext.layer.borderColor = UIColor.gray.cgColor
-        descriptiontext.font = UIFont.systemFont(ofSize: 16)
-        return descriptiontext
+        descriptionText.text = "物品描述"
+        descriptionText.layer.borderColor = UIColor.gray.cgColor
+        descriptionText.font = UIFont.systemFont(ofSize: 16)
+        descriptionText.translatesAutoresizingMaskIntoConstraints = false
+        return descriptionText
     }()
-//    private lazy var takephotoButton: UIButton = {
-//        let takephotobutton = UIButton()
-//        takephotobutton.setImage(UIImage(named: "Class"), for: .normal)
-//        takephotobutton.addTarget(self, action: #selector(PostController.takePhoto), for: .touchUpInside)
-//        takephotobutton.layer.borderWidth = 0.5
-//        takephotobutton.backgroundColor = UIColor.lightGray
-//        return takephotobutton
-//    }()
     private lazy var selectphotoButton: UIButton = {
-        let selectphotobutton = UIButton()
-        selectphotobutton.setImage(UIImage(named: "post"), for: .normal)
-        selectphotobutton.addTarget(self, action: #selector(PostController.selectPhoto), for: .touchUpInside)
-        selectphotobutton.layer.borderWidth = 0.5
-        selectphotobutton.backgroundColor = UIColor.lightGray
-        return selectphotobutton
+        let selectphotoButton = UIButton()
+        selectphotoButton.setImage(UIImage(named: "post"), for: .normal)
+        selectphotoButton.addTarget(self, action: #selector(PostController.selectPhoto), for: .touchUpInside)
+        selectphotoButton.layer.borderWidth = 0.5
+        selectphotoButton.backgroundColor = UIColor.lightGray
+        selectphotoButton.translatesAutoresizingMaskIntoConstraints = false
+        return selectphotoButton
     }()
 
     private lazy var previewImages: UICollectionView = {
@@ -86,6 +82,7 @@ class PostController: UIViewController, UINavigationControllerDelegate, UICollec
         previewImages.delegate = self
         previewImages.dataSource = self
         previewImages.backgroundColor = UIColor.gray
+        previewImages.translatesAutoresizingMaskIntoConstraints = false
         return previewImages
     }()
     
@@ -93,14 +90,23 @@ class PostController: UIViewController, UINavigationControllerDelegate, UICollec
         let priceText = UITextField()
         //titleText.borderStyle = UITextBorderStyle.bezel
         priceText.placeholder = "你想卖多少钱"
+        priceText.keyboardType = UIKeyboardType.numberPad
+        priceText.translatesAutoresizingMaskIntoConstraints = false
         return priceText
+    }()
+    
+    private lazy var typePicker: UIPickerView = {
+        let typePicker = UIPickerView()
+        typePicker.backgroundColor = UIColor.black
+        typePicker.translatesAutoresizingMaskIntoConstraints = false
         
-        
+        return typePicker
     }()
     
     private lazy var pricehorizontalLine: UIView = {
         let pricehorizontalLine = UIView()
         pricehorizontalLine.backgroundColor = UIColor.lightGray
+        pricehorizontalLine.translatesAutoresizingMaskIntoConstraints = false
         return pricehorizontalLine
     }()
 
@@ -109,25 +115,15 @@ class PostController: UIViewController, UINavigationControllerDelegate, UICollec
         super.viewDidLoad()
      
         self.view.setNeedsUpdateConstraints()
-        self.view.addSubview(newNavigationBar)
+        self.view.addSubview(navigationBar)
         self.view.addSubview(titleText)
         self.view.addSubview(horizontalLine)
         self.view.addSubview(descriptionText)
-        //self.view.addSubview(takephotoButton)
         self.view.addSubview(selectphotoButton)
         self.view.addSubview(previewImages)
         self.view.addSubview(priceText)
         self.view.addSubview(pricehorizontalLine)
-        
-        newNavigationBar.translatesAutoresizingMaskIntoConstraints = false
-        titleText.translatesAutoresizingMaskIntoConstraints = false
-        horizontalLine.translatesAutoresizingMaskIntoConstraints = false
-        descriptionText.translatesAutoresizingMaskIntoConstraints = false
-        //takephotoButton.translatesAutoresizingMaskIntoConstraints = false
-        selectphotoButton.translatesAutoresizingMaskIntoConstraints = false
-        previewImages.translatesAutoresizingMaskIntoConstraints = false
-        priceText.translatesAutoresizingMaskIntoConstraints = false
-        pricehorizontalLine.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(typePicker)
     }
     override func updateViewConstraints() {
         defer { super.updateViewConstraints() }
@@ -136,11 +132,12 @@ class PostController: UIViewController, UINavigationControllerDelegate, UICollec
             "selectphotoButton": selectphotoButton,
             "titleText": titleText,
             "descriptionText": descriptionText,
-            "newnavigationBar": newNavigationBar,
+            "navigationBar": navigationBar,
             "horizontalLine": horizontalLine,
             "previewImages": previewImages,
             "priceText": priceText,
-            "pricehorizontalLine": pricehorizontalLine
+            "pricehorizontalLine": pricehorizontalLine,
+            "typePicker": typePicker
             
         ] as [String : Any]
         
@@ -159,11 +156,11 @@ class PostController: UIViewController, UINavigationControllerDelegate, UICollec
             "photoViewSize": Constraints.photoViewSize
         ] as [String : Any]
         
-        customConstraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:|-(0)-[newnavigationBar]-(0)-|", options:NSLayoutFormatOptions.alignAllTop, metrics: metrics, views: views))
-        customConstraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "V:|-[newnavigationBar(navigationBarHeight)]", metrics: metrics, views: views))
+        customConstraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:|-(0)-[navigationBar]-(0)-|", options:NSLayoutFormatOptions.alignAllTop, metrics: metrics, views: views))
+        customConstraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "V:|-[navigationBar(navigationBarHeight)]", metrics: metrics, views: views))
         
         customConstraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:|-(sidePadding)-[titleText]-|",  metrics: metrics, views: views))
-        customConstraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "V:[newnavigationBar]-(sidePadding)-[titleText(textHeight)]", metrics: metrics, views: views))
+        customConstraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "V:[navigationBar]-(sidePadding)-[titleText(textHeight)]", metrics: metrics, views: views))
         
         customConstraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:|-(sidePadding)-[horizontalLine]-|", metrics: metrics, views: views))
         customConstraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "V:[titleText]-[horizontalLine(horizontalLineHeight)]", metrics: metrics, views: views))
@@ -178,9 +175,11 @@ class PostController: UIViewController, UINavigationControllerDelegate, UICollec
         customConstraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "V:[selectphotoButton]-[previewImages(previewImagesHeight)]", metrics: metrics, views: views))
         
         customConstraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:|-(sidePadding)-[priceText]-|", metrics: metrics, views: views))
-        customConstraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "V:[previewImages]-(sidePadding)-[priceText(textHeight)]-[pricehorizontalLine(horizontalLineHeight)]", metrics: metrics, views: views))
+        customConstraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "V:[previewImages]-(sidePadding)-[priceText(textHeight)]-[pricehorizontalLine(horizontalLineHeight)]-[typePicker(500)]", metrics: metrics, views: views))
         
         customConstraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:|-(sidePadding)-[pricehorizontalLine]-|", metrics: metrics, views: views))
+         customConstraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:|-[typePicker]-|", metrics: metrics, views: views))
+        
         
         
         NSLayoutConstraint.activate(customConstraints)
@@ -265,6 +264,22 @@ class PostController: UIViewController, UINavigationControllerDelegate, UICollec
             
         })
         return cell
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return productType.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return productType[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
     }
     
     

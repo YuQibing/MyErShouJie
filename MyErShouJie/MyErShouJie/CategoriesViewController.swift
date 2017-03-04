@@ -16,7 +16,7 @@ import Kingfisher
 class CategoriesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var tableview: UITableView!
-    var item = ["书籍", "电子产品", "体育用品", "生活用品", "交通工具"]
+    
     var index: IndexPath!
 
     override func viewDidLoad() {
@@ -60,7 +60,7 @@ class CategoriesViewController: UIViewController, UITableViewDataSource, UITable
         
         switch indexPath.section {
         case 0:
-            cell?.textLabel?.text = item[indexPath.row]
+            cell?.textLabel?.text = productType[indexPath.row]
         default:
             break
         }
@@ -73,7 +73,7 @@ class CategoriesViewController: UIViewController, UITableViewDataSource, UITable
         tableView.deselectRow(at: indexPath, animated: true)
 
         let categoryViewController = CategoryViewController()
-        categoryViewController.navigationItem.title = item[indexPath.row]
+        categoryViewController.navigationItem.title = productType[indexPath.row]
         categoryViewController.type = indexPath.row
         categoryViewController.getDataFromServer()
         categoryViewController.hidesBottomBarWhenPushed = true

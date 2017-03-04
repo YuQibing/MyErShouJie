@@ -83,7 +83,9 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
             
             print("JSON COUNT = ", jsonReturn.count)
             //print("JSONVALUE = ", jsonReturn)
-            
+            if jsonReturn.count == 0 {
+                return
+            }
             for index in 0...jsonReturn.count-1 {
                 let product = Product()
                 var oneProductJson = jsonReturn[index]
