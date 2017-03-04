@@ -10,11 +10,9 @@ import UIKit
 import SwiftyJSON
 import DKImagePickerController
 import Photos
-class PostController: UIViewController, UINavigationControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    var collectionView: UICollectionView!
-    var imageUrls: Array<String>!
+class PostController: UIViewController, UINavigationControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate {
+    var images = Array<UIImage>()
     var assets: [DKAsset]?
-    
     lazy public var UIDelegate: DKImagePickerControllerUIDelegate = {
         return DKImagePickerControllerDefaultUIDelegate()
     }()
@@ -24,10 +22,11 @@ class PostController: UIViewController, UINavigationControllerDelegate, UICollec
         static let smallButtonSize = 60
         static let largeButtonSize = 120
         static let titleTextHeight = 30
-        static let descriptionTextHeight = 100
+        static let descriptionTextHeight = 80
         static let horizontalLineHeight = 0.5
         static let photoViewSize = 80
     }
+    
     private lazy var navigationBar: UINavigationBar =  {
         let navigationBar = UINavigationBar()
         navigationBar.barStyle = UIBarStyle.default
@@ -45,6 +44,7 @@ class PostController: UIViewController, UINavigationControllerDelegate, UICollec
         let titleText = UITextField()
         //titleText.borderStyle = UITextBorderStyle.bezel
         titleText.placeholder = "标题 物品的品牌型号"
+        titleText.delegate = self
         titleText.translatesAutoresizingMaskIntoConstraints = false
         return titleText
     }()
@@ -91,15 +91,17 @@ class PostController: UIViewController, UINavigationControllerDelegate, UICollec
         //titleText.borderStyle = UITextBorderStyle.bezel
         priceText.placeholder = "你想卖多少钱"
         priceText.keyboardType = UIKeyboardType.numberPad
+        priceText.returnKeyType = .done
+        priceText.delegate = self
         priceText.translatesAutoresizingMaskIntoConstraints = false
         return priceText
     }()
     
     private lazy var typePicker: UIPickerView = {
         let typePicker = UIPickerView()
-        typePicker.backgroundColor = UIColor.black
         typePicker.translatesAutoresizingMaskIntoConstraints = false
-        
+        typePicker.delegate = self
+        typePicker.dataSource = self
         return typePicker
     }()
     
@@ -109,11 +111,18 @@ class PostController: UIViewController, UINavigationControllerDelegate, UICollec
         pricehorizontalLine.translatesAutoresizingMaskIntoConstraints = false
         return pricehorizontalLine
     }()
-
     
+    private lazy var typeLabel: UILabel = {
+        let typeLabel = UILabel()
+        typeLabel.text = "商品类型"
+        typeLabel.translatesAutoresizingMaskIntoConstraints = false
+        return typeLabel
+    }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-     
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(PostController.dismissKeyboard))
+        self.view.addGestureRecognizer(tap)
         self.view.setNeedsUpdateConstraints()
         self.view.addSubview(navigationBar)
         self.view.addSubview(titleText)
@@ -124,6 +133,7 @@ class PostController: UIViewController, UINavigationControllerDelegate, UICollec
         self.view.addSubview(priceText)
         self.view.addSubview(pricehorizontalLine)
         self.view.addSubview(typePicker)
+        self.view.addSubview(typeLabel)
     }
     override func updateViewConstraints() {
         defer { super.updateViewConstraints() }
@@ -137,7 +147,8 @@ class PostController: UIViewController, UINavigationControllerDelegate, UICollec
             "previewImages": previewImages,
             "priceText": priceText,
             "pricehorizontalLine": pricehorizontalLine,
-            "typePicker": typePicker
+            "typePicker": typePicker,
+            "typeLabel": typeLabel
             
         ] as [String : Any]
         
@@ -153,32 +164,34 @@ class PostController: UIViewController, UINavigationControllerDelegate, UICollec
             "navigationBarWidth": ScreenWidth,
             "navigationBarHeight": 64,
             "previewImagesHeight": 200,
+            "width": ScreenWidth - 20,
             "photoViewSize": Constraints.photoViewSize
         ] as [String : Any]
         
-        customConstraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:|-(0)-[navigationBar]-(0)-|", options:NSLayoutFormatOptions.alignAllTop, metrics: metrics, views: views))
-        customConstraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "V:|-[navigationBar(navigationBarHeight)]", metrics: metrics, views: views))
+        customConstraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:[navigationBar(navigationBarWidth)]", options:NSLayoutFormatOptions.alignAllTop, metrics: metrics, views: views))
+        customConstraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "V:|-(0)-[navigationBar(navigationBarHeight)]", metrics: metrics, views: views))
         
-        customConstraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:|-(sidePadding)-[titleText]-|",  metrics: metrics, views: views))
+        customConstraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:|-(sidePadding)-[titleText(width)]",  metrics: metrics, views: views))
         customConstraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "V:[navigationBar]-(sidePadding)-[titleText(textHeight)]", metrics: metrics, views: views))
         
-        customConstraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:|-(sidePadding)-[horizontalLine]-|", metrics: metrics, views: views))
+        customConstraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:|-(sidePadding)-[horizontalLine(width)]", metrics: metrics, views: views))
         customConstraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "V:[titleText]-[horizontalLine(horizontalLineHeight)]", metrics: metrics, views: views))
         
-        customConstraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:|-(sidePadding)-[descriptionText]-|", metrics: metrics, views: views))
+        customConstraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:|-(sidePadding)-[descriptionText(width)]", metrics: metrics, views: views))
         customConstraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "V:[horizontalLine]-[descriptionText(descriptionTextHeight)]", metrics: metrics, views: views))
     
         customConstraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:|-(sidePadding)-[selectphotoButton(smallButtonSize)]", metrics: metrics, views: views))
         customConstraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "V:[descriptionText]-[selectphotoButton(smallButtonSize)]", metrics: metrics, views: views))
         
-        customConstraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:|-(sidePadding)-[previewImages]-|", metrics: metrics, views: views))
+        customConstraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:|-(sidePadding)-[previewImages(width)]", metrics: metrics, views: views))
         customConstraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "V:[selectphotoButton]-[previewImages(previewImagesHeight)]", metrics: metrics, views: views))
         
-        customConstraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:|-(sidePadding)-[priceText]-|", metrics: metrics, views: views))
-        customConstraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "V:[previewImages]-(sidePadding)-[priceText(textHeight)]-[pricehorizontalLine(horizontalLineHeight)]-[typePicker(500)]", metrics: metrics, views: views))
+        customConstraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:|-(sidePadding)-[priceText(width)]", metrics: metrics, views: views))
+        customConstraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "V:[previewImages]-(sidePadding)-[priceText(textHeight)]-[pricehorizontalLine(horizontalLineHeight)]-[typeLabel(10)]-[typePicker(100)]", metrics: metrics, views: views))
         
-        customConstraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:|-(sidePadding)-[pricehorizontalLine]-|", metrics: metrics, views: views))
-         customConstraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:|-[typePicker]-|", metrics: metrics, views: views))
+        customConstraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:|-(sidePadding)-[pricehorizontalLine(width)]", metrics: metrics, views: views))
+        customConstraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:|-[typePicker]-|", metrics: metrics, views: views))
+        customConstraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:|-[typeLabel]-|", metrics: metrics, views: views))
  
         NSLayoutConstraint.activate(customConstraints)
         
@@ -194,6 +207,11 @@ class PostController: UIViewController, UINavigationControllerDelegate, UICollec
         dismiss(animated: true, completion: nil)
     }
     
+    func dismissKeyboard() {
+        
+        self.view.endEditing(true)
+    }
+    
     func selectPhoto() {
         let pickerController = DKImagePickerController()
         pickerController.defaultSelectedAssets = self.assets
@@ -206,6 +224,23 @@ class PostController: UIViewController, UINavigationControllerDelegate, UICollec
         self.present(pickerController, animated: true, completion: nil)
         
     }
+    //价格文本框 弹出键盘 View上移
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        let frame:CGRect = textField.frame
+        let offset:CGFloat = frame.origin.y + 30 - (self.view.frame.size.height-216)
+        if offset > 0  {
+            self.view.frame = CGRect(x:0.0, y:-offset, width: self.view.frame.size.width, height: self.view.frame.size.height)
+        }
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        self.view.frame = CGRect(x:0, y:0, width: self.view.frame.size.width, height: self.view.frame.size.height)
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.assets?.count ?? 0
@@ -215,10 +250,7 @@ class PostController: UIViewController, UINavigationControllerDelegate, UICollec
         return 1
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//      let layout = UICollectionViewFlowLayout()
-//        layout.minimumInteritemSpacing = 10  
-//        
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {      
         return CGSize(width: CGFloat((collectionView.frame.size.width / 3) - 10 ), height: CGFloat((collectionView.frame.size.width / 3)))
     }
     
@@ -227,18 +259,19 @@ class PostController: UIViewController, UINavigationControllerDelegate, UICollec
         let asset = self.assets![indexPath.row]
 
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "previewimages", for: indexPath) as! PostPreviewImagesCell
-        let imageView = cell.images! as UIImageView
         asset.fetchFullScreenImage(false, completeBlock: { image, info in
             
             print("images = ", info!)
-            if self.imageUrls == nil {
-                self.imageUrls = Array<String>()
+            if self.images.count == 0 {
+                self.images = Array<UIImage>()
             }
-            let ImageUrlValue = info!["PHImageFileURLKey"] as! NSURL
-            let ImageUrlString = ImageUrlValue.absoluteString?.replacingOccurrences(of: "file://", with: "")
-
-            self.imageUrls?.append(ImageUrlString!)
-            imageView.image = image
+//            let ImageUrlValue = info!["PHImageFileURLKey"] as! NSURL
+//            let ImageUrlString = ImageUrlValue.absoluteString?.replacingOccurrences(of: "file://", with: "")
+//            let selectImage = UIImage(contentsOfFile: ImageUrlString!)
+            self.images.append(image!)
+            //print("ImageUrlString = ", ImageUrlString!)
+            cell.imageView?.image = image
+            //cell.imageView?.image = UIImage(contentsOfFile: ImageUrlString!)
             
         })
         return cell
@@ -258,6 +291,7 @@ class PostController: UIViewController, UINavigationControllerDelegate, UICollec
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
+        
     }
     
     func upload() {
@@ -265,6 +299,7 @@ class PostController: UIViewController, UINavigationControllerDelegate, UICollec
         let paramsTitleValue = titleText.text!
         let paramsDescriptionValue = descriptionText.text!
         let paramsPriceValue = priceText.text!
+        let paramsTypeValue = typePicker.selectedRow(inComponent: 0) + 1
         let alertView = Alert()
         print("pricetext = ", priceText.text!)
         var alertMessage = ""
@@ -274,7 +309,7 @@ class PostController: UIViewController, UINavigationControllerDelegate, UICollec
             alertMessage = "价格"
         } else if (descriptionText.text! == "") {
             alertMessage = "物品描述"
-        } else if (self.imageUrls == nil) {
+        } else if (self.images.count == 0) {
             alertMessage = "图片"
         }
         
@@ -282,9 +317,9 @@ class PostController: UIViewController, UINavigationControllerDelegate, UICollec
             alertView.alertView(message: alertMessage+"不能为空", okActionTitle: "好的", fromViewController: self, dismissParentViewController: false)
             return
         }
-        let params: [String:String] = ["title": paramsTitleValue, "price": paramsPriceValue, "description": paramsDescriptionValue, "type": "1" ]
+        let params: [String:String] = ["title": paramsTitleValue, "price": paramsPriceValue, "description": paramsDescriptionValue, "type": String(paramsTypeValue)]
 
-        serverAPI.upLoad(params: params,paramsImageUrls: imageUrls!, success: { response in
+        serverAPI.upLoad(params: params,paramsImages: images, success: { response in
             let json = JSON(response)
             print("return json = ", json)
             let alertUploadSuccess = Alert()

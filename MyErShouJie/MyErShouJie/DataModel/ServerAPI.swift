@@ -43,13 +43,11 @@ class ServerAPI: NSObject {
                 //print("JSON COUNT = ", json.count)
                 //print("JSON VALUE = ", json)
                 completion(json)
-                
-                
             }
         }
     }
 
-    func upLoad(params:[String:String], paramsImageUrls:Array<String>, success: @escaping (_ response : [String : AnyObject])->(),
+    func upLoad(params:[String:String], paramsImages: Array<UIImage>, success: @escaping (_ response : [String : AnyObject])->(),
                             failure : @escaping (_ error : Error)->()){
         let url = URL(string: baseUrl+"/ershoujie/upload")!
         print("uploadURL======= ", url)
@@ -65,9 +63,10 @@ class ServerAPI: NSObject {
                 multipartFormData.append((params["description"]?.data(using: String.Encoding.utf8)!)!, withName: "description")
                 multipartFormData.append((params["price"]?.data(using: String.Encoding.utf8)!)!, withName: "price")
                 multipartFormData.append((params["type"]?.data(using: String.Encoding.utf8)!)!, withName: "type")
-                for index in 0...paramsImageUrls.count - 1 {
-                    let uiimage = UIImage(contentsOfFile: paramsImageUrls[index])
-                    let imagedata = UIImageJPEGRepresentation(uiimage!, 0.1)
+                for index in 0...paramsImages.count - 1 {
+//                    let image = UIImage(contentsOfFile: paramsImageUrls[index])
+//                    print("paramsImageUrls = ", paramsImageUrls[index])
+                    let imagedata = UIImageJPEGRepresentation(paramsImages[index], 0.1)
                     multipartFormData.append(imagedata!, withName: "image_urls", fileName: "ImageName.JPG", mimeType: "image/jpeg")
                 }
             },

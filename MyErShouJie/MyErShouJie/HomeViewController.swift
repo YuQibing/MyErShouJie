@@ -55,8 +55,9 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     func refreshData(){
 //        if self.collectionView != nil {
 //            self.collectionView.reloadData()
-        
+//            
 //        }
+        self.productArray.removeAll()
         getDataFromServer()
         self.collectionView!.mj_header.endRefreshing()
     }
@@ -98,9 +99,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
                     let imgUrlsJson = try JSONSerialization.jsonObject(with: imgUrlsText!, options: .mutableContainers)
                     if let imageUrlsJson = imgUrlsJson as? [String:Any] {
                         
-                        print("imageUrlsJson = ", imageUrlsJson)
                         imageUrlsJsonArray = imageUrlsJson["ImageUrls"] as! [Any]
-                        
                         for imageUrlsIndex in 0...imageUrlsJsonArray.count-1 {
                             imageUrlsDic = imageUrlsJsonArray[imageUrlsIndex] as! [String : String]
                             imageUrlsArray.append(imageUrlsDic["ImageUrl"]!)
@@ -109,6 +108,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
                     }
                 } catch {
                     print(error.localizedDescription)
+                    
                 }
                 
                 

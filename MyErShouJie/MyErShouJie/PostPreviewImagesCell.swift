@@ -9,17 +9,16 @@
 import UIKit
 
 class PostPreviewImagesCell: UICollectionViewCell {
-    var images: UIImageView?
+    var imageView: UIImageView?
     
     override init (frame: CGRect) {
         super.init(frame: frame)
         
-        images = UIImageView(frame: CGRect(x: 0, y: 0, width: (ScreenWidth/3) - 20, height: (ScreenWidth/3) - 20))
-        images?.tag = 1
-        self.addSubview(images!)
-        
+        imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: (ScreenWidth/3) - 20, height: (ScreenWidth/3) - 20))
+        imageView?.tag = 1
+        self.addSubview(imageView!)        
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

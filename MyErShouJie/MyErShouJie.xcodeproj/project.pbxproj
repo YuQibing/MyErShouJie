@@ -74,10 +74,10 @@
 		9665182C5DC775E086232937 /* Pods-MyErShouJie.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyErShouJie.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyErShouJie/Pods-MyErShouJie.debug.xcconfig"; sourceTree = "<group>"; };
 		AD0F749B1DEFE8700090D6B3 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = "../../Library/Developer/Xcode/DerivedData/MyErShouJie-dchfnaftqkodnvdaapuogdunivkn/Build/Products/Debug-iphonesimulator/SnapKit/SnapKit.framework"; sourceTree = "<group>"; };
 		AD1219DE1E4CF48C00B1F117 /* MJRefresh.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MJRefresh.framework; path = "../../Library/Developer/Xcode/DerivedData/MyErShouJie-dchfnaftqkodnvdaapuogdunivkn/Build/Products/Debug-iphonesimulator/MJRefresh/MJRefresh.framework"; sourceTree = "<group>"; };
-		AD1890121E68856800BACBF7 /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		AD1890121E68856800BACBF7 /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Alert.swift; path = DataModel/Alert.swift; sourceTree = "<group>"; };
 		AD1890161E68A55C00BACBF7 /* productDetail.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = productDetail.html; sourceTree = "<group>"; };
 		AD1890181E68DD4900BACBF7 /* productDetailTemp.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = productDetailTemp.html; sourceTree = "<group>"; };
-		AD234B2D1E4EA28B0064F115 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		AD234B2D1E4EA28B0064F115 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constant.swift; path = DataModel/Constant.swift; sourceTree = "<group>"; };
 		AD234B371E52B2C90064F115 /* ButtonController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonController.swift; sourceTree = "<group>"; };
 		AD234B451E53AC000064F115 /* PostController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostController.swift; sourceTree = "<group>"; };
 		AD234B871E5785220064F115 /* DKImagePickerController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DKImagePickerController.framework; path = "../../Library/Developer/Xcode/DerivedData/MyErShouJie-dchfnaftqkodnvdaapuogdunivkn/Build/Products/Debug-iphonesimulator/DKImagePickerController/DKImagePickerController.framework"; sourceTree = "<group>"; };
@@ -119,7 +119,7 @@
 		ADBB480A1DF436060046F73F /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = "../../Library/Developer/Xcode/DerivedData/MyErShouJie-dchfnaftqkodnvdaapuogdunivkn/Build/Products/Debug-iphonesimulator/Kingfisher/Kingfisher.framework"; sourceTree = "<group>"; };
 		ADBB480C1DF4360E0046F73F /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "../../Library/Developer/Xcode/DerivedData/MyErShouJie-dchfnaftqkodnvdaapuogdunivkn/Build/Products/Debug-iphonesimulator/SwiftyJSON/SwiftyJSON.framework"; sourceTree = "<group>"; };
 		ADBBB4DA1E48014900E85610 /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
-		ADBBB4DC1E48056700E85610 /* ServerAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerAPI.swift; sourceTree = "<group>"; };
+		ADBBB4DC1E48056700E85610 /* ServerAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ServerAPI.swift; path = DataModel/ServerAPI.swift; sourceTree = "<group>"; };
 		ADE878181E64D06200A527E6 /* ProductDetailsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDetailsController.swift; sourceTree = "<group>"; };
 		ADEC5A831E107F3C00C30547 /* HomepageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomepageCollectionViewCell.swift; sourceTree = "<group>"; };
 		ADEC5A851E107F5900C30547 /* HomeproductCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeproductCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -244,6 +244,9 @@
 			isa = PBXGroup;
 			children = (
 				ADBBB4D91E48014900E85610 /* DataModel */,
+				AD234B2D1E4EA28B0064F115 /* Constant.swift */,
+				AD1890121E68856800BACBF7 /* Alert.swift */,
+				ADBBB4DC1E48056700E85610 /* ServerAPI.swift */,
 				AD5B0B441DD098E200E39670 /* HomeViewController.swift */,
 				ADEC5A831E107F3C00C30547 /* HomepageCollectionViewCell.swift */,
 				ADEC5A851E107F5900C30547 /* HomeproductCollectionViewCell.swift */,
@@ -283,9 +286,6 @@
 			isa = PBXGroup;
 			children = (
 				ADBBB4DA1E48014900E85610 /* Product.swift */,
-				ADBBB4DC1E48056700E85610 /* ServerAPI.swift */,
-				AD234B2D1E4EA28B0064F115 /* Constant.swift */,
-				AD1890121E68856800BACBF7 /* Alert.swift */,
 			);
 			path = DataModel;
 			sourceTree = "<group>";
