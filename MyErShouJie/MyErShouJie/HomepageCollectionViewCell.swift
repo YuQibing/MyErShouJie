@@ -8,10 +8,6 @@
 
 import UIKit
 
-let ScreenWidth = UIScreen.main.bounds.width
-let ScreenHeight = UIScreen.main.bounds.height
-
-
 class HomepageCollectionViewCell: UICollectionViewCell {
     var label: UILabel?
     
@@ -22,11 +18,6 @@ class HomepageCollectionViewCell: UICollectionViewCell {
         label?.font = UIFont.boldSystemFont(ofSize: 16.0)
         label?.textColor = UIColor.blue
         self.addSubview(label!)
-        
-        
-        
-        
-        
     }
     
     required init?(coder aDecoder: NSCoder) {

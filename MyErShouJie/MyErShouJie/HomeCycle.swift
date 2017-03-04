@@ -15,14 +15,11 @@ class HomeCycle: UICollectionViewCell {
     override init (frame: CGRect){
         super.init(frame: frame)
         setupUI()
-        
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-
 }
 
 extension HomeCycle {
@@ -32,8 +29,6 @@ extension HomeCycle {
         let cycleView = HomeCycleScrollView(frame: CGRect(x: 0, y: 0, width: width, height: 200))
         
         contentView.addSubview(cycleView)
-        
-        
     }
     
 }

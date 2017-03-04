@@ -16,8 +16,6 @@ class ProductDetailsController: UIViewController, UICollectionViewDelegate, UICo
     var productPrice: Double?
     var productDescription: String?
     var imagesUrl: Array<String> = []
-
-    
     var collectionView: UICollectionView?
     private var customConstraints: [NSLayoutConstraint] = []
     
@@ -34,15 +32,11 @@ class ProductDetailsController: UIViewController, UICollectionViewDelegate, UICo
 
     private lazy var titleLabel: UILabel = {
         let titlelabel = UILabel()
-        //titlelabel.backgroundColor = UIColor.red
-        //titlelabel.text = productTitle
         return titlelabel
     }()
     
     private lazy var priceLabel: UILabel = {
         let pricelabel = UILabel()
-        //pricelabel.text = productPrice as! String
-        //pricelabel.backgroundColor = UIColor.blue
         return pricelabel
     }()
     
@@ -54,12 +48,10 @@ class ProductDetailsController: UIViewController, UICollectionViewDelegate, UICo
     
     private lazy var descriptionLabel: UILabel = {
         let descriptionlabel = UILabel()
-        //descriptionlabel.text = productDescription
         return descriptionlabel
     }()
     
     private lazy var imageCollectionView: UICollectionView = {
-        
         let layout = UICollectionViewFlowLayout()
         let imageCollectionView = UICollectionView(frame: CGRect(), collectionViewLayout: layout)
         imageCollectionView.isScrollEnabled = false
@@ -74,10 +66,6 @@ class ProductDetailsController: UIViewController, UICollectionViewDelegate, UICo
         self.view.setNeedsUpdateConstraints()
         self.titleLabel.text = productTitle!
         self.priceLabel.text = "¥ "+String(describing: productPrice!)
-        print("productTitle = ", productTitle!)
-        print("productTitle = ", productPrice!)
-        
-
         self.view.addSubview(titleLabel)
         self.view.addSubview(priceLabel)
         self.view.addSubview(horizontalLine)
@@ -86,13 +74,11 @@ class ProductDetailsController: UIViewController, UICollectionViewDelegate, UICo
         priceLabel.translatesAutoresizingMaskIntoConstraints = false
         horizontalLine.translatesAutoresizingMaskIntoConstraints = false
         imageCollectionView.translatesAutoresizingMaskIntoConstraints = false
-        // Do any additional setup after loading the view.
     }
     
     override func updateViewConstraints() {
         defer { super.updateViewConstraints() }
         let views = [
-            
             "titleLabel": titleLabel,
             "priceLabel": priceLabel,
             "descriptionLabel": descriptionLabel,
@@ -117,10 +103,6 @@ class ProductDetailsController: UIViewController, UICollectionViewDelegate, UICo
         customConstraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:|-(sidepadding)-[horizontalLine]-(sidepadding)-|", metrics: metrics, views: views))
         customConstraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:|-(sidepadding)-[imageCollectionView]-(sidepadding)-|", metrics: metrics, views: views))
         customConstraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "V:[horizontalLine]-[imageCollectionView(collectionViewHeight)]", metrics: metrics, views: views))
-        
-        
-        
-        
         NSLayoutConstraint.activate(customConstraints)
         
     }
@@ -138,7 +120,6 @@ class ProductDetailsController: UIViewController, UICollectionViewDelegate, UICo
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
         return CGSize(width: CGFloat (collectionView.frame.size.width  ), height: 200)
     }
     
@@ -148,10 +129,6 @@ class ProductDetailsController: UIViewController, UICollectionViewDelegate, UICo
         for index in 0...imagesUrl.count - 1 {
             imageView.hnk_setImage(from: URL(string: baseUrl + imagesUrl[index]))
         }
-        
         return cell
     }
-    
-    
-
 }

@@ -19,7 +19,6 @@ class HomeCycleScrollView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupUI()
-        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -128,9 +127,7 @@ extension HomeCycleScrollView: UICollectionViewDataSource, UICollectionViewDeleg
     }
     
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        
         startTimer()
-        
     }
     
     func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
@@ -138,8 +135,7 @@ extension HomeCycleScrollView: UICollectionViewDataSource, UICollectionViewDeleg
         if isScroll{
             
             collectionView?.scrollToItem(at: IndexPath(item: 0, section: 1), at: .centeredHorizontally, animated: false)
-            isScroll = false
-            
+            isScroll = false            
         }
     }
     

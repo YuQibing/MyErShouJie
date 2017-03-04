@@ -10,14 +10,8 @@ import UIKit
 
 class HomeproductCollectionViewCell: UICollectionViewCell {
     let width = UIScreen.main.bounds.size.width
-//    var imgView : UIImageView?
-//    var titleLabel:UILabel?
-//    var priceLabel:UILabel?
-//    var descriptionLabel:UILabel?
-//    var readLabel:UILabel?
-    
     private var customConstraints: [NSLayoutConstraint] = []
-
+    
     public lazy var imageView: UIImageView = {
     
         let imageView = UIImageView()
@@ -43,19 +37,16 @@ class HomeproductCollectionViewCell: UICollectionViewCell {
     
     override init(frame: CGRect){
         super.init(frame: frame)
-        
         self.setNeedsUpdateConstraints()
         self.addSubview(imageView)
         self.addSubview(titleLabel)
         self.addSubview(priceLabel)
         self.addSubview(descriptionLabel)
-        
+
         imageView.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         priceLabel.translatesAutoresizingMaskIntoConstraints = false
         descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
-        
-
     }
     
     override func updateConstraints() {
@@ -70,25 +61,17 @@ class HomeproductCollectionViewCell: UICollectionViewCell {
         let metrics = [
             "descriptionLabelWidth": Float((UIScreen.main.bounds.width-10)/2)
         ]
-//        
-//        customConstraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:|-[imageView(200)]-|", options:NSLayoutFormatOptions.alignAllLeading, metrics: nil, views: views))
         print("==========titlelabelwidth", Float((UIScreen.main.bounds.width-10)/2) )
         customConstraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:|-[titleLabel]", options:NSLayoutFormatOptions.alignAllLeading, metrics: nil, views: views))
         customConstraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:[priceLabel]-|", options:NSLayoutFormatOptions.alignAllRight, metrics: nil, views: views))
         customConstraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "V:|-(205)-[priceLabel]-[descriptionLabel]-|", options:NSLayoutFormatOptions.alignAllLeading, metrics: nil, views: views))
         customConstraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "V:|-(205)-[titleLabel]", options:NSLayoutFormatOptions.alignAllTop, metrics: metrics, views: views))
         customConstraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:|-[descriptionLabel]-|", options:NSLayoutFormatOptions.alignAllTop, metrics: nil, views: views))
-//         customConstraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "V:[titleLabel]-[descriptionLabel(25)]", options:NSLayoutFormatOptions.alignAllTop, metrics: nil, views: views))
-        
-//        customConstraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:|-(0)-[descriptionLabel]-(0)-|", options:NSLayoutFormatOptions.alignAllTop, metrics: nil, views: views))
         NSLayoutConstraint.activate(customConstraints)
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    
-    
-    
+
 }

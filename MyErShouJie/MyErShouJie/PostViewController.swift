@@ -18,9 +18,6 @@ class PostViewController: UIViewController {
         let img = UIImage(named: "post")
         let item = UIBarButtonItem(image: img, style: UIBarButtonItemStyle.plain, target: self, action: #selector(PostViewController.post))
         self.navigationItem.rightBarButtonItem = item
-        
-        
-        
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -31,14 +28,7 @@ class PostViewController: UIViewController {
         let postcontroller = PostController()
         postcontroller.hidesBottomBarWhenPushed = true
         navigationController?.present(postcontroller, animated: true, completion: nil)
-        
-        
     }
-    
-    
-    
-    
-        
 }
     
     

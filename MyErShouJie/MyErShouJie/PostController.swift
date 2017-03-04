@@ -179,9 +179,7 @@ class PostController: UIViewController, UINavigationControllerDelegate, UICollec
         
         customConstraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:|-(sidePadding)-[pricehorizontalLine]-|", metrics: metrics, views: views))
          customConstraints.append(contentsOf: NSLayoutConstraint.constraints(withVisualFormat: "H:|-[typePicker]-|", metrics: metrics, views: views))
-        
-        
-        
+ 
         NSLayoutConstraint.activate(customConstraints)
         
     }
@@ -190,31 +188,11 @@ class PostController: UIViewController, UINavigationControllerDelegate, UICollec
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-   
-    
+
     func dismiss() {
         
         dismiss(animated: true, completion: nil)
     }
-    
-    
-//    func takePhoto() {
-//        let takephoto = UIImagePickerController()
-//        takephoto.delegate = self
-//        takephoto.sourceType = UIImagePickerControllerSourceType.camera
-//        self.present(takephoto, animated: true, completion: nil)
-//    }
-    
-//    func selectPhoto() {
-//        let selectphoto = DKImagePickerController()
-//        selectphoto.allowMultipleTypes = true
-//        selectphoto.maxSelectableCount = 3
-//        selectphoto.showsCancelButton = true
-//        self.present(selectphoto, animated: true, completion: nil)
-//        
-//    }
-
     
     func selectPhoto() {
         let pickerController = DKImagePickerController()
@@ -281,8 +259,6 @@ class PostController: UIViewController, UINavigationControllerDelegate, UICollec
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
     }
-    
-    
     
     func upload() {
         let serverAPI = ServerAPI()

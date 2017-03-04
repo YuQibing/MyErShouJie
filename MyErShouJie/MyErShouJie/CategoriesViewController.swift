@@ -11,8 +11,6 @@ import Alamofire
 import SwiftyJSON
 import Kingfisher
 
-
-
 class CategoriesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var tableview: UITableView!

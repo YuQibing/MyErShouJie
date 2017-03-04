@@ -39,8 +39,6 @@
 		AD9C6C741DE073C7009AB8EC /* HomeCycleScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9C6C731DE073C7009AB8EC /* HomeCycleScrollView.swift */; };
 		AD9C6C761DE07891009AB8EC /* HomeCycleViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9C6C751DE07891009AB8EC /* HomeCycleViewCell.swift */; };
 		AD9C6C791DE088E0009AB8EC /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9C6C781DE088E0009AB8EC /* UIImage+Extension.swift */; };
-		AD9C6C8F1DE1AC6D009AB8EC /* HomeHeadCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9C6C8E1DE1AC6D009AB8EC /* HomeHeadCollectionView.swift */; };
-		AD9C6C911DE1AF4E009AB8EC /* HomeHeadCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9C6C901DE1AF4E009AB8EC /* HomeHeadCollectionViewCell.swift */; };
 		AD9C6C931DE1DC80009AB8EC /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9C6C921DE1DC80009AB8EC /* UIImageView+Extension.swift */; };
 		AD9C6C951DE1E090009AB8EC /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9C6C941DE1E090009AB8EC /* UILabel+Extension.swift */; };
 		ADA133551E09D7FD00F1ABF5 /* HomeCycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA133541E09D7FD00F1ABF5 /* HomeCycle.swift */; };
@@ -113,8 +111,6 @@
 		AD9C6C731DE073C7009AB8EC /* HomeCycleScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCycleScrollView.swift; sourceTree = "<group>"; };
 		AD9C6C751DE07891009AB8EC /* HomeCycleViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCycleViewCell.swift; sourceTree = "<group>"; };
 		AD9C6C781DE088E0009AB8EC /* UIImage+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
-		AD9C6C8E1DE1AC6D009AB8EC /* HomeHeadCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeHeadCollectionView.swift; sourceTree = "<group>"; };
-		AD9C6C901DE1AF4E009AB8EC /* HomeHeadCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeHeadCollectionViewCell.swift; sourceTree = "<group>"; };
 		AD9C6C921DE1DC80009AB8EC /* UIImageView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		AD9C6C941DE1E090009AB8EC /* UILabel+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		ADA133541E09D7FD00F1ABF5 /* HomeCycle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCycle.swift; sourceTree = "<group>"; };
@@ -257,8 +253,6 @@
 				ADA133541E09D7FD00F1ABF5 /* HomeCycle.swift */,
 				AD9C6C731DE073C7009AB8EC /* HomeCycleScrollView.swift */,
 				AD9C6C751DE07891009AB8EC /* HomeCycleViewCell.swift */,
-				AD9C6C8E1DE1AC6D009AB8EC /* HomeHeadCollectionView.swift */,
-				AD9C6C901DE1AF4E009AB8EC /* HomeHeadCollectionViewCell.swift */,
 				AD5B0B461DD098F300E39670 /* CategoriesViewController.swift */,
 				ADEC5A871E108A7100C30547 /* CategoryViewController.swift */,
 				AD234B371E52B2C90064F115 /* ButtonController.swift */,
@@ -488,7 +482,6 @@
 				ADEC5A881E108A7100C30547 /* CategoryViewController.swift in Sources */,
 				AD5B0B4B1DD0990E00E39670 /* ProfileViewController.swift in Sources */,
 				AD9C6C951DE1E090009AB8EC /* UILabel+Extension.swift in Sources */,
-				AD9C6C911DE1AF4E009AB8EC /* HomeHeadCollectionViewCell.swift in Sources */,
 				AD5B0B471DD098F300E39670 /* CategoriesViewController.swift in Sources */,
 				AD2432381E6735F9009234DC /* ProductWebViewController.swift in Sources */,
 				AD234B2E1E4EA28B0064F115 /* Constant.swift in Sources */,
@@ -506,7 +499,6 @@
 				AD1890131E68856800BACBF7 /* Alert.swift in Sources */,
 				AD2800881DD2BC7000483B8D /* ProfileSellDetailsController.swift in Sources */,
 				AD234B381E52B2C90064F115 /* ButtonController.swift in Sources */,
-				AD9C6C8F1DE1AC6D009AB8EC /* HomeHeadCollectionView.swift in Sources */,
 				ADEC5A861E107F5900C30547 /* HomeproductCollectionViewCell.swift in Sources */,
 				AD9C6C741DE073C7009AB8EC /* HomeCycleScrollView.swift in Sources */,
 				AD28008C1DD2BE6000483B8D /* ProfileSetDetailsController.swift in Sources */,
