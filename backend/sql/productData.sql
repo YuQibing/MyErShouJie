@@ -10,10 +10,4 @@ create table productdetail(id int(5) not null auto_increment,
                            time Datetime not null,
 						   longitude double(10,6) default null,
                            latitude double(10,6) default null,
-                           primary key(id));
-
-
-
-
-
-
+                           primary key(id))DEFAULT CHARSET=utf8;
