@@ -18,8 +18,8 @@
         <!-- MySQL5 -->
         <property name="driverClass" value="${driverClassName}"></property>
         <property name="jdbcUrl" value="${url}"></property>
-        <property name="user" value="root"></property>
-        <property name="password" value="yqb19941001"></property>
+        <property name="user" value="${username}"></property>
+        <property name="password" value="${password}"></property>
         <property name="maxPoolSize" value="100"></property>
         <property name="minPoolSize" value="1"></property>
         <property name="initialPoolSize" value="1"></property>
